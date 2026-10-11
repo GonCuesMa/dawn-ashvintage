@@ -1,0 +1,207 @@
+{%- comment -%}
+  Sección de garantías de confianza: columnas con icono SVG, título y texto.
+  Máximo 4 bloques. Los iconos se eligen desde un desplegable en cada bloque.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign block_count = section.blocks.size -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title inline-richtext h1 trust-guarantee__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    {%- if block_count > 0 -%}
+      <ul
+        class="trust-guarantee__list grid grid--1-col{% if block_count == 4 %} grid--2-col-tablet grid--4-col-desktop{% else %} grid--3-col-tablet{% endif %}"
+        role="list"
+      >
+        {%- for block in section.blocks -%}
+          <li class="trust-guarantee__item grid__item" {{ block.shopify_attributes }}>
+            <span class="trust-guarantee__icon" aria-hidden="true">
+              {%- case block.settings.icon -%}
+                {%- when 'medal' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/><path d="m12 6 .9 1.8 2 .3-1.45 1.4.35 2-1.8-.95-1.8.95.35-2L9.1 8.1l2-.3z"/></svg>
+                {%- when 'check' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>
+                {%- when 'truck' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4.5l3.5 4v3h-8"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg>
+                {%- when 'star' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+                {%- when 'shield' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+              {%- endcase -%}
+            </span>
+            {%- if block.settings.title != blank -%}
+              <h3 class="trust-guarantee__title h4">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="trust-guarantee__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .trust-guarantee__heading {
+    margin: 0 0 3rem;
+    text-align: center;
+  }
+
+  .trust-guarantee__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .trust-guarantee__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .trust-guarantee__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.06);
+  }
+
+  .trust-guarantee__icon svg {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .trust-guarantee__title,
+  .trust-guarantee__text {
+    margin: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Garantías de confianza",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Título de la sección",
+      "info": "Opcional."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Garantía",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "medal", "label": "Medalla" },
+            { "value": "check", "label": "Check" },
+            { "value": "truck", "label": "Camión" },
+            { "value": "star", "label": "Estrella" },
+            { "value": "shield", "label": "Escudo" }
+          ],
+          "default": "medal"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Garantía"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Garantías de confianza",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "icon": "medal",
+            "title": "90% de ropa Clase A garantizada",
+            "text": "Al menos el 90% de las prendas de cada lote es de Clase A, en perfecto estado."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "check",
+            "title": "Lotes revisados a mano",
+            "text": "Cada lote se revisa prenda a prenda antes de prepararlo."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Envíos en 24/48h",
+            "text": "Preparamos y enviamos tu pedido en un plazo de 24 a 48 horas."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
