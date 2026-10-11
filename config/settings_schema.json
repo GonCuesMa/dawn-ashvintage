@@ -1466,5 +1466,19 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "Popup de descuento",
+    "settings": [
+      {"type": "checkbox", "id": "discount_popup_enabled", "label": "Activar popup de bienvenida", "info": "Solo se muestra a visitantes sin sesión o clientes sin pedidos.", "default": false},
+      {"type": "text", "id": "discount_popup_heading", "label": "Título", "default": "Consigue un 10% de descuento"},
+      {"type": "textarea", "id": "discount_popup_text", "label": "Texto", "default": "En tu primer pedido de lotes de ropa vintage. Usa este código al finalizar la compra:"},
+      {"type": "text", "id": "discount_popup_code", "label": "Código de descuento", "default": "BIENVENIDO10"},
+      {"type": "text", "id": "discount_popup_copy_label", "label": "Texto del botón copiar", "default": "Copiar código"},
+      {"type": "text", "id": "discount_popup_copied_label", "label": "Texto tras copiar", "default": "¡Copiado!"},
+      {"type": "text", "id": "discount_popup_dismiss_label", "label": "Texto del botón de rechazo", "default": "No, gracias"},
+      {"type": "range", "id": "discount_popup_delay", "label": "Segundos hasta mostrarse", "min": 0, "max": 30, "step": 1, "default": 5},
+      {"type": "range", "id": "discount_popup_days", "label": "Días sin volver a mostrarse tras cerrarlo", "min": 1, "max": 30, "step": 1, "default": 7}
+    ]
   }
 ]

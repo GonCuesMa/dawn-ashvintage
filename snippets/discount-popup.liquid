@@ -1,0 +1,153 @@
+{%- comment -%}
+  Popup de bienvenida con descuento.
+  Solo se renderiza si está activado y el visitante no ha iniciado sesión o no tiene pedidos.
+  Ajustes en: Personalizar tema > Configuración del tema > Popup de descuento.
+{%- endcomment -%}
+
+{%- if settings.discount_popup_enabled and settings.discount_popup_code != blank -%}
+  {%- if customer == blank or customer.orders_count == 0 -%}
+    <dialog
+      id="discount-popup"
+      class="discount-popup color-scheme-1 gradient"
+      aria-labelledby="discount-popup-heading"
+      data-delay="{{ settings.discount_popup_delay | times: 1000 }}"
+      data-days="{{ settings.discount_popup_days }}"
+    >
+      <div class="discount-popup__content">
+        <button type="button" class="discount-popup__close" data-discount-close aria-label="{{ 'accessibility.close' | t }}">
+          {{ 'icon-close.svg' | inline_asset_content }}
+        </button>
+        {%- if settings.discount_popup_heading != blank -%}
+          <h2 id="discount-popup-heading" class="h2">{{ settings.discount_popup_heading | escape }}</h2>
+        {%- endif -%}
+        {%- if settings.discount_popup_text != blank -%}
+          <p>{{ settings.discount_popup_text | escape }}</p>
+        {%- endif -%}
+        <p class="discount-popup__code" aria-live="polite">{{ settings.discount_popup_code | escape }}</p>
+        <button
+          type="button"
+          class="button"
+          data-discount-copy
+          data-code="{{ settings.discount_popup_code | escape }}"
+          data-copied="{{ settings.discount_popup_copied_label | escape }}"
+        >
+          {{- settings.discount_popup_copy_label | escape -}}
+        </button>
+        <button type="button" class="link discount-popup__dismiss" data-discount-close>
+          {{- settings.discount_popup_dismiss_label | escape -}}
+        </button>
+      </div>
+    </dialog>
+
+    <style>
+      .discount-popup {
+        border: 0;
+        border-radius: 8px;
+        padding: 0;
+        width: min(92vw, 44rem);
+        max-height: 90vh;
+        color: rgb(var(--color-foreground));
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3);
+      }
+      .discount-popup[open] {
+        margin: auto;
+        animation: discount-popup-in 0.3s ease-out;
+      }
+      .discount-popup::backdrop {
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .discount-popup__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 4rem 2.4rem 3rem;
+        text-align: center;
+      }
+      .discount-popup__content > * {
+        margin: 0;
+      }
+      .discount-popup__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: flex;
+        padding: 0.8rem;
+        background: none;
+        border: 0;
+        color: inherit;
+        cursor: pointer;
+      }
+      .discount-popup__close .icon {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+      .discount-popup__code {
+        padding: 1rem 2.4rem;
+        border: 0.1rem dashed rgb(var(--color-foreground));
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        user-select: all;
+      }
+      .discount-popup__dismiss {
+        background: none;
+        border: 0;
+        color: inherit;
+        cursor: pointer;
+      }
+      @keyframes discount-popup-in {
+        from { opacity: 0; transform: translateY(1.5rem); }
+        to { opacity: 1; transform: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .discount-popup[open] { animation: none; }
+      }
+    </style>
+
+    <script>
+      (function () {
+        var dialog = document.getElementById('discount-popup');
+        if (!dialog || typeof dialog.showModal !== 'function') return;
+
+        var KEY = 'ashvintage_discount_popup_until';
+
+        function read() {
+          try { return parseInt(localStorage.getItem(KEY), 10) || 0; } catch (e) { return 0; }
+        }
+
+        function snooze() {
+          var days = parseInt(dialog.dataset.days, 10) || 7;
+          try { localStorage.setItem(KEY, String(Date.now() + days * 864e5)); } catch (e) {}
+        }
+
+        // No mostrar mientras no haya expirado el aplazamiento (en el editor sí, para poder previsualizar).
+        if (!Shopify.designMode && read() > Date.now()) return;
+
+        setTimeout(function () {
+          if (!dialog.open) dialog.showModal();
+        }, parseInt(dialog.dataset.delay, 10) || 0);
+
+        dialog.addEventListener('close', snooze);
+
+        dialog.querySelectorAll('[data-discount-close]').forEach(function (btn) {
+          btn.addEventListener('click', function () { dialog.close(); });
+        });
+
+        // Clic en el fondo (fuera del contenido) cierra el popup.
+        dialog.addEventListener('click', function (e) {
+          if (e.target === dialog) dialog.close();
+        });
+
+        var copyBtn = dialog.querySelector('[data-discount-copy]');
+        copyBtn.addEventListener('click', function () {
+          var done = function () { copyBtn.textContent = copyBtn.dataset.copied; };
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(copyBtn.dataset.code).then(done, function () {});
+          }
+        });
+      })();
+    </script>
+  {%- endif -%}
+{%- endif -%}
