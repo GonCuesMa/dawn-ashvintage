@@ -47,6 +47,7 @@
         "kilos": {
           "type": "model",
           "settings": {
+            "image": "shopify://shop_images/kilos.jpg",
             "title": "Lotes por kilos",
             "text": "Compra por peso y ajusta el volumen a tu tienda.",
             "link": "/collections/venta-por-kilos",
@@ -56,6 +57,7 @@
         "prendas": {
           "type": "model",
           "settings": {
+            "image": "shopify://shop_images/prendas.jpg",
             "title": "Lotes por prendas",
             "text": "Cantidades cerradas de prendas seleccionadas.",
             "link": "/collections/lotes-por-prendas",
@@ -65,6 +67,7 @@
         "mayor": {
           "type": "model",
           "settings": {
+            "image": "shopify://shop_images/mayorista.jpg",
             "title": "Al por mayor",
             "text": "Grandes volúmenes con condiciones a medida.",
             "link": "/collections/all",
