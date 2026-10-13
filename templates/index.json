@@ -70,7 +70,7 @@
             "image": "shopify://shop_images/mayorista.jpg",
             "title": "Al por mayor",
             "text": "Grandes volúmenes con condiciones a medida.",
-            "link": "/collections/all",
+            "link": "shopify://collections/mayoristas",
             "link_label": "Pedir presupuesto"
           }
         }
