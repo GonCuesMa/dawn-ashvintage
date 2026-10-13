@@ -182,9 +182,11 @@ body .header__submenu .header__menu-item:hover {
 body .mega-menu__content {
   left: 0;
   right: 0;
-  width: min(calc(100% - 4rem), 120rem);
+  width: fit-content;
+  min-width: 36rem;
+  max-width: min(calc(100% - 4rem), 120rem);
   margin: 1.2rem auto 0;
-  padding: 3.2rem 4rem;
+  padding: 3.2rem 4.8rem;
   border: 0;
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
@@ -192,15 +194,22 @@ body .mega-menu__content {
 }
 
 body .mega-menu__list {
-  gap: 3rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 6rem;
   padding-left: 0;
   padding-right: 0;
   border: 0;
 }
 
 body .mega-menu__list > li {
+  min-width: 18rem;
   padding: 0;
   border: 0;
+}
+
+body .mega-menu__link {
+  white-space: nowrap;
 }
 
 body .mega-menu__link {
