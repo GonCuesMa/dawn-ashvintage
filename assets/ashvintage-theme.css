@@ -1,18 +1,22 @@
 /*
- * AshVintage: estética Vintage / Streetwear Wholesale (neo-brutalismo).
+ * AshVintage: Moderno Premium con toques vintage.
+ * Paleta cálida (crema, arena, tinta y terracota) derivada del logo monocromo.
  * Se carga después de base.css desde layout/theme.liquid.
  * El prefijo "body" sube la especificidad para ganar a los CSS de componentes de Dawn.
+ * Las formas (radios, bordes de botones/tarjetas) y los colores base se gobiernan
+ * desde la configuración del tema; aquí solo se afina lo que Dawn no expone.
  */
 
 :root {
   --ash-black: #000;
   --ash-cream: #faf9f6;
-  --ash-ink: #2b2622;
+  --ash-sand: #f1ebe1;
+  --ash-ink: #1f1b18;
   --ash-accent: #a8553a;
-  --ash-hard-shadow: 5px 5px 0 0 var(--ash-black);
+  --ash-soft-shadow: 0 10px 30px rgba(31, 27, 24, 0.1);
 }
 
-/* ---------- Tipografía: encabezados pesados en mayúsculas ---------- */
+/* ---------- Tipografía: títulos serif elegantes, etiquetas con tracking del logo ---------- */
 body h1,
 body h2,
 body h3,
@@ -25,39 +29,40 @@ body .h2,
 body .h3,
 body .h4,
 body .h5,
-body .title,
-body .caption-with-letter-spacing {
+body .title {
+  letter-spacing: 0.005em;
+  line-height: calc(1 + 0.2 / var(--font-heading-scale));
+}
+
+body .caption-with-letter-spacing,
+body .subtitle {
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  line-height: calc(1 + 0.1 / var(--font-heading-scale));
 }
 
-/* ---------- Botones: cuadrados, borde marcado y sombra dura en hover ---------- */
-body .button,
-body .shopify-challenge__button,
-body .customer button,
-body .quantity,
-body .field__input,
-body .select__select,
-body .badge {
-  border-radius: 0;
+body .title-wrapper-with-link {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
 }
 
+/* ---------- Botones: píldora suave, texto con tracking, elevación sutil ---------- */
 body .button,
 body .shopify-challenge__button,
 body .customer button {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 body .button:not([disabled]):hover,
 body .shopify-challenge__button:hover,
 body .customer button:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--ash-hard-shadow);
+  transform: translateY(-2px);
+  box-shadow: var(--ash-soft-shadow);
 }
 
 body .button:not([disabled]):active {
@@ -65,46 +70,57 @@ body .button:not([disabled]):active {
   box-shadow: none;
 }
 
-/* ---------- Tarjetas de producto ---------- */
-body .card,
-body .card__inner,
-body .card__media,
-body .card .media {
-  border-radius: 0;
-  background: transparent;
-}
-
-/* Imagen siempre cuadrada 1:1, rellenando sin huecos grises */
+/* ---------- Tarjetas de producto: retrato 4:5, sin bordes, elegantes ---------- */
 body .card__inner.ratio {
-  --ratio-percent: 100% !important;
-  border: 2px solid var(--ash-black);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  --ratio-percent: 125% !important;
+  overflow: hidden;
+  background: var(--ash-sand);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 body .card__media .media img {
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 body .card-wrapper:hover .card__inner.ratio {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--ash-hard-shadow);
+  box-shadow: var(--ash-soft-shadow);
 }
 
-/* Título más grande y en negrita; precio destacado */
+body .card-wrapper:hover .card__media .media img {
+  transform: scale(1.04);
+}
+
+body .card-information {
+  padding-top: 0.4rem;
+}
+
+/* El título de producto usa la fuente del cuerpo para leerse mejor; el precio destaca */
 body .card__heading,
 body .card__heading a {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 body .card-information .price,
 body .card-information .price-item {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--ash-ink);
 }
 
 body .card-information .price--on-sale .price-item--sale {
-  font-size: 2rem;
+  color: var(--ash-accent);
+}
+
+body .badge {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* ---------- Cabecera: Moderno Premium con toques vintage ---------- */
