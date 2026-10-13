@@ -340,3 +340,9 @@ body .active-facets__button-inner {
   letter-spacing: 0.02em;
   text-transform: none;
 }
+
+/* Selector de cantidad: color del número coherente con el tema */
+body .quantity__input {
+  color: rgb(var(--color-foreground));
+  -webkit-text-fill-color: rgb(var(--color-foreground));
+}
