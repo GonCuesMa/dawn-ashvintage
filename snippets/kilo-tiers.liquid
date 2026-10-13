@@ -1,0 +1,262 @@
+{%- comment -%}
+  Selector visual de lotes por kilos con descuento progresivo.
+  Cada variante del producto es un tramo (10 kg, 20 kg...). El descuento se calcula
+  automáticamente comparando el precio por kilo de cada tramo con el del primer tramo.
+  Los kilos se leen del peso de la variante (en gramos) y, si no hay peso, del texto de la opción.
+
+  Uso: {% render 'kilo-tiers', block: block, product: product, section_id: section.id %}
+{%- endcomment -%}
+
+{%- liquid
+  assign selected_variant = product.selected_or_first_available_variant
+  assign ref_ppk = 0
+-%}
+
+<div class="kilo-tiers" id="KiloTiers-{{ section_id }}" data-section="{{ section_id }}" {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}
+    <h2 class="kilo-tiers__heading h4">{{ block.settings.heading | escape }}</h2>
+  {%- endif -%}
+  {%- if block.settings.text != blank -%}
+    <p class="kilo-tiers__text">{{ block.settings.text | escape }}</p>
+  {%- endif -%}
+
+  <ul class="kilo-tiers__list" role="list">
+    {%- for variant in product.variants -%}
+      {%- liquid
+        assign kg = variant.weight | times: 1.0 | divided_by: 1000
+        if kg <= 0
+          assign kg = variant.option1 | split: ' ' | first | times: 1.0
+        endif
+        if kg <= 0
+          assign kg = 1.0
+        endif
+        assign ppk = variant.price | times: 1.0 | divided_by: kg
+        if forloop.first
+          assign ref_ppk = ppk
+        endif
+        assign pct = 0
+        if ref_ppk > 0 and ppk < ref_ppk
+          assign pct = ref_ppk | minus: ppk | times: 100 | divided_by: ref_ppk | round
+        endif
+        assign ref_total = ref_ppk | times: kg | round
+        assign savings = ref_total | minus: variant.price
+      -%}
+      <li class="kilo-tiers__item">
+        <button
+          type="button"
+          class="kilo-tiers__card{% if variant.id == selected_variant.id %} is-selected{% endif %}{% if forloop.last and pct > 0 %} is-best{% endif %}"
+          data-variant-id="{{ variant.id }}"
+          data-option-value="{{ variant.option1 | escape }}"
+          aria-pressed="{% if variant.id == selected_variant.id %}true{% else %}false{% endif %}"
+          {% unless variant.available %}disabled{% endunless %}
+        >
+          {%- if pct > 0 -%}
+            <span class="kilo-tiers__badge">-{{ pct }}%</span>
+          {%- endif -%}
+          {%- if forloop.last and pct > 0 -%}
+            <span class="kilo-tiers__ribbon">{{ block.settings.best_label | escape }}</span>
+          {%- endif -%}
+          <span class="kilo-tiers__kg">{{ kg | round: 1 | remove: '.0' }} kg</span>
+          <span class="kilo-tiers__ppk">{{ ppk | round | money }}/kg</span>
+          <span class="kilo-tiers__total">
+            {%- if pct > 0 -%}
+              <s class="kilo-tiers__old">{{ ref_total | money }}</s>
+            {%- endif -%}
+            <span class="kilo-tiers__price">{{ variant.price | money }}</span>
+          </span>
+          {%- if pct > 0 and savings > 0 -%}
+            <span class="kilo-tiers__save">{{ block.settings.save_label | escape }} {{ savings | money }}</span>
+          {%- endif -%}
+          {%- unless variant.available -%}
+            <span class="kilo-tiers__save">{{ 'products.product.sold_out' | t }}</span>
+          {%- endunless -%}
+        </button>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  {%- if block.settings.hide_default_picker -%}
+    <style>
+      #MainProduct-{{ section_id }} variant-selects {
+        display: none;
+      }
+    </style>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .kilo-tiers {
+    margin: 2rem 0;
+  }
+
+  .kilo-tiers__heading {
+    margin: 0 0 0.4rem;
+  }
+
+  .kilo-tiers__text {
+    margin: 0 0 1.6rem;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .kilo-tiers__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .kilo-tiers__list {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+  }
+
+  .kilo-tiers__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+    height: 100%;
+    padding: 2.2rem 1.4rem 1.4rem;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 12px;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .kilo-tiers__card:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .kilo-tiers__card.is-selected {
+    border-color: var(--ash-accent, #a8553a);
+    box-shadow: 0 0 0 2px var(--ash-accent, #a8553a);
+  }
+
+  .kilo-tiers__card:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .kilo-tiers__badge {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    background: var(--ash-accent, #a8553a);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .kilo-tiers__ribbon {
+    align-self: flex-start;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .kilo-tiers__kg {
+    font-family: var(--font-heading-family);
+    font-size: 2.4rem;
+    line-height: 1.1;
+  }
+
+  .kilo-tiers__ppk {
+    color: var(--ash-accent, #a8553a);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .kilo-tiers__total {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+  }
+
+  .kilo-tiers__old {
+    color: rgba(var(--color-foreground), 0.55);
+    font-size: 1.3rem;
+  }
+
+  .kilo-tiers__price {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+
+  .kilo-tiers__save {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ash-accent, #a8553a);
+  }
+{% endstylesheet %}
+
+<script>
+  (function () {
+    function init() {
+      var root = document.getElementById('KiloTiers-{{ section_id }}');
+      if (!root || root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      var info = root.closest('product-info') || document;
+
+      function mark(variantId) {
+        root.querySelectorAll('.kilo-tiers__card').forEach(function (card) {
+          var on = String(card.dataset.variantId) === String(variantId);
+          card.classList.toggle('is-selected', on);
+          card.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+
+      root.addEventListener('click', function (event) {
+        var card = event.target.closest('.kilo-tiers__card');
+        if (!card || card.disabled) return;
+        var value = card.dataset.optionValue;
+        var radio = Array.prototype.find.call(
+          info.querySelectorAll('variant-selects input[type="radio"]'),
+          function (input) { return input.value === value; }
+        );
+        if (radio) {
+          radio.click();
+        } else {
+          var select = info.querySelector('variant-selects select');
+          if (select) {
+            select.value = value;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+        mark(card.dataset.variantId);
+      });
+
+      if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+        subscribe(PUB_SUB_EVENTS.variantChange, function (event) {
+          var variant = event && event.data && event.data.variant;
+          if (variant) mark(variant.id);
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

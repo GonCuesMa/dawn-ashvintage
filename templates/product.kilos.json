@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir"
+          }
+        },
+        "tab_details": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Detalles del producto",
+            "icon": "shirt",
+            "content": "<p>Lote de ropa vintage y de segunda mano de marcas de calidad, revisado prenda a prenda a mano.</p><p>Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p><p>Nuestros lotes no incluyen calzado.</p>"
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envío y devoluciones",
+            "icon": "truck",
+            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas. Envío gratis a partir de 300 €.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>"
+          }
+        },
+        "tab_info": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Información importante",
+            "icon": "check_mark",
+            "content": "<p>El contenido exacto de cada lote puede variar en tallas, colores y modelos. Las imágenes son orientativas.</p><p>Si tienes dudas sobre un lote, escríbenos antes de comprar.</p>"
+          }
+        },
+        "kilo_tiers": {
+          "type": "kilo_tiers",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "kilo_tiers",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "tab_details",
+        "tab_shipping",
+        "tab_info",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "disclosures",
+    "related-products"
+  ]
+}

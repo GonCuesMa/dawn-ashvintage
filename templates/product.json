@@ -54,6 +54,30 @@
           "settings": {
             "share_label": "Compartir"
           }
+        },
+        "tab_details": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Detalles del producto",
+            "icon": "shirt",
+            "content": "<p>Lote de ropa vintage y de segunda mano de marcas de calidad, revisado prenda a prenda a mano.</p><p>Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p><p>Nuestros lotes no incluyen calzado.</p>"
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envío y devoluciones",
+            "icon": "truck",
+            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas. Envío gratis a partir de 300 €.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>"
+          }
+        },
+        "tab_info": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Información importante",
+            "icon": "check_mark",
+            "content": "<p>El contenido exacto de cada lote puede variar en tallas, colores y modelos. Las imágenes son orientativas.</p><p>Si tienes dudas sobre un lote, escríbenos antes de comprar.</p>"
+          }
         }
       },
       "block_order": [
@@ -64,6 +88,9 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "tab_details",
+        "tab_shipping",
+        "tab_info",
         "share"
       ],
       "settings": {

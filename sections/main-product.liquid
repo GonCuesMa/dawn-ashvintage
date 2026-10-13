@@ -455,6 +455,8 @@
                       </volume-pricing>
                     {%- endif -%}
                   </div>
+                {%- when 'kilo_tiers' -%}
+                  {%- render 'kilo-tiers', block: block, product: product, section_id: section.id -%}
                 {%- when 'popup' -%}
                   <modal-opener
                     class="product-popup-modal__opener quick-add-hidden"
@@ -1219,6 +1221,48 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "kilo_tiers",
+      "name": "Descuentos por kilos",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Cada variante del producto es un tramo de kilos (10 kg, 20 kg...). El descuento se calcula solo, comparando el precio por kilo con el del primer tramo. Pon el peso de cada variante en gramos."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Elige tu lote"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Cuantos más kilos, mayor descuento."
+        },
+        {
+          "type": "text",
+          "id": "best_label",
+          "label": "Etiqueta del mejor tramo",
+          "default": "Mejor precio"
+        },
+        {
+          "type": "text",
+          "id": "save_label",
+          "label": "Texto de ahorro",
+          "default": "Ahorras"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_default_picker",
+          "label": "Ocultar el selector de variantes estándar",
+          "info": "Mantén el bloque Selector de variantes en la plantilla: lo usa este bloque por detrás.",
+          "default": true
         }
       ]
     },

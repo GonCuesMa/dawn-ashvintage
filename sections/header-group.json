@@ -19,8 +19,8 @@
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "color_background": "#000000",
-        "color_text": "#39FF14",
+        "color_background": "#a8553a",
+        "color_text": "#faf9f6",
         "separator": "★",
         "ticker_duration": 40
       },
