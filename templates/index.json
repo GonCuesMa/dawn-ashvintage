@@ -224,9 +224,9 @@
       "name": "Garantías de confianza",
       "settings": {
         "heading": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 56,
-        "padding_bottom": 56
+        "color_scheme": "scheme-5",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     }
   },

@@ -297,14 +297,16 @@ body .header {
   padding-bottom: 0.8rem;
 }
 
-/* Garantías: títulos con presencia (la serif necesita más cuerpo que la sans) */
+/* Garantías: título serif grande y texto con buen interlineado */
 body .trust-guarantee__title {
-  font-size: 2rem;
+  font-size: 2.4rem;
+  line-height: 1.2;
 }
 
 body .trust-guarantee__text {
   font-size: 1.5rem;
-  color: rgba(var(--color-foreground), 0.75);
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.85);
 }
 
 /* Pie de página */
