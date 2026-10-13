@@ -108,5 +108,139 @@ body .card-information .price--on-sale .price-item--sale {
 body .section-header .header-wrapper,
 body .section-header .header-wrapper.gradient {
   background: #fff;
+  border-bottom: 2px solid var(--ash-black);
+}
+
+/* Enlaces del nivel principal: negrita, mayúsculas y hover tipo "rotulador" */
+body .header__menu-item,
+body .header__menu-item span {
+  color: var(--ash-black);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body .header__menu-item {
+  padding: 0.8rem 1.2rem;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+body .header__inline-menu .header__menu-item:hover,
+body .header__inline-menu .header__menu-item:hover span,
+body .header__inline-menu details[open] > .header__menu-item,
+body .header__inline-menu details[open] > .header__menu-item span {
+  background: var(--ash-black);
+  color: #fff;
+  text-decoration: none;
+}
+
+body .header__active-menu-item {
+  text-decoration-thickness: 0.4rem;
+  text-underline-offset: 0.3rem;
+}
+
+/* Desplegables y mega menú: sin sombras ni bordes redondeados, borde negro sólido */
+body .header__submenu.global-settings-popup,
+body .mega-menu__content {
+  border: 2px solid var(--ash-black);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body .mega-menu__content {
+  border-top: 0;
+  padding: 3rem 0;
+  background: #fff;
+}
+
+body .header__submenu .header__menu-item:hover {
+  text-decoration: none;
+}
+
+/* Mega menú como tabla de catálogo: líneas divisorias entre columnas y filas */
+body .mega-menu__list {
+  gap: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-top: 1px solid var(--ash-black);
+  border-left: 1px solid var(--ash-black);
+}
+
+body .mega-menu__list > li {
+  padding: 1.6rem 2rem;
+  border-right: 1px solid var(--ash-black);
   border-bottom: 1px solid var(--ash-black);
+}
+
+body .mega-menu__list--condensed {
+  border: 0;
+}
+
+body .mega-menu__list--condensed > li {
+  border: 0;
+  padding: 0.4rem 2rem;
+}
+
+body .mega-menu__link {
+  color: var(--ash-black);
+}
+
+body .mega-menu__link--level-2 {
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--ash-black);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body .mega-menu__link:hover,
+body .mega-menu__link--active {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3rem;
+  text-underline-offset: 0.3rem;
+}
+
+/* Menú móvil (drawer): fondo sólido, enlaces gigantes y líneas duras */
+body .menu-drawer,
+body .menu-drawer__submenu,
+body .menu-drawer__inner-submenu {
+  background: #fff;
+}
+
+body .menu-drawer {
+  border-right: 2px solid var(--ash-black);
+}
+
+body .js .menu-drawer__menu li {
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--ash-black);
+}
+
+body .menu-drawer__menu-item {
+  padding: 1.6rem 3rem;
+  color: var(--ash-black);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+body .menu-drawer__submenu .menu-drawer__menu-item {
+  font-size: 2.2rem;
+}
+
+body .menu-drawer__menu-item:hover,
+body .menu-drawer__menu-item:focus,
+body .menu-drawer__menu-item--active,
+body .menu-drawer__close-button:hover,
+body .menu-drawer__close-button:focus {
+  background: var(--ash-black);
+  color: #fff;
+}
+
+body .menu-drawer__utility-links {
+  border-top: 2px solid var(--ash-black);
+  background: #fff;
 }
