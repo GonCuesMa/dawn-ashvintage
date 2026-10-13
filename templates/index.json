@@ -99,10 +99,10 @@
             "image": "shopify://shop_images/inicial.jpg",
             "badge": "Para empezar",
             "title": "Lote Inicial",
-            "kilos": "7 kg",
+            "kilos": "10 kg",
             "price_text": "Desde 16 €/kg",
             "highlight": "+5 prendas gratis",
-            "link": ""
+            "link": "shopify://products/lote-marcas-variadas-por-kilos"
           }
         },
         "p2": {
@@ -112,10 +112,10 @@
             "image": "shopify://shop_images/seleccion.jpg",
             "badge": "Para crecer",
             "title": "Lote Selección",
-            "kilos": "15 kg",
+            "kilos": "25 kg",
             "price_text": "Desde 14 €/kg",
             "highlight": "+10 prendas gratis",
-            "link": ""
+            "link": "shopify://products/lote-marcas-variadas-por-kilos"
           }
         },
         "p3": {
@@ -125,10 +125,10 @@
             "image": "shopify://shop_images/premium.jpg",
             "badge": "Más pedido",
             "title": "Lote Premium",
-            "kilos": "25 kg",
+            "kilos": "50 kg",
             "price_text": "Desde 10 €/kg",
             "highlight": "El más vendido",
-            "link": ""
+            "link": "shopify://products/lote-marcas-variadas-por-kilos"
           }
         },
         "p4": {
