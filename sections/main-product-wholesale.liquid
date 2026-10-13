@@ -230,7 +230,8 @@
                       <p>{{ block.settings.text | escape }}</p>
                     {%- endif -%}
 
-                    {%- form 'contact', id: 'ContactForm-wholesale-' | append: block.id, class: 'isolate' -%}
+                    {%- assign contact_form_id = 'ContactForm-wholesale-' | append: block.id -%}
+                    {%- form 'contact', id: contact_form_id, class: 'isolate' -%}
                       {%- if form.posted_successfully? -%}
                         <div class="form__message" role="status" tabindex="-1" autofocus>
                           {{- 'icon-success.svg' | inline_asset_content -}}
