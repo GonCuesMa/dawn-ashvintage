@@ -307,3 +307,27 @@ body .footer .newsletter__heading {
 body .footer {
   border-top: 0;
 }
+
+/* Formulario de contacto de lotes mayoristas: campos con aire */
+body .product-wholesale-contact .field {
+  margin-bottom: 1.4rem;
+}
+
+body .product-wholesale-contact .text-area {
+  min-height: 12rem;
+}
+
+body .product-wholesale-contact .button {
+  margin-top: 2rem;
+}
+
+body .product-wholesale-contact h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Chips de filtros activos: legibles y sin gritar */
+body .active-facets__button-inner {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
