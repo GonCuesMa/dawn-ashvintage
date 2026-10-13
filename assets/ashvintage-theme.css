@@ -6,6 +6,9 @@
 
 :root {
   --ash-black: #000;
+  --ash-cream: #faf9f6;
+  --ash-ink: #2b2622;
+  --ash-accent: #a8553a;
   --ash-hard-shadow: 5px 5px 0 0 var(--ash-black);
 }
 
@@ -104,131 +107,131 @@ body .card-information .price--on-sale .price-item--sale {
   font-size: 2rem;
 }
 
-/* ---------- Cabecera: fija, fondo blanco y borde inferior negro fino ---------- */
+/* ---------- Cabecera: Moderno Premium con toques vintage ---------- */
 body .section-header .header-wrapper,
 body .section-header .header-wrapper.gradient {
-  background: #fff;
-  border-bottom: 2px solid var(--ash-black);
+  background: var(--ash-cream);
+  border-bottom: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* Enlaces del nivel principal: negrita, mayúsculas y hover tipo "rotulador" */
+/* Enlaces del nivel principal: capitalización normal y hover cálido */
 body .header__menu-item,
 body .header__menu-item span {
-  color: var(--ash-black);
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  color: var(--ash-ink);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: color 0.3s ease;
 }
 
-body .header__menu-item {
-  padding: 0.8rem 1.2rem;
-  transition: background-color 0.1s ease, color 0.1s ease;
-}
-
-body .header__inline-menu .header__menu-item:hover,
-body .header__inline-menu .header__menu-item:hover span,
-body .header__inline-menu details[open] > .header__menu-item,
-body .header__inline-menu details[open] > .header__menu-item span {
-  background: var(--ash-black);
-  color: #fff;
+body .header__menu-item:hover,
+body .header__menu-item:hover span,
+body details[open] > .header__menu-item,
+body details[open] > .header__menu-item span {
+  color: var(--ash-accent);
   text-decoration: none;
 }
 
 body .header__active-menu-item {
-  text-decoration-thickness: 0.4rem;
-  text-underline-offset: 0.3rem;
+  color: var(--ash-accent);
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.5rem;
 }
 
-/* Desplegables y mega menú: sin sombras ni bordes redondeados, borde negro sólido */
-body .header__submenu.global-settings-popup,
-body .mega-menu__content {
-  border: 2px solid var(--ash-black);
-  border-radius: 0;
-  box-shadow: none;
-}
-
-body .mega-menu__content {
-  border-top: 0;
-  padding: 3rem 0;
-  background: #fff;
+/* Desplegable simple: tarjeta suave */
+body .header__submenu.global-settings-popup {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  background: var(--ash-cream);
 }
 
 body .header__submenu .header__menu-item:hover {
   text-decoration: none;
 }
 
-/* Mega menú como tabla de catálogo: líneas divisorias entre columnas y filas */
+/* Mega menú: tarjeta flotante, sin líneas, con aire */
+body .mega-menu__content {
+  left: 0;
+  right: 0;
+  width: min(calc(100% - 4rem), 120rem);
+  margin: 1.2rem auto 0;
+  padding: 3.2rem 4rem;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  background: var(--ash-cream);
+}
+
 body .mega-menu__list {
-  gap: 0;
+  gap: 3rem 5rem;
   padding-left: 0;
   padding-right: 0;
-  border-top: 1px solid var(--ash-black);
-  border-left: 1px solid var(--ash-black);
+  border: 0;
 }
 
 body .mega-menu__list > li {
-  padding: 1.6rem 2rem;
-  border-right: 1px solid var(--ash-black);
-  border-bottom: 1px solid var(--ash-black);
-}
-
-body .mega-menu__list--condensed {
+  padding: 0;
   border: 0;
-}
-
-body .mega-menu__list--condensed > li {
-  border: 0;
-  padding: 0.4rem 2rem;
 }
 
 body .mega-menu__link {
-  color: var(--ash-black);
+  padding: 0.5rem 0;
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 body .mega-menu__link--level-2 {
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 2px solid var(--ash-black);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0;
+  border: 0;
+  color: var(--ash-ink);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 body .mega-menu__link:hover,
 body .mega-menu__link--active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.3rem;
-  text-underline-offset: 0.3rem;
+  color: var(--ash-accent);
+  text-decoration: none;
 }
 
-/* Menú móvil (drawer): fondo sólido, enlaces gigantes y líneas duras */
+/* Menú móvil (drawer): mismo lenguaje suave */
 body .menu-drawer,
 body .menu-drawer__submenu,
 body .menu-drawer__inner-submenu {
-  background: #fff;
+  background: var(--ash-cream);
 }
 
 body .menu-drawer {
-  border-right: 2px solid var(--ash-black);
+  border-right: 0;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 body .js .menu-drawer__menu li {
   margin-bottom: 0;
-  border-bottom: 2px solid var(--ash-black);
+  border-bottom: 0;
 }
 
 body .menu-drawer__menu-item {
-  padding: 1.6rem 3rem;
-  color: var(--ash-black);
-  font-size: 3rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  line-height: 1.1;
-  text-transform: uppercase;
+  padding: 1.3rem 3rem;
+  color: var(--ash-ink);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  text-transform: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 body .menu-drawer__submenu .menu-drawer__menu-item {
-  font-size: 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
 }
 
 body .menu-drawer__menu-item:hover,
@@ -236,11 +239,11 @@ body .menu-drawer__menu-item:focus,
 body .menu-drawer__menu-item--active,
 body .menu-drawer__close-button:hover,
 body .menu-drawer__close-button:focus {
-  background: var(--ash-black);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--ash-accent);
 }
 
 body .menu-drawer__utility-links {
-  border-top: 2px solid var(--ash-black);
-  background: #fff;
+  border-top: 0;
+  background: var(--ash-cream);
 }
