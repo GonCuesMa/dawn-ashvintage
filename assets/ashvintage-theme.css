@@ -7,6 +7,15 @@
  * desde la configuración del tema; aquí solo se afina lo que Dawn no expone.
  */
 
+/* Playfair Display (OFL) alojada en el tema: sin dependencia de terceros ni envío de IP a Google */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('ashvintage-playfair-display.woff2') format('woff2');
+}
+
 :root {
   --ash-black: #000;
   --ash-cream: #faf9f6;
@@ -30,6 +39,8 @@ body .h3,
 body .h4,
 body .h5,
 body .title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 500;
   letter-spacing: 0.005em;
   line-height: calc(1 + 0.2 / var(--font-heading-scale));
 }
