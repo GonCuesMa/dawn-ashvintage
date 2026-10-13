@@ -126,7 +126,7 @@ body .badge {
 /* ---------- Cabecera: Moderno Premium con toques vintage ---------- */
 body .section-header .header-wrapper,
 body .section-header .header-wrapper.gradient {
-  background: var(--ash-cream);
+  background: #fff;
   border-bottom: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
@@ -160,7 +160,7 @@ body .header__submenu.global-settings-popup {
   border: 0;
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-  background: var(--ash-cream);
+  background: #fff;
 }
 
 body .header__submenu .header__menu-item:hover {
@@ -177,7 +177,7 @@ body .mega-menu__content {
   border: 0;
   border-radius: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-  background: var(--ash-cream);
+  background: #fff;
 }
 
 body .mega-menu__list {
@@ -221,7 +221,7 @@ body .mega-menu__link--active {
 body .menu-drawer,
 body .menu-drawer__submenu,
 body .menu-drawer__inner-submenu {
-  background: var(--ash-cream);
+  background: #fff;
 }
 
 body .menu-drawer {
@@ -261,5 +261,5 @@ body .menu-drawer__close-button:focus {
 
 body .menu-drawer__utility-links {
   border-top: 0;
-  background: var(--ash-cream);
+  background: #fff;
 }
