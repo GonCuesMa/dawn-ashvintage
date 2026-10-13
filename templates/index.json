@@ -157,11 +157,71 @@
         "padding_top": 56,
         "padding_bottom": 56
       }
+    },
+    "kilo_packs": {
+      "type": "kilo-packs",
+      "settings": {
+        "heading": "Elige tu pack por kilos",
+        "text": "Cuantos más kilos llevas, más baja el precio por kilo y más crece tu margen de venta.",
+        "price_prefix": "Desde",
+        "color_scheme": "scheme-2",
+        "padding_top": 56,
+        "padding_bottom": 56
+      },
+      "blocks": {
+        "p1": {
+          "type": "pack",
+          "settings": {
+            "badge": "Para empezar",
+            "title": "Lote Inicial",
+            "kilos": "7 kg",
+            "price_text": "Desde 16 €/kg",
+            "highlight": "+5 prendas gratis"
+          }
+        },
+        "p2": {
+          "type": "pack",
+          "settings": {
+            "badge": "Para crecer",
+            "title": "Lote Selección",
+            "kilos": "15 kg",
+            "price_text": "Desde 14 €/kg",
+            "highlight": "+10 prendas gratis"
+          }
+        },
+        "p3": {
+          "type": "pack",
+          "settings": {
+            "badge": "Más pedido",
+            "title": "Lote Premium",
+            "kilos": "25 kg",
+            "price_text": "Desde 10 €/kg",
+            "highlight": "El más vendido"
+          }
+        },
+        "p4": {
+          "type": "pack",
+          "settings": {
+            "badge": "Para negocios",
+            "title": "Lote Profesional",
+            "kilos": "100 kg",
+            "price_text": "Desde 8 €/kg",
+            "highlight": "Mejor precio por kilo"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ]
     }
   },
   "order": [
     "image_banner",
     "shop_by_model",
+    "kilo_packs",
     "featured_collection",
     "trust_guarantee_GbC7jf"
   ]
