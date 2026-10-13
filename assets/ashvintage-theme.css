@@ -274,3 +274,36 @@ body .menu-drawer__utility-links {
   border-top: 0;
   background: #fff;
 }
+
+/* ---------- Pulido: logo, cabecera compacta, garantías y pie ---------- */
+
+/* El logo (JPG con fondo casi blanco) se funde con la cabecera blanca */
+body .header__heading-logo,
+body .header__heading-logo-wrapper img {
+  mix-blend-mode: multiply;
+}
+
+body .header {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+/* Garantías: títulos con presencia (la serif necesita más cuerpo que la sans) */
+body .trust-guarantee__title {
+  font-size: 2rem;
+}
+
+body .trust-guarantee__text {
+  font-size: 1.5rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+/* Pie de página */
+body .footer-block__heading,
+body .footer .newsletter__heading {
+  font-size: 2rem;
+}
+
+body .footer {
+  border-top: 0;
+}

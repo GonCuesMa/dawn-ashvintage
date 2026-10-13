@@ -116,10 +116,56 @@
         "padding_top": 56,
         "padding_bottom": 56
       }
+    },
+    "shop_by_model": {
+      "type": "shop-by-model",
+      "blocks": {
+        "kilos": {
+          "type": "model",
+          "settings": {
+            "title": "Lotes por kilos",
+            "text": "Compra por peso y ajusta el volumen a tu tienda.",
+            "link": "/collections/venta-por-kilos",
+            "link_label": "Ver lotes"
+          }
+        },
+        "prendas": {
+          "type": "model",
+          "settings": {
+            "title": "Lotes por prendas",
+            "text": "Cantidades cerradas de prendas seleccionadas.",
+            "link": "/collections/lotes-por-prendas",
+            "link_label": "Ver lotes"
+          }
+        },
+        "mayor": {
+          "type": "model",
+          "settings": {
+            "title": "Al por mayor",
+            "text": "Grandes volúmenes con condiciones a medida.",
+            "link": "/collections/all",
+            "link_label": "Pedir presupuesto"
+          }
+        }
+      },
+      "block_order": [
+        "kilos",
+        "prendas",
+        "mayor"
+      ],
+      "settings": {
+        "eyebrow": "Nuestros lotes",
+        "heading": "Elige cómo quieres comprar",
+        "text": "Ropa vintage y de segunda mano de marcas de calidad, en el formato que mejor encaje con tu negocio.",
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
   "order": [
     "image_banner",
+    "shop_by_model",
     "featured_collection",
     "trust_guarantee_GbC7jf"
   ]
