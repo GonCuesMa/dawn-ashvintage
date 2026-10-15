@@ -176,6 +176,27 @@
     }
   }
 
+  /* Con "reducir movimiento": sin desplazamiento; se muestra una sola vez cada anuncio, centrado */
+  @media (prefers-reduced-motion: reduce) {
+    .announcement-ticker__track {
+      width: auto;
+      animation: none;
+    }
+
+    .announcement-ticker__half {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .announcement-ticker__half[aria-hidden='true'],
+    .announcement-ticker__item[aria-hidden='true'],
+    .announcement-ticker__item[aria-hidden='true'] + .announcement-ticker__separator,
+    .announcement-ticker__separator:has(+ .announcement-ticker__item[aria-hidden='true']) {
+      display: none;
+    }
+  }
+
 {% endstylesheet %}
 
 {% schema %}
