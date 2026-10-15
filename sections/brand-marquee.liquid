@@ -16,10 +16,6 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  #shopify-section-{{ section.id }} .brand-marquee__track {
-    --brand-marquee-duration: {{ section.settings.duration }}s;
-  }
 {%- endstyle -%}
 
 {%- if section.blocks.size > 0 -%}
@@ -29,7 +25,7 @@
         <p class="brand-marquee__heading subtitle">{{ section.settings.heading | escape }}</p>
       {%- endif -%}
 
-      <div class="brand-marquee__viewport">
+      <brand-marquee class="brand-marquee__viewport" data-speed="{{ section.settings.speed }}">
         <div class="brand-marquee__track">
           {%- for copy in (1..2) -%}
             <ul
@@ -55,7 +51,7 @@
             </ul>
           {%- endfor -%}
         </div>
-      </div>
+      </brand-marquee>
 
       {%- if section.settings.disclaimer != blank -%}
         <p class="brand-marquee__disclaimer page-width">{{ section.settings.disclaimer | escape }}</p>
@@ -71,6 +67,7 @@
   }
 
   .brand-marquee__viewport {
+    display: block;
     overflow: hidden;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -79,10 +76,16 @@
   .brand-marquee__track {
     display: flex;
     width: max-content;
-    animation: brand-marquee-scroll var(--brand-marquee-duration, 40s) linear infinite;
+    will-change: transform;
+    /* Sin JS: desplazamiento CSS simple. Con JS (data-js) lo mueve el script con frenado suave */
+    animation: brand-marquee-scroll 60s linear infinite;
   }
 
-  .brand-marquee__viewport:hover .brand-marquee__track {
+  .brand-marquee__viewport[data-js] .brand-marquee__track {
+    animation: none;
+  }
+
+  .brand-marquee__viewport:not([data-js]):hover .brand-marquee__track {
     animation-play-state: paused;
   }
 
@@ -161,6 +164,110 @@
   }
 {% endstylesheet %}
 
+{% javascript %}
+  if (!customElements.get('brand-marquee')) {
+    customElements.define(
+      'brand-marquee',
+      class BrandMarquee extends HTMLElement {
+        connectedCallback() {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+          this.track = this.querySelector('.brand-marquee__track');
+          this.original = this.querySelector('.brand-marquee__list');
+          if (!this.track || !this.original) return;
+
+          this.speed = parseFloat(this.dataset.speed) || 30; // px/s
+          this.offset = 0;
+          this.velocity = this.speed;
+          this.accel = 0;
+          this.target = this.speed;
+          this.visible = true;
+          this.running = false;
+
+          this.setAttribute('data-js', '');
+          this.measure();
+
+          this.addEventListener('pointerenter', (e) => e.pointerType === 'mouse' && this.setPaused(true));
+          this.addEventListener('pointerleave', (e) => e.pointerType === 'mouse' && this.setPaused(false));
+          this.addEventListener('focusin', () => this.setPaused(true));
+          this.addEventListener('focusout', () => this.setPaused(false));
+
+          this.resizeObserver = new ResizeObserver(() => this.measure());
+          this.resizeObserver.observe(this);
+          this.intersectionObserver = new IntersectionObserver(([entry]) => {
+            this.visible = entry.isIntersecting;
+            if (this.visible) this.start();
+          });
+          this.intersectionObserver.observe(this);
+
+          this.start();
+        }
+
+        disconnectedCallback() {
+          if (this.resizeObserver) this.resizeObserver.disconnect();
+          if (this.intersectionObserver) this.intersectionObserver.disconnect();
+          this.running = false;
+        }
+
+        // Asegura copias suficientes para cubrir el ancho aunque haya pocos logos
+        measure() {
+          this.loop = this.original.getBoundingClientRect().width;
+          if (!this.loop) return;
+          const needed = Math.ceil((this.clientWidth * 2) / this.loop) + 1;
+          const lists = this.track.querySelectorAll('.brand-marquee__list');
+          for (let i = lists.length; i < needed; i++) {
+            const clone = this.original.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            clone.querySelectorAll('[data-shopify-editor-block]').forEach((el) => el.removeAttribute('data-shopify-editor-block'));
+            this.track.appendChild(clone);
+          }
+        }
+
+        setPaused(paused) {
+          this.target = paused ? 0 : this.speed;
+          this.start();
+        }
+
+        start() {
+          if (this.running || !this.visible) return;
+          this.running = true;
+          this.last = performance.now();
+          requestAnimationFrame((t) => this.tick(t));
+        }
+
+        // Muelle subamortiguado sobre la velocidad: frena con un pequeño retroceso y reanuda con suavidad
+        tick(now) {
+          if (!this.running) return;
+          const dt = Math.min((now - this.last) / 1000, 0.05);
+          this.last = now;
+
+          const stiffness = 30;
+          const damping = 3.5;
+          this.accel += (stiffness * (this.target - this.velocity) - damping * this.accel) * dt;
+          this.velocity += this.accel * dt;
+
+          this.offset += this.velocity * dt;
+          if (this.loop) this.offset = ((this.offset % this.loop) + this.loop) % this.loop;
+          this.track.style.transform = 'translate3d(' + -this.offset + 'px,0,0)';
+
+          const settled = Math.abs(this.velocity - this.target) < 0.05 && Math.abs(this.accel) < 0.05;
+          if (settled && this.target === 0) {
+            this.velocity = 0;
+            this.accel = 0;
+            this.running = false;
+            return;
+          }
+          if (!this.visible) {
+            this.running = false;
+            return;
+          }
+          requestAnimationFrame((t) => this.tick(t));
+        }
+      }
+    );
+  }
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "Barra de marcas",
@@ -183,14 +290,14 @@
     },
     {
       "type": "range",
-      "id": "duration",
-      "min": 15,
-      "max": 90,
+      "id": "speed",
+      "min": 10,
+      "max": 100,
       "step": 5,
-      "unit": "s",
-      "label": "Duración de una vuelta",
-      "info": "Más segundos = más lento.",
-      "default": 40
+      "unit": "px/s",
+      "label": "Velocidad",
+      "info": "Más bajo = más lento. Con 30 se leen bien muchos logos.",
+      "default": 30
     },
     {
       "type": "color_scheme",
