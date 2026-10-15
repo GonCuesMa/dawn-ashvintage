@@ -41,6 +41,220 @@
         "show_text_below": false
       }
     },
+    "brand_marquee_VBkjkK": {
+      "type": "brand-marquee",
+      "blocks": {
+        "brand_gBepaN": {
+          "type": "brand",
+          "settings": {
+            "name": "Napajiri",
+            "logo": "shopify://shop_images/Napapijri_logo_svg.webp"
+          }
+        },
+        "brand_VFeggX": {
+          "type": "brand",
+          "settings": {
+            "name": "Adidas",
+            "logo": "shopify://shop_images/Adidas_logo.png"
+          }
+        },
+        "brand_AzPDMi": {
+          "type": "brand",
+          "settings": {
+            "name": "The North Face",
+            "logo": "shopify://shop_images/The-North-Face-Logo.png"
+          }
+        },
+        "brand_BdYQB6": {
+          "type": "brand",
+          "settings": {
+            "name": "Nike",
+            "logo": "shopify://shop_images/Logo_NIKE_svg.webp"
+          }
+        },
+        "brand_3nY8rg": {
+          "type": "brand",
+          "settings": {
+            "name": "Ralph Lauren",
+            "logo": "shopify://shop_images/Ralph-Lauren-Logo_copy.webp"
+          }
+        },
+        "brand_G63bfa": {
+          "type": "brand",
+          "settings": {
+            "name": "",
+            "logo": "shopify://shop_images/Louis_Vuitton_logo_and_wordmark.svg"
+          }
+        },
+        "brand_LGyVXw": {
+          "type": "brand",
+          "settings": {
+            "name": "Armani",
+            "logo": "shopify://shop_images/Emporio_Armani_logo_svg.webp"
+          }
+        },
+        "brand_AyChrm": {
+          "type": "brand",
+          "settings": {
+            "name": "",
+            "logo": "shopify://shop_images/Burberry_Logo_svg.webp"
+          }
+        },
+        "brand_E9iwyh": {
+          "type": "brand",
+          "settings": {
+            "name": "",
+            "logo": "shopify://shop_images/Levi_s_logo_svg.webp"
+          }
+        },
+        "brand_UNmLpN": {
+          "type": "brand",
+          "settings": {
+            "name": "",
+            "logo": "shopify://shop_images/logo-carhartt.svg"
+          }
+        }
+      },
+      "block_order": [
+        "brand_gBepaN",
+        "brand_VFeggX",
+        "brand_AzPDMi",
+        "brand_BdYQB6",
+        "brand_3nY8rg",
+        "brand_G63bfa",
+        "brand_LGyVXw",
+        "brand_AyChrm",
+        "brand_E9iwyh",
+        "brand_UNmLpN"
+      ],
+      "name": "Barra de marcas",
+      "settings": {
+        "heading": "Marcas que encontrarás en nuestros lotes",
+        "disclaimer": "Las marcas mencionadas pertenecen a sus respectivos propietarios. AshVintage no está afiliada a ellas.",
+        "duration": 40,
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "how_it_works_iw7c36": {
+      "type": "how-it-works",
+      "blocks": {
+        "step_PtpUXB": {
+          "type": "step",
+          "settings": {
+            "title": "Elige tu lote",
+            "text": "Por kilos, por número de prendas o al por mayor."
+          }
+        },
+        "step_eVh9eT": {
+          "type": "step",
+          "settings": {
+            "title": "Lo revisamos a mano",
+            "text": "Cada lote se revisa prenda a prenda antes de prepararlo."
+          }
+        },
+        "step_cHW6qb": {
+          "type": "step",
+          "settings": {
+            "title": "Te lo enviamos",
+            "text": "Preparamos y enviamos tu pedido en 24/48 horas."
+          }
+        }
+      },
+      "block_order": [
+        "step_PtpUXB",
+        "step_eVh9eT",
+        "step_cHW6qb"
+      ],
+      "name": "Cómo funciona",
+      "settings": {
+        "eyebrow": "Comprar un lote",
+        "heading": "Así de fácil es comprar tu lote",
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "kilo_calculator_bmbXwe": {
+      "type": "kilo-calculator",
+      "blocks": {
+        "garment_LFBMeE": {
+          "type": "garment",
+          "settings": {
+            "name": "Camisetas",
+            "grams": 200
+          }
+        },
+        "garment_KQjCPx": {
+          "type": "garment",
+          "settings": {
+            "name": "Camisas",
+            "grams": 250
+          }
+        },
+        "garment_qpkkF4": {
+          "type": "garment",
+          "settings": {
+            "name": "Sudaderas",
+            "grams": 500
+          }
+        },
+        "garment_AQA3A9": {
+          "type": "garment",
+          "settings": {
+            "name": "Jerséis",
+            "grams": 450
+          }
+        },
+        "garment_giNkWN": {
+          "type": "garment",
+          "settings": {
+            "name": "Pantalones y vaqueros",
+            "grams": 600
+          }
+        },
+        "garment_fhgEhU": {
+          "type": "garment",
+          "settings": {
+            "name": "Chaquetas y abrigos",
+            "grams": 900
+          }
+        }
+      },
+      "block_order": [
+        "garment_LFBMeE",
+        "garment_KQjCPx",
+        "garment_qpkkF4",
+        "garment_AQA3A9",
+        "garment_giNkWN",
+        "garment_fhgEhU"
+      ],
+      "name": "Calculadora de lote",
+      "settings": {
+        "eyebrow": "Calculadora de lotes",
+        "heading": "¿Cuántas prendas caben en tu lote?",
+        "text": "Elige los kilos y el tipo de ropa y calcula cuántas prendas recibirás aproximadamente.",
+        "kilos_label": "Kilos",
+        "min_kg": 5,
+        "max_kg": 100,
+        "step_kg": 5,
+        "default_kg": 20,
+        "type_label": "Tipo de ropa",
+        "mix_label": "Mezcla variada",
+        "result_label": "Recibirás aproximadamente",
+        "unit_singular": "prenda",
+        "unit_plural": "prendas",
+        "disclaimer": "Cálculo orientativo según el peso medio de cada tipo de prenda. El número real puede variar.",
+        "price_per_kg": 0,
+        "price_label": "Precio estimado",
+        "button_label": "Ver lotes por kilos",
+        "button_link": "",
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "shop_by_model": {
       "type": "shop-by-model",
       "blocks": {
@@ -228,83 +442,16 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
-    },
-    "brand_marquee": {
-      "type": "brand-marquee",
-      "blocks": {
-        "b1": { "type": "brand", "settings": { "name": "Moncler" } },
-        "b2": { "type": "brand", "settings": { "name": "Ralph Lauren" } },
-        "b3": { "type": "brand", "settings": { "name": "The North Face" } },
-        "b4": { "type": "brand", "settings": { "name": "Adidas" } },
-        "b5": { "type": "brand", "settings": { "name": "Nike" } },
-        "b6": { "type": "brand", "settings": { "name": "Napapijri" } },
-        "b7": { "type": "brand", "settings": { "name": "Dior" } },
-        "b8": { "type": "brand", "settings": { "name": "Prada" } },
-        "b9": { "type": "brand", "settings": { "name": "Louis Vuitton" } }
-      },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9"],
-      "settings": {}
-    },
-    "kilo_calculator": {
-      "type": "kilo-calculator",
-      "blocks": {
-        "g1": { "type": "garment", "settings": { "name": "Camisetas", "grams": 200 } },
-        "g2": { "type": "garment", "settings": { "name": "Camisas", "grams": 250 } },
-        "g3": { "type": "garment", "settings": { "name": "Sudaderas", "grams": 500 } },
-        "g4": { "type": "garment", "settings": { "name": "Jerséis", "grams": 450 } },
-        "g5": { "type": "garment", "settings": { "name": "Pantalones y vaqueros", "grams": 600 } },
-        "g6": { "type": "garment", "settings": { "name": "Chaquetas y abrigos", "grams": 900 } }
-      },
-      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
-      "settings": { "button_link": "shopify://collections/all" }
-    },
-    "how_it_works": {
-      "type": "how-it-works",
-      "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Elige tu lote", "text": "Por kilos, por número de prendas o al por mayor." } },
-        "s2": { "type": "step", "settings": { "title": "Lo revisamos a mano", "text": "Cada lote se revisa prenda a prenda antes de prepararlo." } },
-        "s3": { "type": "step", "settings": { "title": "Te lo enviamos", "text": "Preparamos y enviamos tu pedido en 24/48 horas." } },
-        "s4": { "type": "step", "settings": { "title": "Devolución del lote entero", "text": "Si no es lo que esperabas, devuelves el lote completo. No se aceptan devoluciones parciales." } }
-      },
-      "block_order": ["s1", "s2", "s3", "s4"],
-      "settings": {}
-    },
-    "faq": {
-      "type": "collapsible-content",
-      "blocks": {
-        "q1": { "type": "collapsible_row", "settings": { "heading": "¿Qué significa ropa de Clase A?", "row_content": "<p>Es ropa en perfecto estado. Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p>" } },
-        "q2": { "type": "collapsible_row", "settings": { "heading": "¿Puedo devolver solo parte del lote?", "row_content": "<p>No. Los lotes se devuelven enteros o no se devuelven; no aceptamos devoluciones parciales.</p>" } },
-        "q3": { "type": "collapsible_row", "settings": { "heading": "¿Cuánto tarda el envío?", "row_content": "<p>Preparamos y enviamos tu pedido en un plazo de 24 a 48 horas. El envío es gratis a partir de 300 €.</p>" } },
-        "q4": { "type": "collapsible_row", "settings": { "heading": "¿Vendéis zapatos?", "row_content": "<p>No. Trabajamos solo ropa: camisetas, camisas, sudaderas, jerséis, polos, chaquetas y abrigos, pantalones, vaqueros y vestidos.</p>" } }
-      },
-      "block_order": ["q1", "q2", "q3", "q4"],
-      "settings": {
-        "caption": "Dudas frecuentes",
-        "heading": "Preguntas frecuentes",
-        "layout": "none",
-        "open_first_collapsible_row": false
-      }
-    },
-    "wholesale_cta": {
-      "type": "wholesale-cta",
-      "settings": { "button_link": "shopify://collections/mayoristas" }
-    },
-    "ash_social_connect": {
-      "type": "ash-social-connect",
-      "settings": {}
     }
   },
   "order": [
     "image_banner",
-    "brand_marquee",
+    "brand_marquee_VBkjkK",
+    "how_it_works_iw7c36",
+    "kilo_calculator_bmbXwe",
     "shop_by_model",
     "kilo_packs",
-    "kilo_calculator",
     "featured_collection",
-    "how_it_works",
-    "trust_guarantee_GbC7jf",
-    "faq",
-    "wholesale_cta",
-    "ash_social_connect"
+    "trust_guarantee_GbC7jf"
   ]
 }
