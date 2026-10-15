@@ -10,8 +10,8 @@
   if (window.Shopify && window.Shopify.designMode) return;
   if (!('IntersectionObserver' in window)) return;
 
-  var HEADINGS = '.title-wrapper-with-link, .shop-by-model__header, .trust-guarantee__heading, .kilo-packs__header';
-  var ITEMS = '.shop-by-model__list > li, .trust-guarantee__list > li, .kilo-packs__list > li, .product-grid > li, .collection-list > li';
+  var HEADINGS = '.title-wrapper-with-link, .shop-by-model__header, .trust-guarantee__heading, .kilo-packs__header, .ash-social__header';
+  var ITEMS = '.shop-by-model__list > li, .trust-guarantee__list > li, .kilo-packs__list > li, .ash-social__grid > li, .product-grid > li, .collection-list > li';
   var COLUMNS = 4;
 
   function init() {

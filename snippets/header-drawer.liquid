@@ -3,6 +3,7 @@
 
   @param {boolean} [show_country_selector] - Whether to render the country selector in the drawer.
   @param {boolean} [show_language_selector] - Whether to render the language selector in the drawer.
+  @param {linklist} [shortcuts_menu] - Menú opcional de accesos directos (chips) al inicio del drawer.
   @param {boolean} [show_social_links] - Whether to render social links list in the drawer.
 
   @example
@@ -23,6 +24,15 @@
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
+          {%- if shortcuts_menu != blank and shortcuts_menu.links.size > 0 -%}
+            <ul class="ash-drawer-shortcuts list-unstyled" role="list">
+              {%- for shortcut in shortcuts_menu.links -%}
+                <li>
+                  <a href="{{ shortcut.url }}" class="ash-drawer-shortcuts__link">{{ shortcut.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}

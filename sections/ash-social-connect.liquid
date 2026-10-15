@@ -1,0 +1,482 @@
+{%- comment -%}
+  Comunidad en redes: dos tarjetas grandes (TikTok e Instagram) con icono, handle, texto, CTA
+  e imagen o vídeo de vista previa opcionales. Todo editable desde el Theme Editor.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding ash-social">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <header class="ash-social__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ash-social__eyebrow subtitle">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="ash-social__heading title h1">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="ash-social__subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <ul class="ash-social__grid list-unstyled" role="list">
+      {%- for network in (1..2) -%}
+        {%- liquid
+          if network == 1
+            assign key = 'tiktok'
+            assign url = section.settings.tiktok_url
+            assign handle = section.settings.tiktok_handle
+            assign title = section.settings.tiktok_title
+            assign text = section.settings.tiktok_text
+            assign cta = section.settings.tiktok_cta
+            assign bg = section.settings.tiktok_bg
+            assign fg = section.settings.tiktok_fg
+            assign image = section.settings.tiktok_image
+            assign video = section.settings.tiktok_video
+          else
+            assign key = 'instagram'
+            assign url = section.settings.instagram_url
+            assign handle = section.settings.instagram_handle
+            assign title = section.settings.instagram_title
+            assign text = section.settings.instagram_text
+            assign cta = section.settings.instagram_cta
+            assign bg = section.settings.instagram_bg
+            assign fg = section.settings.instagram_fg
+            assign image = section.settings.instagram_image
+            assign video = section.settings.instagram_video
+          endif
+        -%}
+        {%- if url != blank -%}
+          <li class="ash-social__item">
+            <a
+              href="{{ url }}"
+              class="ash-social-card ash-social-card--{{ key }}"
+              style="--ash-card-bg: {{ bg }}; --ash-card-fg: {{ fg }};"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="{{ title | escape }} {{ handle | escape }} ({{ 'accessibility.link_messages.new_window' | t }})"
+            >
+              <span class="ash-social-card__body">
+                <span class="ash-social-card__icon" aria-hidden="true">
+                  {%- if key == 'tiktok' -%}
+                    {{- 'icon-tiktok.svg' | inline_asset_content -}}
+                  {%- else -%}
+                    {{- 'icon-instagram.svg' | inline_asset_content -}}
+                  {%- endif -%}
+                </span>
+                {%- if title != blank -%}
+                  <span class="ash-social-card__title">{{ title | escape }}</span>
+                {%- endif -%}
+                {%- if handle != blank -%}
+                  <span class="ash-social-card__handle">{{ handle | escape }}</span>
+                {%- endif -%}
+                {%- if text != blank -%}
+                  <span class="ash-social-card__text">{{ text | escape }}</span>
+                {%- endif -%}
+                {%- if cta != blank -%}
+                  <span class="ash-social-card__cta">
+                    {{- cta | escape -}}
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </span>
+                {%- endif -%}
+              </span>
+              {%- if video != blank or image != blank -%}
+                <span class="ash-social-card__media" aria-hidden="true">
+                  {%- if video != blank -%}
+                    {{
+                      video
+                      | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none', image_size: '600x'
+                    }}
+                  {%- else -%}
+                    {{
+                      image
+                      | image_url: width: 800
+                      | image_tag: loading: 'lazy', widths: '300, 450, 600, 800', sizes: '(min-width: 750px) 25vw, 40vw', alt: ''
+                    }}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% stylesheet %}
+  .ash-social__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+
+  .ash-social__eyebrow,
+  .ash-social__heading,
+  .ash-social__subheading {
+    margin: 0;
+  }
+
+  .ash-social__subheading {
+    max-width: 52rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .ash-social__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ash-social__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+    }
+  }
+
+  .ash-social-card {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 26rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: var(--ash-card-bg, #1f1b18);
+    color: var(--ash-card-fg, #faf9f6);
+    text-decoration: none;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ash-social-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(31, 27, 24, 0.22);
+  }
+
+  .ash-social-card:focus-visible {
+    outline: 0.2rem solid rgb(var(--color-foreground));
+    outline-offset: 0.3rem;
+  }
+
+  .ash-social-card__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1 1 60%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 2.8rem;
+  }
+
+  .ash-social-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ash-card-fg, #faf9f6) 16%, transparent);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ash-social-card__icon .icon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .ash-social-card:hover .ash-social-card__icon {
+    transform: scale(1.1) rotate(-6deg);
+  }
+
+  .ash-social-card__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .ash-social-card__handle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    opacity: 0.8;
+  }
+
+  .ash-social-card__text {
+    max-width: 30rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.92;
+  }
+
+  .ash-social-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: auto;
+    padding: 1.1rem 2rem;
+    border-radius: 4rem;
+    background: var(--ash-card-fg, #faf9f6);
+    color: var(--ash-card-bg, #1f1b18);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .ash-social-card__cta svg {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ash-social-card:hover .ash-social-card__cta svg {
+    transform: translateX(4px);
+  }
+
+  .ash-social-card__media {
+    flex: 0 0 38%;
+    overflow: hidden;
+  }
+
+  .ash-social-card__media img,
+  .ash-social-card__media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .ash-social-card:hover .ash-social-card__media img,
+  .ash-social-card:hover .ash-social-card__media video {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ash-social-card {
+      min-height: 22rem;
+    }
+
+    .ash-social-card__body {
+      padding: 2.2rem;
+    }
+
+    .ash-social-card__media {
+      flex-basis: 34%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ash-social-card,
+    .ash-social-card__icon,
+    .ash-social-card__media img,
+    .ash-social-card__media video {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Redes: TikTok e Insta",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Cabecera"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta superior",
+      "default": "Nuestros lotes en vídeo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Únete a la comunidad de @ashvintage.es"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "Mira cómo es un lote por dentro antes de comprarlo."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "TikTok"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "Enlace",
+      "default": "https://www.tiktok.com/@ashvintage.es"
+    },
+    {
+      "type": "text",
+      "id": "tiktok_title",
+      "label": "Título",
+      "default": "TikTok"
+    },
+    {
+      "type": "text",
+      "id": "tiktok_handle",
+      "label": "Usuario",
+      "default": "@ashvintage.es"
+    },
+    {
+      "type": "textarea",
+      "id": "tiktok_text",
+      "label": "Texto",
+      "default": "Unboxings reales de lotes, drops semanales y prendas al detalle."
+    },
+    {
+      "type": "text",
+      "id": "tiktok_cta",
+      "label": "Texto del botón",
+      "default": "Ver en TikTok"
+    },
+    {
+      "type": "color",
+      "id": "tiktok_bg",
+      "label": "Color de fondo",
+      "default": "#1f1b18"
+    },
+    {
+      "type": "color",
+      "id": "tiktok_fg",
+      "label": "Color del texto",
+      "default": "#faf9f6"
+    },
+    {
+      "type": "image_picker",
+      "id": "tiktok_image",
+      "label": "Imagen de vista previa",
+      "info": "Se muestra si no hay vídeo."
+    },
+    {
+      "type": "video",
+      "id": "tiktok_video",
+      "label": "Vídeo de vista previa",
+      "info": "Opcional. Se reproduce en bucle y sin sonido."
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Enlace",
+      "default": "https://www.instagram.com/ashvintage.es/"
+    },
+    {
+      "type": "text",
+      "id": "instagram_title",
+      "label": "Título",
+      "default": "Instagram"
+    },
+    {
+      "type": "text",
+      "id": "instagram_handle",
+      "label": "Usuario",
+      "default": "@ashvintage.es"
+    },
+    {
+      "type": "textarea",
+      "id": "instagram_text",
+      "label": "Texto",
+      "default": "Novedades, avisos de restock y atención directa por DM."
+    },
+    {
+      "type": "text",
+      "id": "instagram_cta",
+      "label": "Texto del botón",
+      "default": "Seguir en Instagram"
+    },
+    {
+      "type": "color",
+      "id": "instagram_bg",
+      "label": "Color de fondo",
+      "default": "#a8553a"
+    },
+    {
+      "type": "color",
+      "id": "instagram_fg",
+      "label": "Color del texto",
+      "default": "#faf9f6"
+    },
+    {
+      "type": "image_picker",
+      "id": "instagram_image",
+      "label": "Imagen de vista previa",
+      "info": "Se muestra si no hay vídeo."
+    },
+    {
+      "type": "video",
+      "id": "instagram_video",
+      "label": "Vídeo de vista previa",
+      "info": "Opcional. Se reproduce en bucle y sin sonido."
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Redes: TikTok e Insta"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,272 @@
+/*
+ * AshVintage: capa "premium editorial" (se carga después de ashvintage-theme.css).
+ * Solo refina interacción y legibilidad: no cambia la paleta ni la identidad visual.
+ * Usa las variables --ash-* de ashvintage-theme.css y las --color-* de Dawn.
+ */
+
+:root {
+  --ash-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Cabecera sticky: blur y sombra al hacer scroll ---------- */
+body .section-header .header-wrapper {
+  transition: background-color 0.4s var(--ash-ease), box-shadow 0.4s var(--ash-ease);
+}
+
+body .shopify-section-header-sticky .header-wrapper {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 6px 24px rgba(31, 27, 24, 0.08);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  body .shopify-section-header-sticky .header-wrapper {
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+  }
+}
+
+/* ---------- Menú escritorio: subrayado animado de izquierda a derecha ---------- */
+body .header__inline-menu .header__menu-item > span {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  padding-bottom: 0.3rem;
+  text-decoration: none;
+  transition: background-size 0.45s var(--ash-ease), color 0.3s ease;
+}
+
+body .header__inline-menu .header__menu-item:hover > span,
+body .header__inline-menu details[open] > .header__menu-item > span,
+body .header__inline-menu .header__active-menu-item > span {
+  background-size: 100% 1px;
+}
+
+body .header__inline-menu .header__active-menu-item {
+  text-decoration: none;
+}
+
+/* ---------- Menú móvil: jerarquía, espacio para el pulgar, accesos y redes ---------- */
+.ash-drawer-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 2rem 3rem 0.4rem;
+}
+
+.ash-drawer-shortcuts__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 4.4rem;
+  padding: 0 1.8rem;
+  border: 1px solid rgba(var(--color-foreground), 0.25);
+  border-radius: 4rem;
+  color: var(--ash-ink);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.ash-drawer-shortcuts__link:hover,
+.ash-drawer-shortcuts__link:focus-visible,
+.ash-drawer-shortcuts__link:active {
+  border-color: var(--ash-ink);
+  background: var(--ash-ink);
+  color: var(--ash-cream);
+}
+
+body .menu-drawer__menu-item {
+  min-height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body .menu-drawer__utility-links {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+}
+
+body .menu-drawer__utility-links .list-social {
+  justify-content: flex-start;
+  gap: 0.4rem;
+  margin-left: -1.1rem;
+}
+
+/* ---------- Iconos sociales: tamaño equilibrado y hover sutil ---------- */
+body .list-social__item .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+body .list-social__link {
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+  justify-content: center;
+}
+
+body .list-social__link .icon {
+  transition: transform 0.35s var(--ash-ease), color 0.3s ease;
+}
+
+body .list-social__link:hover .icon,
+body .list-social__link:focus-visible .icon {
+  transform: translateY(-2px) scale(1.12);
+  color: var(--ash-accent);
+}
+
+/* ---------- Tarjetas de producto: catálogo editorial ---------- */
+body .card-wrapper {
+  transition: transform 0.5s var(--ash-ease);
+}
+
+body .card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+body .card__inner.ratio {
+  border: 1px solid rgba(var(--color-foreground), 0.06);
+  box-shadow: 0 1px 2px rgba(31, 27, 24, 0.04);
+  transition: box-shadow 0.5s var(--ash-ease), transform 0.5s var(--ash-ease);
+}
+
+body .card-wrapper:hover .card__inner.ratio {
+  box-shadow: 0 18px 36px rgba(31, 27, 24, 0.14);
+}
+
+body .card__media .media img {
+  transition: transform 0.9s var(--ash-ease), opacity 0.6s ease;
+}
+
+body .card-wrapper:hover .card__media .media img {
+  transform: scale(1.06);
+}
+
+/* Título del lote primero, precio claro después */
+body .card-information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 1rem;
+}
+
+body .card__heading,
+body .card__heading a {
+  line-height: 1.35;
+  color: var(--ash-ink);
+}
+
+body .card-information .price {
+  margin-top: 0.2rem;
+}
+
+body .card-information .price__sale .price-item--regular,
+body .card-information .price .price-item--regular:not(:only-child) {
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+/* Etiquetas (Agotado / Oferta / Lote Único): píldora tipo sello; el color lo da el esquema del tema */
+body .card__badge .badge {
+  padding: 0.5rem 1.2rem;
+  border: 0;
+  border-radius: 4rem;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  box-shadow: 0 2px 8px rgba(31, 27, 24, 0.18);
+}
+
+/* ---------- Botones: elevación y relleno suaves, compra con más presencia ---------- */
+body .button {
+  transition: transform 0.35s var(--ash-ease), box-shadow 0.35s var(--ash-ease);
+}
+
+body .button:not([disabled]):hover {
+  transform: translateY(-2px);
+}
+
+body .button:not([disabled]):active {
+  transform: translateY(0) scale(0.98);
+}
+
+body .product-form__submit,
+body .product-form__submit:hover {
+  min-height: 5.2rem;
+  box-shadow: 0 8px 20px rgba(31, 27, 24, 0.18);
+}
+
+body .product-form__submit:active {
+  box-shadow: 0 2px 6px rgba(31, 27, 24, 0.2);
+}
+
+/* ---------- Página de producto: jerarquía título > precio > detalles ---------- */
+body .product__title h1,
+body .product__title > a {
+  line-height: 1.15;
+  color: var(--ash-ink);
+}
+
+body .product__info-container .price {
+  margin: 0.4rem 0 1.2rem;
+}
+
+body .product__info-container .price-item--regular,
+body .product__info-container .price-item--sale {
+  color: var(--ash-ink);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+body .product__info-container .price--on-sale .price-item--sale {
+  color: var(--ash-accent);
+}
+
+body .product__description {
+  line-height: 1.7;
+}
+
+/* ---------- Scroll reveal de Dawn: fade-up corto, sin saltos de layout ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  body .scroll-trigger.animate--slide-in {
+    --animation-translate-y: 2rem;
+    transition: opacity 0.9s var(--ash-ease), transform 0.9s var(--ash-ease);
+  }
+}
+
+/* ---------- Pie: sello de titularidad ---------- */
+.footer__company-seal {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 0.4rem;
+  text-align: center;
+}
+
+.footer__company-seal-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 0.8rem;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.footer__company-seal-text > span {
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+}
+
+.footer__company-seal-icon {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  color: var(--ash-accent);
+}
+
+.footer__company-seal-link {
+  font-size: 1.3rem;
+  text-underline-offset: 0.3rem;
+}

@@ -228,6 +228,10 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
+    },
+    "ash_social_connect": {
+      "type": "ash-social-connect",
+      "settings": {}
     }
   },
   "order": [
@@ -235,6 +239,7 @@
     "shop_by_model",
     "kilo_packs",
     "featured_collection",
-    "trust_guarantee_GbC7jf"
+    "trust_guarantee_GbC7jf",
+    "ash_social_connect"
   ]
 }

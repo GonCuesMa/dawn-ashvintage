@@ -297,6 +297,25 @@
         {%- endif -%}
       </div>
     </div>
+    {%- if section.settings.show_company_seal and section.settings.company_seal_text != blank -%}
+      <div class="footer__company-seal page-width">
+        <p class="footer__company-seal-text caption">
+          <svg class="footer__company-seal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+          <span>{{ section.settings.company_seal_text | escape }}</span>
+          {%- if section.settings.company_seal_link_label != blank and section.settings.company_seal_url != blank -%}
+            <a
+              href="{{ section.settings.company_seal_url }}"
+              class="footer__company-seal-link link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{- section.settings.company_seal_link_label | escape -}}
+              <span class="visually-hidden"> ({{ 'accessibility.link_messages.new_window' | t }})</span>
+            </a>
+          {%- endif -%}
+        </p>
+      </div>
+    {%- endif -%}
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
@@ -484,6 +503,35 @@
       "id": "payment_enable",
       "default": true,
       "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "Sello de confianza (titularidad)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_company_seal",
+      "default": true,
+      "label": "Mostrar sello de titularidad"
+    },
+    {
+      "type": "text",
+      "id": "company_seal_text",
+      "default": "Web oficial y original propiedad de ASH VINTAGE S.L.",
+      "label": "Texto del sello"
+    },
+    {
+      "type": "text",
+      "id": "company_seal_link_label",
+      "default": "ASH VINTAGE S.L. (Empresa registrada verificada)",
+      "label": "Texto del enlace",
+      "info": "Déjalo vacío para ocultar el enlace."
+    },
+    {
+      "type": "url",
+      "id": "company_seal_url",
+      "default": "https://www.datoscif.es/empresa/ash-vintage-sl",
+      "label": "URL de la ficha empresarial"
     },
     {
       "type": "checkbox",

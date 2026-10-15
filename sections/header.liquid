@@ -172,7 +172,7 @@
       endif
 
       if section.settings.menu != blank
-        render 'header-drawer', show_country_selector: country_selector, show_language_selector: language_selector, show_social_links: social_links
+        render 'header-drawer', show_country_selector: country_selector, show_language_selector: language_selector, show_social_links: social_links, shortcuts_menu: section.settings.drawer_shortcuts_menu
       endif
 
       if render_search_left
@@ -550,6 +550,12 @@
       "id": "menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "link_list",
+      "id": "drawer_shortcuts_menu",
+      "label": "Accesos directos del menú móvil",
+      "info": "Opcional. Aparecen como botones destacados (lotes/categorías) al inicio del menú móvil."
     },
     {
       "type": "select",
