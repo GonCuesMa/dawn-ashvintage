@@ -131,7 +131,7 @@
       "settings": {
         "heading": "Marcas que encontrarás en nuestros lotes",
         "disclaimer": "Las marcas mencionadas pertenecen a sus respectivos propietarios. AshVintage no está afiliada a ellas.",
-        "duration": 40,
+        "speed": 10,
         "color_scheme": "",
         "padding_top": 32,
         "padding_bottom": 32
