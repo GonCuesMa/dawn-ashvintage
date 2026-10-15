@@ -2,6 +2,7 @@
  * AshVintage: comportamiento del menú principal en escritorio.
  * - Abre el desplegable/mega menú al pasar el ratón y lo cierra con una pequeña espera.
  * - Alinea la tarjeta con el título de la entrada de menú (la primera columna queda justo bajo "Tienda").
+ * - Con ratón, pinchar el titular padre navega a su enlace (data-href).
  * En táctil o en pantallas estrechas no hace nada: se mantiene el comportamiento de Dawn.
  */
 (function () {
@@ -57,7 +58,15 @@
       var summary = details.querySelector('summary');
       if (summary) {
         summary.addEventListener('click', function (event) {
-          if (desktop.matches && details.open) event.preventDefault();
+          if (!desktop.matches) return;
+          // Con ratón, pinchar el titular padre lleva a su página (si el menú le asigna enlace)
+          var href = summary.getAttribute('data-href');
+          if (href) {
+            event.preventDefault();
+            window.location.href = href;
+            return;
+          }
+          if (details.open) event.preventDefault();
         });
       }
     });

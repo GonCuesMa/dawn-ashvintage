@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "menu-children",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
