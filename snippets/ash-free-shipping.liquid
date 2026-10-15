@@ -17,7 +17,7 @@
   <div class="ash-shipping{% if remaining <= 0 %} ash-shipping--done{% endif %}">
     <p class="ash-shipping__text" role="status">
       {%- if remaining > 0 -%}
-        {{ settings.ash_free_shipping_message | escape | replace: '{amount}', remaining_money }}
+        {{ settings.ash_free_shipping_message | escape | replace: '[importe]', remaining_money }}
       {%- else -%}
         {{ settings.ash_free_shipping_success | escape }}
       {%- endif -%}

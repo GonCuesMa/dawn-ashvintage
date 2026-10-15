@@ -1421,8 +1421,8 @@
         "type": "text",
         "id": "ash_free_shipping_message",
         "label": "Mensaje mientras falta importe",
-        "info": "{amount} se sustituye por lo que falta.",
-        "default": "Te faltan {amount} para conseguir el envío gratis"
+        "info": "[importe] se sustituye por lo que falta.",
+        "default": "Te faltan [importe] para conseguir el envío gratis"
       },
       {
         "type": "text",
