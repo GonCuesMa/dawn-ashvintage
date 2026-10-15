@@ -1,0 +1,198 @@
+{%- comment -%}
+  Cómo funciona: pasos numerados (máx. 5) para explicar la compra de un lote.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding how-it-works">
+    <header class="how-it-works__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="subtitle how-it-works__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="title h1 how-it-works__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+    </header>
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="how-it-works__list list-unstyled" role="list">
+        {%- for block in section.blocks -%}
+          <li class="how-it-works__step" {{ block.shopify_attributes }}>
+            <span class="how-it-works__number" aria-hidden="true">{{ forloop.index }}</span>
+            {%- if block.settings.title != blank -%}
+              <h3 class="how-it-works__title h4">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="how-it-works__text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .how-it-works__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .how-it-works__eyebrow,
+  .how-it-works__heading {
+    margin: 0;
+  }
+
+  .how-it-works__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    margin: 0;
+    padding: 0;
+    counter-reset: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .how-it-works__list {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 4rem;
+    }
+  }
+
+  .how-it-works__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Número grande en serif, con una línea fina que acompaña al siguiente paso */
+  .how-it-works__number {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.8rem;
+    line-height: 1;
+    color: #a8553a;
+  }
+
+  @media screen and (min-width: 750px) {
+    .how-it-works__number::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(var(--color-foreground), 0.2);
+    }
+
+    .how-it-works__step:last-child .how-it-works__number::after {
+      display: none;
+    }
+  }
+
+  .how-it-works__title,
+  .how-it-works__text {
+    margin: 0;
+  }
+
+  .how-it-works__text {
+    font-size: 1.5rem;
+    line-height: 1.65;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Cómo funciona",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta superior",
+      "default": "Comprar un lote"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Así de fácil es comprar tu lote"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Paso",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Elige tu lote"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto",
+          "default": "Por kilos, por número de prendas o al por mayor."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cómo funciona",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step", "settings": { "title": "Lo revisamos a mano", "text": "Cada lote se revisa prenda a prenda antes de prepararlo." } },
+        { "type": "step", "settings": { "title": "Te lo enviamos", "text": "Preparamos y enviamos tu pedido en 24/48 horas." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

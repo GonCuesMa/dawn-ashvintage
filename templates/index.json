@@ -229,6 +229,37 @@
         "padding_bottom": 72
       }
     },
+    "how_it_works": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Elige tu lote", "text": "Por kilos, por número de prendas o al por mayor." } },
+        "s2": { "type": "step", "settings": { "title": "Lo revisamos a mano", "text": "Cada lote se revisa prenda a prenda antes de prepararlo." } },
+        "s3": { "type": "step", "settings": { "title": "Te lo enviamos", "text": "Preparamos y enviamos tu pedido en 24/48 horas." } },
+        "s4": { "type": "step", "settings": { "title": "Devolución del lote entero", "text": "Si no es lo que esperabas, devuelves el lote completo. No se aceptan devoluciones parciales." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {}
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": { "type": "collapsible_row", "settings": { "heading": "¿Qué significa ropa de Clase A?", "row_content": "<p>Es ropa en perfecto estado. Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p>" } },
+        "q2": { "type": "collapsible_row", "settings": { "heading": "¿Puedo devolver solo parte del lote?", "row_content": "<p>No. Los lotes se devuelven enteros o no se devuelven; no aceptamos devoluciones parciales.</p>" } },
+        "q3": { "type": "collapsible_row", "settings": { "heading": "¿Cuánto tarda el envío?", "row_content": "<p>Preparamos y enviamos tu pedido en un plazo de 24 a 48 horas. El envío es gratis a partir de 300 €.</p>" } },
+        "q4": { "type": "collapsible_row", "settings": { "heading": "¿Vendéis zapatos?", "row_content": "<p>No. Trabajamos solo ropa: camisetas, camisas, sudaderas, jerséis, polos, chaquetas y abrigos, pantalones, vaqueros y vestidos.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": {
+        "caption": "Dudas frecuentes",
+        "heading": "Preguntas frecuentes",
+        "layout": "none",
+        "open_first_collapsible_row": false
+      }
+    },
+    "wholesale_cta": {
+      "type": "wholesale-cta",
+      "settings": { "button_link": "shopify://collections/mayoristas" }
+    },
     "ash_social_connect": {
       "type": "ash-social-connect",
       "settings": {}
@@ -239,7 +270,10 @@
     "shop_by_model",
     "kilo_packs",
     "featured_collection",
+    "how_it_works",
     "trust_guarantee_GbC7jf",
+    "faq",
+    "wholesale_cta",
     "ash_social_connect"
   ]
 }
