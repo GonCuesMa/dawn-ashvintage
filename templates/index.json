@@ -229,6 +229,35 @@
         "padding_bottom": 72
       }
     },
+    "brand_marquee": {
+      "type": "brand-marquee",
+      "blocks": {
+        "b1": { "type": "brand", "settings": { "name": "Moncler" } },
+        "b2": { "type": "brand", "settings": { "name": "Ralph Lauren" } },
+        "b3": { "type": "brand", "settings": { "name": "The North Face" } },
+        "b4": { "type": "brand", "settings": { "name": "Adidas" } },
+        "b5": { "type": "brand", "settings": { "name": "Nike" } },
+        "b6": { "type": "brand", "settings": { "name": "Napapijri" } },
+        "b7": { "type": "brand", "settings": { "name": "Dior" } },
+        "b8": { "type": "brand", "settings": { "name": "Prada" } },
+        "b9": { "type": "brand", "settings": { "name": "Louis Vuitton" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9"],
+      "settings": {}
+    },
+    "kilo_calculator": {
+      "type": "kilo-calculator",
+      "blocks": {
+        "g1": { "type": "garment", "settings": { "name": "Camisetas", "grams": 200 } },
+        "g2": { "type": "garment", "settings": { "name": "Camisas", "grams": 250 } },
+        "g3": { "type": "garment", "settings": { "name": "Sudaderas", "grams": 500 } },
+        "g4": { "type": "garment", "settings": { "name": "Jerséis", "grams": 450 } },
+        "g5": { "type": "garment", "settings": { "name": "Pantalones y vaqueros", "grams": 600 } },
+        "g6": { "type": "garment", "settings": { "name": "Chaquetas y abrigos", "grams": 900 } }
+      },
+      "block_order": ["g1", "g2", "g3", "g4", "g5", "g6"],
+      "settings": { "button_link": "shopify://collections/all" }
+    },
     "how_it_works": {
       "type": "how-it-works",
       "blocks": {
@@ -267,8 +296,10 @@
   },
   "order": [
     "image_banner",
+    "brand_marquee",
     "shop_by_model",
     "kilo_packs",
+    "kilo_calculator",
     "featured_collection",
     "how_it_works",
     "trust_guarantee_GbC7jf",

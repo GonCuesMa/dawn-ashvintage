@@ -1,0 +1,259 @@
+{%- comment -%}
+  Barra de marcas: cinta en movimiento con nombres (o logos subidos) de las marcas del catálogo.
+  Por defecto cada marca se muestra como texto tipográfico. Se detiene al pasar el cursor
+  y no se anima si el usuario prefiere reducir movimiento.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .brand-marquee__track {
+    --brand-marquee-duration: {{ section.settings.duration }}s;
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="color-{{ section.settings.color_scheme }} gradient">
+    <div class="section-{{ section.id }}-padding brand-marquee">
+      {%- if section.settings.heading != blank -%}
+        <p class="brand-marquee__heading subtitle">{{ section.settings.heading | escape }}</p>
+      {%- endif -%}
+
+      <div class="brand-marquee__viewport">
+        <div class="brand-marquee__track">
+          {%- for copy in (1..2) -%}
+            <ul
+              class="brand-marquee__list list-unstyled"
+              role="list"
+              {% if copy == 2 %}
+                aria-hidden="true"
+              {% endif %}
+            >
+              {%- for block in section.blocks -%}
+                <li class="brand-marquee__item" {% if copy == 1 %}{{ block.shopify_attributes }}{% endif %}>
+                  {%- if block.settings.logo != blank -%}
+                    {{
+                      block.settings.logo
+                      | image_url: height: 120
+                      | image_tag: loading: 'lazy', height: 48, class: 'brand-marquee__logo', alt: block.settings.name
+                    }}
+                  {%- else -%}
+                    <span class="brand-marquee__name">{{ block.settings.name | escape }}</span>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      {%- if section.settings.disclaimer != blank -%}
+        <p class="brand-marquee__disclaimer page-width">{{ section.settings.disclaimer | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .brand-marquee__heading {
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  .brand-marquee__viewport {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .brand-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: brand-marquee-scroll var(--brand-marquee-duration, 40s) linear infinite;
+  }
+
+  .brand-marquee__viewport:hover .brand-marquee__track {
+    animation-play-state: paused;
+  }
+
+  .brand-marquee__list {
+    display: flex;
+    flex: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .brand-marquee__item {
+    display: flex;
+    align-items: center;
+    padding: 0 3.2rem;
+    white-space: nowrap;
+  }
+
+  .brand-marquee__name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .brand-marquee__logo {
+    width: auto;
+    height: 4rem;
+    opacity: 0.7;
+    filter: grayscale(1);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .brand-marquee__item:hover .brand-marquee__name,
+  .brand-marquee__item:hover .brand-marquee__logo {
+    opacity: 1;
+    filter: none;
+  }
+
+  .brand-marquee__disclaimer {
+    margin-top: 1.6rem;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 0.55;
+  }
+
+  @keyframes brand-marquee-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-marquee__viewport {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .brand-marquee__track {
+      width: auto;
+      animation: none;
+    }
+
+    .brand-marquee__list {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 1.2rem;
+    }
+
+    .brand-marquee__list[aria-hidden='true'] {
+      display: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Barra de marcas",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Marcas que encontrarás en nuestros lotes"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Aviso legal",
+      "default": "Las marcas mencionadas pertenecen a sus respectivos propietarios. AshVintage no está afiliada a ellas.",
+      "info": "Déjalo vacío para ocultarlo."
+    },
+    {
+      "type": "range",
+      "id": "duration",
+      "min": 15,
+      "max": 90,
+      "step": 5,
+      "unit": "s",
+      "label": "Duración de una vuelta",
+      "info": "Más segundos = más lento.",
+      "default": 40
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Marca",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Marca"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo (opcional)",
+          "info": "Si subes un logo, se usa en lugar del nombre. Recomendado: PNG o SVG transparente."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barra de marcas",
+      "blocks": [
+        { "type": "brand", "settings": { "name": "Moncler" } },
+        { "type": "brand", "settings": { "name": "Ralph Lauren" } },
+        { "type": "brand", "settings": { "name": "The North Face" } },
+        { "type": "brand", "settings": { "name": "Adidas" } },
+        { "type": "brand", "settings": { "name": "Nike" } },
+        { "type": "brand", "settings": { "name": "Napapijri" } },
+        { "type": "brand", "settings": { "name": "Dior" } },
+        { "type": "brand", "settings": { "name": "Prada" } },
+        { "type": "brand", "settings": { "name": "Louis Vuitton" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

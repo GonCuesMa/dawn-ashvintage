@@ -1403,6 +1403,34 @@
     "name": "t:settings_schema.cart.name",
     "settings": [
       {
+        "type": "header",
+        "content": "Envío gratis (barra de progreso)"
+      },
+      {
+        "type": "range",
+        "id": "ash_free_shipping_threshold",
+        "min": 0,
+        "max": 1000,
+        "step": 10,
+        "unit": "€",
+        "label": "Importe mínimo para envío gratis",
+        "info": "0 = ocultar la barra. Debe coincidir con las tarifas de envío configuradas en Shopify.",
+        "default": 300
+      },
+      {
+        "type": "text",
+        "id": "ash_free_shipping_message",
+        "label": "Mensaje mientras falta importe",
+        "info": "{amount} se sustituye por lo que falta.",
+        "default": "Te faltan {amount} para conseguir el envío gratis"
+      },
+      {
+        "type": "text",
+        "id": "ash_free_shipping_success",
+        "label": "Mensaje al alcanzarlo",
+        "default": "¡Tu pedido tiene envío gratis!"
+      },
+      {
         "type": "select",
         "id": "cart_type",
         "options": [

@@ -1,0 +1,545 @@
+{%- comment -%}
+  Calculadora de lote: el usuario elige kilos y tipo de ropa y ve cuántas prendas aproximadas son.
+  Los pesos medios por prenda (en gramos) se editan en cada bloque; son orientativos.
+{%- endcomment -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign total_grams = 0
+  for block in section.blocks
+    assign total_grams = total_grams | plus: block.settings.grams
+  endfor
+  assign avg_grams = 0
+  if section.blocks.size > 0
+    assign avg_grams = total_grams | divided_by: section.blocks.size
+  endif
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <kilo-calculator
+      class="kilo-calc"
+      data-locale="{{ request.locale.iso_code }}"
+      data-currency="{{ cart.currency.iso_code }}"
+      data-price-per-kg="{{ section.settings.price_per_kg }}"
+      data-singular="{{ section.settings.unit_singular | escape }}"
+      data-plural="{{ section.settings.unit_plural | escape }}"
+    >
+      <header class="kilo-calc__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="subtitle kilo-calc__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="title h1 kilo-calc__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <p class="kilo-calc__text">{{ section.settings.text | escape }}</p>
+        {%- endif -%}
+      </header>
+
+      <div class="kilo-calc__box">
+        <div class="kilo-calc__controls">
+          <div class="kilo-calc__field">
+            <label for="KiloCalc-{{ section.id }}" class="kilo-calc__label">
+              {{- section.settings.kilos_label | escape }}:
+              <strong class="kilo-calc__kilos" data-kilos-output>{{ section.settings.default_kg }} kg</strong>
+            </label>
+            <input
+              type="range"
+              id="KiloCalc-{{ section.id }}"
+              class="kilo-calc__range"
+              min="{{ section.settings.min_kg }}"
+              max="{{ section.settings.max_kg }}"
+              step="{{ section.settings.step_kg }}"
+              value="{{ section.settings.default_kg }}"
+              data-kilos-input
+            >
+          </div>
+
+          <fieldset class="kilo-calc__field kilo-calc__types">
+            <legend class="kilo-calc__label">{{ section.settings.type_label | escape }}</legend>
+            <div class="kilo-calc__chips">
+              <label class="kilo-calc__chip">
+                <input type="radio" name="kilo-calc-type-{{ section.id }}" value="{{ avg_grams }}" checked data-type-input>
+                <span>{{ section.settings.mix_label | escape }}</span>
+              </label>
+              {%- for block in section.blocks -%}
+                <label class="kilo-calc__chip" {{ block.shopify_attributes }}>
+                  <input type="radio" name="kilo-calc-type-{{ section.id }}" value="{{ block.settings.grams }}" data-type-input>
+                  <span>{{ block.settings.name | escape }}</span>
+                </label>
+              {%- endfor -%}
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="kilo-calc__result" aria-live="polite">
+          <p class="kilo-calc__result-label">{{ section.settings.result_label | escape }}</p>
+          <p class="kilo-calc__result-number" data-count-output>–</p>
+          <p class="kilo-calc__result-range" data-range-output></p>
+          {%- if section.settings.price_per_kg > 0 -%}
+            <p class="kilo-calc__result-price">
+              {{ section.settings.price_label | escape }}:
+              <strong data-price-output></strong>
+            </p>
+          {%- endif -%}
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}" class="button button--primary kilo-calc__button">
+              {{- section.settings.button_label | escape -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.disclaimer != blank -%}
+        <p class="kilo-calc__disclaimer">{{ section.settings.disclaimer | escape }}</p>
+      {%- endif -%}
+    </kilo-calculator>
+  </div>
+</div>
+
+{% stylesheet %}
+  .kilo-calc__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+
+  .kilo-calc__eyebrow,
+  .kilo-calc__heading,
+  .kilo-calc__text {
+    margin: 0;
+  }
+
+  .kilo-calc__text {
+    max-width: 52rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .kilo-calc__box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    padding: 2.4rem;
+    border: 1px solid rgba(var(--color-foreground), 0.12);
+    border-radius: 2rem;
+    background: rgb(var(--color-background));
+    box-shadow: 0 10px 30px rgba(31, 27, 24, 0.06);
+  }
+
+  @media screen and (min-width: 750px) {
+    .kilo-calc__box {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      padding: 4rem;
+    }
+  }
+
+  .kilo-calc__field {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0 0 2.4rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .kilo-calc__label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .kilo-calc__kilos {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .kilo-calc__range {
+    width: 100%;
+    height: 4.4rem;
+    accent-color: #a8553a;
+    cursor: pointer;
+  }
+
+  .kilo-calc__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .kilo-calc__chip {
+    position: relative;
+  }
+
+  .kilo-calc__chip input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .kilo-calc__chip span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 4.4rem;
+    padding: 0 1.8rem;
+    border: 1px solid rgba(var(--color-foreground), 0.25);
+    border-radius: 4rem;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .kilo-calc__chip:hover span {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .kilo-calc__chip input:checked + span {
+    border-color: #1f1b18;
+    background: #1f1b18;
+    color: #faf9f6;
+  }
+
+  .kilo-calc__chip input:focus-visible + span {
+    outline: 0.2rem solid rgb(var(--color-foreground));
+    outline-offset: 0.2rem;
+  }
+
+  .kilo-calc__result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 2.4rem;
+    border-radius: 1.6rem;
+    background: #f1ebe1;
+    color: #1f1b18;
+  }
+
+  .kilo-calc__result p {
+    margin: 0;
+  }
+
+  .kilo-calc__result-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .kilo-calc__result-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.8rem;
+    line-height: 1.1;
+    color: #a8553a;
+  }
+
+  .kilo-calc__result-range,
+  .kilo-calc__result-price {
+    font-size: 1.4rem;
+  }
+
+  .kilo-calc__button {
+    margin-top: 1.6rem;
+  }
+
+  .kilo-calc__disclaimer {
+    margin: 1.6rem 0 0;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0.65;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('kilo-calculator')) {
+    customElements.define(
+      'kilo-calculator',
+      class KiloCalculator extends HTMLElement {
+        connectedCallback() {
+          this.kilos = this.querySelector('[data-kilos-input]');
+          this.kilosOut = this.querySelector('[data-kilos-output]');
+          this.countOut = this.querySelector('[data-count-output]');
+          this.rangeOut = this.querySelector('[data-range-output]');
+          this.priceOut = this.querySelector('[data-price-output]');
+          this.pricePerKg = parseFloat(this.dataset.pricePerKg) || 0;
+          this.number = new Intl.NumberFormat(this.dataset.locale || undefined);
+          this.money = new Intl.NumberFormat(this.dataset.locale || undefined, {
+            style: 'currency',
+            currency: this.dataset.currency || 'EUR',
+          });
+          this.addEventListener('input', () => this.update());
+          this.update();
+        }
+
+        update() {
+          const kg = parseFloat(this.kilos.value) || 0;
+          const checked = this.querySelector('[data-type-input]:checked');
+          const grams = parseFloat(checked && checked.value) || 0;
+          this.kilosOut.textContent = this.number.format(kg) + ' kg';
+
+          if (!grams) {
+            this.countOut.textContent = '–';
+            this.rangeOut.textContent = '';
+          } else {
+            const count = Math.round((kg * 1000) / grams);
+            const low = Math.round(count * 0.9);
+            const high = Math.round(count * 1.1);
+            const unit = count === 1 ? this.dataset.singular : this.dataset.plural;
+            this.countOut.textContent = '≈ ' + this.number.format(count) + ' ' + unit;
+            this.rangeOut.textContent = this.number.format(low) + ' – ' + this.number.format(high) + ' ' + this.dataset.plural;
+          }
+
+          if (this.priceOut) this.priceOut.textContent = this.money.format(kg * this.pricePerKg);
+        }
+      }
+    );
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Calculadora de lote",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta superior",
+      "default": "Calculadora de lotes"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿Cuántas prendas caben en tu lote?"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texto",
+      "default": "Elige los kilos y el tipo de ropa y calcula cuántas prendas recibirás aproximadamente."
+    },
+    {
+      "type": "header",
+      "content": "Kilos"
+    },
+    {
+      "type": "text",
+      "id": "kilos_label",
+      "label": "Etiqueta del selector de kilos",
+      "default": "Kilos"
+    },
+    {
+      "type": "range",
+      "id": "min_kg",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "kg",
+      "label": "Mínimo",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "max_kg",
+      "min": 50,
+      "max": 500,
+      "step": 10,
+      "unit": "kg",
+      "label": "Máximo",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "step_kg",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "kg",
+      "label": "Salto",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "default_kg",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "unit": "kg",
+      "label": "Valor inicial",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Textos del resultado"
+    },
+    {
+      "type": "text",
+      "id": "type_label",
+      "label": "Etiqueta del tipo de ropa",
+      "default": "Tipo de ropa"
+    },
+    {
+      "type": "text",
+      "id": "mix_label",
+      "label": "Opción de mezcla",
+      "default": "Mezcla variada"
+    },
+    {
+      "type": "text",
+      "id": "result_label",
+      "label": "Etiqueta del resultado",
+      "default": "Recibirás aproximadamente"
+    },
+    {
+      "type": "text",
+      "id": "unit_singular",
+      "label": "Unidad (singular)",
+      "default": "prenda"
+    },
+    {
+      "type": "text",
+      "id": "unit_plural",
+      "label": "Unidad (plural)",
+      "default": "prendas"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Aviso",
+      "default": "Cálculo orientativo según el peso medio de cada tipo de prenda. El número real puede variar."
+    },
+    {
+      "type": "header",
+      "content": "Precio (opcional)"
+    },
+    {
+      "type": "range",
+      "id": "price_per_kg",
+      "min": 0,
+      "max": 50,
+      "step": 0.5,
+      "label": "Precio por kilo",
+      "info": "0 = no mostrar precio. Usa la misma moneda de la tienda.",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Etiqueta del precio",
+      "default": "Precio estimado"
+    },
+    {
+      "type": "header",
+      "content": "Botón"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Ver lotes por kilos"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen superior",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margen inferior",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "garment",
+      "name": "Tipo de prenda",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Camisetas"
+        },
+        {
+          "type": "range",
+          "id": "grams",
+          "min": 100,
+          "max": 1500,
+          "step": 10,
+          "unit": "g",
+          "label": "Peso medio por prenda",
+          "info": "Orientativo.",
+          "default": 200
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Calculadora de lote",
+      "blocks": [
+        { "type": "garment", "settings": { "name": "Camisetas", "grams": 200 } },
+        { "type": "garment", "settings": { "name": "Camisas", "grams": 250 } },
+        { "type": "garment", "settings": { "name": "Sudaderas", "grams": 500 } },
+        { "type": "garment", "settings": { "name": "Jerséis", "grams": 450 } },
+        { "type": "garment", "settings": { "name": "Pantalones y vaqueros", "grams": 600 } },
+        { "type": "garment", "settings": { "name": "Chaquetas y abrigos", "grams": 900 } }
+      ]
+    }
+  ]
+}
+{% endschema %}

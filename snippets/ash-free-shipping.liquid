@@ -1,0 +1,29 @@
+{% doc %}
+  Barra de progreso hacia el envío gratis. Se oculta si el umbral es 0 o el carrito está vacío.
+  Umbral y textos se editan en Configuración del tema → Carrito (envío gratis).
+{% enddoc %}
+
+{%- liquid
+  assign threshold = settings.ash_free_shipping_threshold | times: 100
+  assign remaining = threshold | minus: cart.total_price
+  assign percent = 100
+  if remaining > 0
+    assign percent = cart.total_price | times: 100 | divided_by: threshold
+  endif
+  assign remaining_money = remaining | money
+-%}
+
+{%- if threshold > 0 and cart.item_count > 0 -%}
+  <div class="ash-shipping{% if remaining <= 0 %} ash-shipping--done{% endif %}">
+    <p class="ash-shipping__text" role="status">
+      {%- if remaining > 0 -%}
+        {{ settings.ash_free_shipping_message | escape | replace: '{amount}', remaining_money }}
+      {%- else -%}
+        {{ settings.ash_free_shipping_success | escape }}
+      {%- endif -%}
+    </p>
+    <div class="ash-shipping__bar" aria-hidden="true">
+      <span class="ash-shipping__fill" style="width: {{ percent }}%"></span>
+    </div>
+  </div>
+{%- endif -%}

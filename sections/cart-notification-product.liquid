@@ -54,6 +54,7 @@
           <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
         {%- endif -%}
       </div>
+      {%- render 'ash-free-shipping' -%}
     </div>
   {%- endfor -%}
 {%- endif -%}
