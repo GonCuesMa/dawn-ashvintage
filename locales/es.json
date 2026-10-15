@@ -539,5 +539,8 @@
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
     }
+  },
+  "ash": {
+    "drawer_view_all": "Ver todo: {{ title }}"
   }
 }

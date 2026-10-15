@@ -1,0 +1,546 @@
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Entra a la botiga amb la contrasenya:",
+      "login_password_button": "Entra amb la contrasenya",
+      "login_form_password_label": "Contrasenya",
+      "login_form_password_placeholder": "La teva contrasenya",
+      "login_form_error": "Contrasenya incorrecta",
+      "login_form_submit": "Entrar",
+      "admin_link_html": "Ets el propietari de la botiga? <a href=\"/admin\" class=\"link underlined-link\">Inicia la sessió aquí</a>",
+      "powered_by_shopify_html": "Aquesta botiga funcionarà amb la tecnologia de Shopify {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Comparteix a Facebook",
+        "share_on_twitter": "Comparteix a X",
+        "share_on_pinterest": "Desa a Pinterest"
+      },
+      "links": {
+        "twitter": "X (Twitter)",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Continua comprant",
+    "pagination": {
+      "label": "Paginació",
+      "page": "Pàgina {{ number }}",
+      "next": "Pàgina següent",
+      "previous": "Pàgina anterior"
+    },
+    "search": {
+      "search": "Cerca",
+      "reset": "Esborra el terme de cerca"
+    },
+    "cart": {
+      "view": "Mostra la cistella ({{ count }})",
+      "item_added": "Article afegit a la cistella",
+      "view_empty_cart": "Mostra la cistella"
+    },
+    "share": {
+      "copy_to_clipboard": "Copia l'enllaç",
+      "share_url": "Enllaç",
+      "success_message": "Enllaç copiat al porta-retalls",
+      "close": "Tanca la compartició"
+    },
+    "slider": {
+      "of": "de",
+      "next_slide": "Diapositiva a la dreta",
+      "previous_slide": "Diapositiva a l'esquerra",
+      "name": "Carrusel"
+    }
+  },
+  "newsletter": {
+    "label": "Correu electrònic",
+    "success": "Gràcies per subscriure't",
+    "button_label": "Subscriu-me"
+  },
+  "accessibility": {
+    "skip_to_text": "Vés directament al contingut",
+    "close": "Tanca",
+    "unit_price_separator": "per",
+    "vendor": "Proveïdor:",
+    "error": "Error",
+    "refresh_page": "En seleccionar una opció, s'actualitza tota la pàgina.",
+    "link_messages": {
+      "new_window": "S'obre en una finestra nova.",
+      "external": "S'obre el lloc web extern."
+    },
+    "loading": "Carregant...",
+    "skip_to_product_info": "Vés directament a la informació del producte",
+    "total_reviews": "ressenyes en total",
+    "star_reviews_info": "{{ rating_value }} de {{ rating_max }} estrelles",
+    "collapsible_content_title": "Contingut desplegable",
+    "complementary_products": "Productes complementaris"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "read_more_title": "Més informació: {{ title }}",
+      "comments": {
+        "one": "{{ count }} comentari",
+        "other": "{{ count }} comentaris",
+        "many": "{{ count }} comentaris"
+      },
+      "moderated": "Tingues en compte que els comentaris s'han d'aprovar abans de publicar-se.",
+      "comment_form_title": "Deixa un comentari",
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "message": "Comentari",
+      "post": "Publica el comentari",
+      "back_to_blog": "Torna al blog",
+      "share": "Comparteix aquest article",
+      "success": "El teu comentari s'ha publicat correctament. Gràcies!",
+      "success_moderated": "El teu comentari s'ha enviat correctament. El publicarem aviat, quan el nostre blog es modere."
+    }
+  },
+  "onboarding": {
+    "product_title": "Exemple de nom del producte",
+    "collection_title": "Nom de la teva col·lecció"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Afegeix a la cistella",
+      "description": "Descripció",
+      "on_sale": "Oferta",
+      "quantity": {
+        "label": "Quantitat",
+        "input_label": "Quantitat per a {{ product }}",
+        "increase": "Augmenta la quantitat per a {{ product }}",
+        "decrease": "Redueix la quantitat per a {{ product }}",
+        "minimum_of": "Mínim de {{ quantity }}",
+        "maximum_of": "Màxim de {{ quantity }}",
+        "multiples_of": "Increments de {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> a la cistella",
+        "note": "Mostra les regles de quantitat",
+        "min_of": "Mín.: {{ quantity }}",
+        "max_of": "Màx.: {{ quantity }}",
+        "in_cart_aria_label": "Quantitat ({{ quantity }} a la cistella)"
+      },
+      "price": {
+        "from_price_html": "A partir de {{ price }}",
+        "regular_price": "Preu habitual",
+        "sale_price": "Preu d'oferta",
+        "unit_price": "Preu unitari"
+      },
+      "share": "Comparteix aquest producte",
+      "sold_out": "Exhaurit",
+      "unavailable": "No disponible",
+      "vendor": "Proveïdor",
+      "video_exit_message": "{{ title }} obre el vídeo en pantalla completa a la mateixa finestra.",
+      "xr_button": "Mostra-ho al teu espai",
+      "xr_button_label": "Mostra-ho al teu espai, carrega l'article a la finestra de realitat augmentada",
+      "pickup_availability": {
+        "view_store_info": "Mostra la informació de la botiga",
+        "check_other_stores": "Comprova la disponibilitat en altres botigues",
+        "pick_up_available": "Recollida disponible",
+        "pick_up_available_at_html": "Recollida disponible a <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Recollida no disponible actualment a <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "No s'ha pogut carregar la disponibilitat de recollida",
+        "refresh": "Actualitza"
+      },
+      "media": {
+        "open_media": "Obre l'element multimèdia {{ index }} en una finestra modal",
+        "play_model": "Reprodueix el visor 3D",
+        "play_video": "Reprodueix el vídeo",
+        "gallery_viewer": "Visor de la galeria",
+        "load_image": "Carrega la imatge {{ index }} a la vista de la galeria",
+        "load_model": "Carrega el model 3D {{ index }} a la vista de la galeria",
+        "load_video": "Reprodueix el vídeo {{ index }} a la vista de la galeria",
+        "image_available": "La imatge {{ index }} ja està disponible a la vista de la galeria"
+      },
+      "nested_label": "{{ title }} per a {{ parent_title }}",
+      "view_full_details": "Mostra tots els detalls",
+      "shipping_policy_html": "Les <a href=\"{{ link }}\">despeses d'enviament</a> es calculen a la pantalla de pagament.",
+      "choose_options": "Selecciona opcions",
+      "choose_product_options": "Tria les opcions per a {{ product_name }}",
+      "value_unavailable": "{{ option_value }}: no disponible",
+      "variant_sold_out_or_unavailable": "Variant exhaurida o no disponible",
+      "inventory_in_stock": "En estoc",
+      "inventory_in_stock_show_count": "{{ quantity }} en estoc",
+      "inventory_low_stock": "Poc estoc",
+      "inventory_low_stock_show_count": "Poc estoc: en queden {{ quantity }}",
+      "inventory_out_of_stock": "Exhaurit",
+      "inventory_out_of_stock_continue_selling": "En estoc",
+      "sku": "SKU",
+      "volume_pricing": {
+        "title": "Preus per volum",
+        "note": "Preu per volum disponible",
+        "minimum": "Més de {{ quantity }}",
+        "price_range": "{{ minimum }} - {{ maximum }}",
+        "price_at_each_html": "a {{ price }} per unitat"
+      },
+      "product_variants": "Variants del producte",
+      "taxes_included": "Impostos inclosos.",
+      "duties_included": "Aranzels inclosos.",
+      "duties_and_taxes_included": "Aranzels i impostos inclosos."
+    },
+    "modal": {
+      "label": "Galeria multimèdia"
+    },
+    "facets": {
+      "apply": "Aplica",
+      "clear": "Esborra",
+      "clear_all": "Elimina-ho tot",
+      "from": "De",
+      "filter_and_sort": "Filtra i ordena",
+      "filter_by_label": "Filtra:",
+      "filter_button": "Filtra",
+      "filters_selected": {
+        "one": "{{ count }} seleccionat",
+        "other": "{{ count }} seleccionats",
+        "many": "{{ count }} seleccionats"
+      },
+      "max_price": "El preu més alt és {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} producte d'un total de {{ count }}",
+        "other": "{{ product_count }} productes d'un total de {{ count }}",
+        "many": "{{ product_count }} productes d'un total de {{ count }}"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} producte",
+        "other": "{{ count }} productes",
+        "many": "{{ count }} productes"
+      },
+      "reset": "Restableix",
+      "sort_button": "Ordena",
+      "sort_by_label": "Ordena per:",
+      "to": "Fins a",
+      "clear_filter": "Elimina el filtre",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filtres seleccionats)",
+      "show_more": "Mostra'n més",
+      "show_less": "Mostra'n menys",
+      "filter_and_operator_subtitle": "Selecciona-ho tot"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "No s'han trobat resultats per a “{{ terms }}”. Revisa l'ortografia o prova amb una altra paraula o frase.",
+      "results_with_count": {
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultats",
+        "many": "{{ count }} resultats"
+      },
+      "title": "Resultats de la cerca",
+      "page": "Pàgina",
+      "products": "Productes",
+      "search_for": "Cerca “{{ terms }}”",
+      "results_with_count_and_term": {
+        "one": "S'ha trobat {{ count }} resultat per a \"{{ terms }}\"",
+        "other": "S'han trobat {{ count }} resultats per a \"{{ terms }}\"",
+        "many": "S'han trobat {{ count }} resultats per a \"{{ terms }}\""
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }} pàgina",
+        "other": "{{ count }} pàgines",
+        "many": "{{ count }} pàgines"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} producte",
+        "other": "{{ count }} productes",
+        "many": "{{ count }} productes"
+      },
+      "suggestions": "Suggeriments",
+      "pages": "Pàgines",
+      "results_suggestions_with_count": {
+        "one": "{{ count }} suggeriment",
+        "other": "{{ count }} suggeriments",
+        "many": "{{ count }} suggeriments"
+      }
+    },
+    "cart": {
+      "cart": "Cistella"
+    },
+    "contact": {
+      "form": {
+        "name": "Nom",
+        "email": "Correu electrònic",
+        "phone": "Número de telèfon",
+        "comment": "Comentari",
+        "send": "Envia",
+        "post_success": "Gràcies per contactar amb nosaltres. Et respondrem tan aviat com puguem.",
+        "error_heading": "Ajusta el següent:",
+        "title": "Formulari de contacte"
+      }
+    },
+    "404": {
+      "title": "Pàgina no trobada",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Anunci",
+      "menu": "Menú",
+      "cart_count": {
+        "one": "{{ count }} article",
+        "other": "{{ count }} articles",
+        "many": "{{ count }} articles"
+      }
+    },
+    "cart": {
+      "title": "La teva cistella",
+      "caption": "Articles a la cistella",
+      "remove_title": "Elimina {{ title }}",
+      "note": "Instruccions especials de la comanda",
+      "checkout": "Finalitza la compra",
+      "empty": "La teva cistella és buida",
+      "product_disclosure": "Avís sobre el producte",
+      "product_disclosures": "Avisos sobre el producte",
+      "cart_error": "S'ha produït un error en actualitzar la cistella. Torna-ho a provar.",
+      "cart_quantity_error_html": "Només pots afegir {{ quantity }} d'aquest article a la cistella.",
+      "headings": {
+        "product": "Producte",
+        "price": "Preu",
+        "total": "Total",
+        "quantity": "Quantitat",
+        "image": "Imatge del producte"
+      },
+      "update": "Actualitza",
+      "login": {
+        "title": "Tens un compte?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia la sessió</a> per finalitzar la compra més ràpidament."
+      },
+      "estimated_total": "Total estimat",
+      "new_estimated_total": "Nou total estimat",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Aranzels i impostos inclosos. Descomptes i <a href=\"{{ link }}\">enviament</a> calculats a la pantalla de pagament.",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Aranzels i impostos inclosos. Descomptes i enviament calculats a la pantalla de pagament.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Impostos inclosos. Descomptes i <a href=\"{{ link }}\">enviament</a> calculats a la pantalla de pagament.",
+      "taxes_included_shipping_at_checkout_without_policy": "Impostos inclosos. Descomptes i enviament calculats a la pantalla de pagament.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Aranzels inclosos. Impostos, descomptes i <a href=\"{{ link }}\">enviament</a> calculats a la pantalla de pagament.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Aranzels inclosos. Impostos, descomptes i enviament calculats a la pantalla de pagament.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Impostos, descomptes i <a href=\"{{ link }}\">enviament</a> calculats a la pantalla de pagament.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Impostos, descomptes i enviament calculats a la pantalla de pagament."
+    },
+    "footer": {
+      "payment": "Formes de pagament"
+    },
+    "featured_blog": {
+      "view_all": "Mostra-ho tot",
+      "onboarding_title": "Article del blog",
+      "onboarding_content": "Ofereix als teus clients un resum de l'article del blog"
+    },
+    "featured_collection": {
+      "view_all": "Mostra-ho tot",
+      "view_all_label": "Mostra tots els productes de la col·lecció {{ collection_name }}"
+    },
+    "collection_list": {
+      "view_all": "Mostra-ho tot"
+    },
+    "collection_template": {
+      "title": "Col·lecció",
+      "empty": "No s'ha trobat cap producte",
+      "use_fewer_filters_html": "Utilitza menys filtres o <a class=\"{{ class }}\" href=\"{{ link }}\">elimina'ls tots</a>"
+    },
+    "video": {
+      "load_video": "Carrega el vídeo: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Carrega la diapositiva",
+      "previous_slideshow": "Diapositiva anterior",
+      "next_slideshow": "Diapositiva següent",
+      "pause_slideshow": "Pausa la presentació",
+      "play_slideshow": "Reprodueix la presentació",
+      "carousel": "Carrusel",
+      "slide": "Diapositiva"
+    },
+    "page": {
+      "title": "Títol de la pàgina"
+    },
+    "announcements": {
+      "previous_announcement": "Anunci anterior",
+      "next_announcement": "Anunci següent",
+      "carousel": "Carrusel",
+      "announcement": "Anunci",
+      "announcement_bar": "Barra d'anuncis"
+    },
+    "quick_order_list": {
+      "product_total": "Subtotal dels productes",
+      "view_cart": "Mostra la cistella",
+      "each": "{{ money }}/unitat",
+      "product": "Producte",
+      "variant": "Variant",
+      "variant_total": "Total de les variants",
+      "items_added": {
+        "one": "{{ quantity }} article afegit",
+        "other": "{{ quantity }} articles afegits",
+        "many": "{{ quantity }} articles afegits"
+      },
+      "items_removed": {
+        "one": "{{ quantity }} article eliminat",
+        "other": "{{ quantity }} articles eliminats",
+        "many": "{{ quantity }} articles eliminats"
+      },
+      "product_variants": "Variants del producte",
+      "total_items": "Total d'articles",
+      "remove_all_items_confirmation": "Vols eliminar els {{ quantity }} articles de la cistella?",
+      "remove_all": "Elimina-ho tot",
+      "cancel": "Cancel·la",
+      "remove_all_single_item_confirmation": "Vols eliminar 1 article de la cistella?",
+      "min_error": "Aquest article té un mínim de {{ min }}.",
+      "max_error": "Aquest article té un màxim de {{ max }}.",
+      "step_error": "Només pots afegir aquest article en increments de {{ step }}"
+    }
+  },
+  "localization": {
+    "country_label": "País/regió",
+    "language_label": "Idioma",
+    "update_language": "Actualitza l'idioma",
+    "update_country": "Actualitza el país/regió",
+    "search": "Cerca",
+    "popular_countries_regions": "Països o regions populars",
+    "country_results_count": "{{ count }} països o regions trobats"
+  },
+  "customer": {
+    "account": {
+      "title": "Compte",
+      "details": "Detalls del compte",
+      "view_addresses": "Mostra les adreces",
+      "return": "Torna als detalls del compte"
+    },
+    "activate_account": {
+      "title": "Activa el compte",
+      "subtext": "Crea la teva contrasenya per activar el compte.",
+      "password": "Contrasenya",
+      "password_confirm": "Confirma la contrasenya",
+      "submit": "Activa el compte",
+      "cancel": "Rebutja la invitació"
+    },
+    "addresses": {
+      "title": "Adreces",
+      "default": "Predeterminada",
+      "add_new": "Afegeix una adreça nova",
+      "edit_address": "Edita l'adreça",
+      "first_name": "Nom",
+      "last_name": "Cognoms",
+      "company": "Empresa",
+      "address1": "Adreça 1",
+      "address2": "Adreça 2",
+      "city": "Ciutat",
+      "country": "País/regió",
+      "province": "Província",
+      "zip": "Codi postal",
+      "phone": "Telèfon",
+      "set_default": "Estableix com a adreça predeterminada",
+      "add": "Afegeix l'adreça",
+      "update": "Actualitza l'adreça",
+      "cancel": "Cancel·la",
+      "edit": "Edita",
+      "delete": "Elimina",
+      "delete_confirm": "Segur que vols eliminar aquesta adreça?"
+    },
+    "log_in": "Inicia la sessió",
+    "log_out": "Tanca la sessió",
+    "login_page": {
+      "cancel": "Cancel·la",
+      "create_account": "Crea un compte",
+      "email": "Correu electrònic",
+      "forgot_password": "Has oblidat la contrasenya?",
+      "guest_continue": "Continua",
+      "guest_title": "Continua com a convidat",
+      "password": "Contrasenya",
+      "title": "Inici de sessió",
+      "sign_in": "Inicia la sessió",
+      "submit": "Envia",
+      "alternate_provider_separator": "o"
+    },
+    "orders": {
+      "title": "Historial de comandes",
+      "order_number": "Comanda",
+      "order_number_link": "Número de comanda {{ number }}",
+      "date": "Data",
+      "payment_status": "Estat del pagament",
+      "fulfillment_status": "Estat de preparació de la comanda",
+      "total": "Total",
+      "none": "Encara no has fet cap comanda."
+    },
+    "recover_password": {
+      "title": "Restableix la contrasenya",
+      "subtext": "T'enviarem un correu electrònic per restablir la contrasenya",
+      "success": "T'hem enviat un correu electrònic amb un enllaç per actualitzar la contrasenya."
+    },
+    "register": {
+      "title": "Crea un compte",
+      "first_name": "Nom",
+      "last_name": "Cognoms",
+      "email": "Correu electrònic",
+      "password": "Contrasenya",
+      "submit": "Crea"
+    },
+    "reset_password": {
+      "title": "Restableix la contrasenya del compte",
+      "subtext": "Introdueix una contrasenya nova.",
+      "password": "Contrasenya",
+      "password_confirm": "Confirma la contrasenya",
+      "submit": "Restableix la contrasenya"
+    },
+    "order": {
+      "title": "Comanda {{ name }}",
+      "date_html": "Feta el {{ date }}",
+      "cancelled_html": "Comanda cancel·lada el {{ date }}",
+      "cancelled_reason": "Motiu: {{ reason }}",
+      "billing_address": "Adreça de facturació",
+      "payment_status": "Estat del pagament",
+      "shipping_address": "Adreça d'enviament",
+      "fulfillment_status": "Estat de preparació de la comanda",
+      "discount": "Descompte",
+      "shipping": "Enviament",
+      "tax": "Impost",
+      "product": "Producte",
+      "sku": "SKU",
+      "price": "Preu",
+      "quantity": "Quantitat",
+      "total": "Total",
+      "fulfilled_at_html": "Preparada el {{ date }}",
+      "track_shipment": "Fes el seguiment de l'enviament",
+      "tracking_url": "Enllaç de seguiment",
+      "tracking_company": "Empresa de transport",
+      "tracking_number": "Número de seguiment",
+      "subtotal": "Subtotal",
+      "total_duties": "Aranzels",
+      "total_refunded": "Reemborsat"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Aquest és el saldo de la teva targeta de regal de {{ value }} per a {{ shop }}.",
+      "subtext": "La teva targeta de regal",
+      "gift_card_code": "Codi de la targeta de regal",
+      "shop_link": "Visita la botiga en línia",
+      "add_to_apple_wallet": "Afegeix a Apple Wallet",
+      "qr_image_alt": "Codi QR: escaneja'l per bescanviar la targeta de regal",
+      "copy_code": "Copia el codi de la targeta de regal",
+      "expired": "Caducada",
+      "copy_code_success": "El codi s'ha copiat correctament",
+      "how_to_use_gift_card": "Utilitza el codi de la targeta de regal en línia o el codi QR a la botiga",
+      "expiration_date": "Caduca el {{ expires_on }}"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Vull enviar això com a regal.",
+      "email_label": "Correu electrònic de la persona destinatària",
+      "email": "Correu electrònic",
+      "name_label": "Nom de la persona destinatària (opcional)",
+      "name": "Nom",
+      "message_label": "Missatge (opcional)",
+      "message": "Missatge",
+      "max_characters": "{{ max_chars }} caràcters màx.",
+      "email_label_optional_for_no_js_behavior": "Correu electrònic de la persona destinatària (opcional)",
+      "send_on": "AAAA-MM-DD",
+      "send_on_label": "Envia el (opcional)",
+      "expanded": "Formulari del destinatari de la targeta de regal desplegat",
+      "collapsed": "Formulari del destinatari de la targeta de regal replegat"
+    }
+  },
+  "ash": {
+    "drawer_view_all": "Mostra-ho tot: {{ title }}"
+  }
+}

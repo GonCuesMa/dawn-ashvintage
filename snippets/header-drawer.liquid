@@ -70,7 +70,8 @@
                                   href="{{ link.url }}"
                                   class="menu-drawer__menu-item menu-drawer__menu-item--all link link--text list-menu__item focus-inset"
                                 >
-                                  Ver todo: {{ link.title | escape }}
+                                  {%- assign view_all_title = link.title | escape -%}
+                                  {{ 'ash.drawer_view_all' | t: title: view_all_title }}
                                 </a>
                               </li>
                             {%- endif -%}
