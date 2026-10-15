@@ -49,18 +49,13 @@
           "type": "description",
           "settings": {}
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Compartir"
-          }
-        },
         "tab_details": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Detalles del producto",
             "icon": "shirt",
-            "content": "<p>Lote de ropa vintage y de segunda mano de marcas de calidad, revisado prenda a prenda a mano.</p><p>Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p><p>Nuestros lotes no incluyen calzado.</p>"
+            "content": "<p>Lote de ropa vintage y de segunda mano de marcas de calidad, revisado prenda a prenda a mano.</p><p>Garantizamos que al menos el 90% de las prendas de cada lote es de Clase A.</p><p>Nuestros lotes no incluyen calzado.</p>",
+            "page": ""
           }
         },
         "tab_shipping": {
@@ -68,7 +63,8 @@
           "settings": {
             "heading": "Envío y devoluciones",
             "icon": "truck",
-            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas. Envío gratis a partir de 300 €.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>"
+            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas. Envío gratis a partir de 300 €.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>",
+            "page": ""
           }
         },
         "tab_info": {
@@ -76,7 +72,14 @@
           "settings": {
             "heading": "Información importante",
             "icon": "check_mark",
-            "content": "<p>El contenido exacto de cada lote puede variar en tallas, colores y modelos. Las imágenes son orientativas.</p><p>Si tienes dudas sobre un lote, escríbenos antes de comprar.</p>"
+            "content": "<p>El contenido exacto de cada lote puede variar en tallas, colores y modelos. Las imágenes son orientativas.</p><p>Si tienes dudas sobre un lote, escríbenos antes de comprar.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir"
           }
         }
       },
@@ -112,6 +115,10 @@
     "disclosures": {
       "type": "disclosures",
       "settings": {
+        "heading": "Divulgaciones",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
       }
