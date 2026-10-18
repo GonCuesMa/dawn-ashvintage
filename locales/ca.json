@@ -3917,9 +3917,72 @@
           "gallery_view": {
             "overdue": "Pagament endarrerit",
             "due": "El pagament venç el {{date}}",
-            "due_today": "El pagament venç avui"
+            "due_today": "El pagament venç avui",
+            "due_without_date": "Pagament vençut",
+            "due_on_fulfillment": "El pagament venç en el moment de la preparació de la comanda",
+            "pay_to_confirm": "Pagar per confirmar",
+            "payment_not_due": "Pagament encara no vençut"
           }
-        }
+        },
+        "sort_currently_sorted_by_accessibility_label": "Actualment, estan ordenades per: {{option}}",
+        "carousel": {
+          "one_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}})",
+          "two_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}})",
+          "three_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}}), {{lineItemName3}} (quantitat: {{lineItemQuantity3}})",
+          "four_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}}), {{lineItemName3}} (quantitat: {{lineItemQuantity3}}), {{lineItemName4}} (quantitat: {{lineItemQuantity4}})",
+          "five_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}}), {{lineItemName3}} (quantitat: {{lineItemQuantity3}}), {{lineItemName4}} (quantitat: {{lineItemQuantity4}}), {{lineItemName5}} (quantitat: {{lineItemQuantity5}})",
+          "six_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}}), {{lineItemName3}} (quantitat: {{lineItemQuantity3}}), {{lineItemName4}} (quantitat: {{lineItemQuantity4}}), {{lineItemName5}} (quantitat: {{lineItemQuantity5}}), {{lineItemName6}} (quantitat: {{lineItemQuantity6}})",
+          "six_and_more_products_accessibility_label": "La comanda inclou {{lineItemName1}} (quantitat: {{lineItemQuantity1}}), {{lineItemName2}} (quantitat: {{lineItemQuantity2}}), {{lineItemName3}} (quantitat: {{lineItemQuantity3}}), {{lineItemName4}} (quantitat: {{lineItemQuantity4}}), {{lineItemName5}} (quantitat: {{lineItemQuantity5}}), {{lineItemName6}} (quantitat: {{lineItemQuantity6}}) i altres articles",
+          "view_order_details": "Veure detalls de la comanda",
+          "previous": "Anterior",
+          "next": "Següent"
+        },
+        "show_order_actions_accessibility_label": "Mostrar accions per a la comanda {{name}}",
+        "empty_state_title_for_pending_orders": "No hi ha cap comanda pendent",
+        "more_than_four_products_accessibility_label": "La comanda inclou {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} i {{numberOfAdditionalProducts}} productes més",
+        "plus_more_products": "{{numberOfAdditionalProducts}} productes",
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Veure la comanda per obtenir informació",
+            "estimated_delivery": "S'estima per al {{date}}",
+            "last_updated": "Darrera actualització: {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Entrega estimada: {{date}}"
+          }
+        },
+        "more_than_three_products_accessibility_label": "La comanda inclou {{lineItemName1}}, {{lineItemName2}} i {{numberOfAdditionalProducts}} productes més",
+        "plus_more": "Més de {{numberOfAdditionalProducts}}",
+        "filter": {
+          "clear_section": "Esborrar secció",
+          "apply": "Aplicar",
+          "date": {
+            "start_date": "Data d'inici",
+            "end_date": "Data de finalització",
+            "title": "Data de la comanda",
+            "today": "Avui",
+            "last_7_days": "Darrers set dies",
+            "last_30_days": "Darrers 30 dies",
+            "last_90_days": "Darrers 90 dies",
+            "last_365_days": "Darrers 12 mesos",
+            "custom": "Personalitzat"
+          },
+          "date_section_accessibility_label": "Filtrar per {{sectionTitle}}"
+        },
+        "no_order_banner": "Crea una comanda per provar la teva extensió a la pàgina d'estat de la comanda.",
+        "location_filter_picker": {
+          "all_location": "Totes les ubicacions",
+          "current_location": "Ubicació actual",
+          "switch_view": "Canviar vista"
+        },
+        "empty_state_with_location_title": "No hi ha comandes per a {{locationName}}",
+        "view_order": "Veure comanda",
+        "view_order_accessibility_label": "Veure comanda {{orderName}}",
+        "empty_state_redesign_cta": "Comprar ara",
+        "empty_state_redesign_subtitle": "Tot a punt per comprar?",
+        "empty_state_redesign_welcome": "Et donem la benvinguda",
+        "empty_state_redesign_welcome_with_name": "Et donem la benvinguda, {{firstName}}",
+        "sort_options_accessibility_label": "Opcions de classificació per a comandes confirmades"
       },
       "order_status": {
         "delivered": "Lliurat el {{date}}",
@@ -4046,7 +4109,74 @@
           "unknown_carrier_banner": "Contacta'ns per a més informació"
         },
         "arrives_tomorrow": "Arriba demà",
-        "arrives_today": "Arriba avui"
+        "arrives_today": "Arriba avui",
+        "canceled_label": "Cancel·lat",
+        "canceled_title": "La teva comanda s'ha cancel·lat",
+        "come_back": "Torna a aquesta pàgina per rebre actualitzacions sobre l'estat de l'enviament.",
+        "company_tracking_number": "Número de seguiment de {{company}}:",
+        "confirmed_label": "Confirmat",
+        "confirmed_title": "La teva comanda està confirmada",
+        "delivered_label": "Lliurat",
+        "estimated_delivery": "S'estima per al {{date}}",
+        "in_review_label": "En revisió",
+        "in_review_title": "La comanda s'està revisant",
+        "on_its_way_label": "De camí",
+        "out_for_delivery_label": "Enviat al destinatari",
+        "resume_tracking": "Reprendre el seguiment",
+        "submitted_label": "Enviat",
+        "track_shipment": "Fer seguiment de l'enviament",
+        "request_return": "Sol·licitar devolució",
+        "attempted_delivery_label": "Intent d'entrega",
+        "preparing_for_shipping_label": "En preparació per a l'enviament",
+        "ready_for_pickup_label": "A punt per a la jubilació",
+        "ready_for_pickup_description": "Aquests articles estan a punt per a la recollida. Porta la confirmació de la comanda quan vinguis a recollir-los.",
+        "picked_up_label": "Retirat",
+        "submitted_description": "Revisa els detalls de la comanda i el pagament.",
+        "last_updated": "Última actualització el {{date}}",
+        "multiple_shipments_label": "Diversos enviaments",
+        "view_order_for_details": "Veure la comanda per obtenir informació",
+        "confirmed_description_digital": "Rebràs un correu electrònic quan la comanda estigui a punt.",
+        "delivered_description_gift_card": {
+          "one": "La targeta regal s'ha enviat per correu electrònic.",
+          "other": "Les targetes de regal es van enviar per correu electrònic.",
+          "many": "Les targetes de regal es van enviar per correu electrònic."
+        },
+        "confirmed_description_pickup": "Estem preparant aquests articles per a retirada.",
+        "confirmed_gift_card_additional_description": {
+          "one": "La targeta de regal s'enviarà en un correu electrònic diferent.",
+          "other": "Cada targeta regal s'enviarà en un correu electrònic per separat.",
+          "many": "Cada targeta regal s'enviarà en un correu electrònic per separat."
+        },
+        "confirmed_description_gift_card_text": "Rebràs un missatge de text quan la teva comanda estigui a punt.",
+        "delivered_description_gift_card_text": {
+          "one": "La targeta regal s'ha enviat per missatge de text.",
+          "other": "Les targetes de regal es van enviar per missatge de text.",
+          "many": "Les targetes de regal es van enviar per missatge de text."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "La targeta de regal s'enviarà en un missatge de text diferent.",
+          "other": "Cada targeta regal s'enviarà en un missatge de text independent.",
+          "many": "Cada targeta regal s'enviarà en un missatge de text independent."
+        },
+        "gift_resend_success": {
+          "one": "Targeta regal reenviada",
+          "other": "Targetes regal reenviades",
+          "many": "Targetes regal reenviades"
+        },
+        "gift_resend_failure": {
+          "one": "Hi ha hagut un problema en reenviar la teva targeta regal. Torna-ho a provar o contacta amb nosaltres.",
+          "other": "Hi ha hagut un problema en reenviar les teves targetes regal. Torna-ho a provar o contacta amb nosaltres.",
+          "many": "Hi ha hagut un problema en reenviar les teves targetes regal. Torna-ho a provar o contacta amb nosaltres."
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Gestionar amb Amazon",
+            "new_window_disclaimer": "(obre una finestra nova)"
+          }
+        },
+        "attempted_to_deliver_label": "S'ha intentat el lliurament.",
+        "there_was_a_problem_label": "Hi ha hagut un problema",
+        "buy_with_prime_logo_accessibility_label": "Logotip d'Amazon Buy with Prime"
       },
       "status_mark_as_delivered": "Marcar com a entregat",
       "buy_again": "Tornar a comprar",
