@@ -821,10 +821,334 @@
               "mt": "Introdueix un número d'IVA vàlid de Malta",
               "nl": "Introdueix un número d'IVA vàlid dels Països Baixos",
               "pl": "Introdueix un número d'IVA vàlid de Polònia",
-              "pt": "Introdueix un número d'IVA vàlid de Portugal"
+              "pt": "Introdueix un número d'IVA vàlid de Portugal",
+              "ro": "Introdueix un número d'IVA vàlid de Romania",
+              "sk": "Introdueix un número d'IVA vàlid d'Eslovàquia",
+              "si": "Introdueix un número d'IVA vàlid d'Eslovènia",
+              "es": "Introdueix un número d'IVA vàlid d'Espanya",
+              "se": "Introdueix un número d'IVA vàlid de Suècia",
+              "gb": "Introdueix un número d'IVA vàlid del Regne Unit"
+            },
+            "service_unavailable": "Servei de validació no disponible",
+            "service_error": "Servei de validació no disponible"
+          },
+          "accessibility": {
+            "status": {
+              "validating": "Validació del número d'IVA en curs",
+              "valid": "El número d'IVA és vàlid",
+              "applied": "S'ha aplicat l'exempció d'IVA",
+              "domestic": "No s'ha aplicat l'exempció d'IVA",
+              "invalid_number": "L'exempció d'IVA ha fallat",
+              "service_unavailable": "No s'ha pogut verificar l'exempció d'IVA",
+              "service_error": "No s'ha pogut verificar l'exempció d'IVA"
             }
           }
         }
+      },
+      "payment_collection": {
+        "cancelled": "Aquest pagament ja no és necessari. Visita la pàgina de comandes per obtenir més informació.",
+        "paid": "Aquest pagament ja s'ha enviat. Visita la pàgina de comandes per obtenir més informació."
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "Es requereix una interacció d'extensió per completar el pagament."
+        }
+      },
+      "embed": {
+        "header": {
+          "review_order": "Escriu una ressenya de la comanda"
+        },
+        "shipping": {
+          "shipping_options": "Veure totes les opcions d'enviament"
+        },
+        "payment": {
+          "payment_options": "Veure totes les opcions de pagament"
+        }
+      },
+      "too_many_requests": {
+        "title": "Massa intents de pagament",
+        "body": "Espera uns minuts i torna-ho a intentar des del carret.",
+        "return_to_cart": "Tornar al carretó",
+        "body_no_cart": "Espera uns minuts i torna-ho a intentar."
+      },
+      "address_management": {
+        "saved_with_store": "Desat en aquesta botiga"
+      },
+      "ucp": {
+        "standard_errors": {
+          "item_unavailable": "L'article no es pot comprar"
+        },
+        "totals": {
+          "subtotal": "Subtotal",
+          "items_discount": "Descomptes en articles",
+          "discount": "Descomptes de la comanda",
+          "fulfillment": "Enviament",
+          "tax": "Impostos",
+          "duty": "Aranzels",
+          "fee": "Càrrec",
+          "total": "Total"
+        },
+        "validation_errors": {
+          "invalid_gid": "no és un GID de %{type} vàlid (s'ha rebut: %{value})",
+          "missing_destination_country": "Falta l'address_country de destinació del mètode de preparació de comandes",
+          "invalid_destination_country": "S'esperava que %{country_code} fos un dels següents: %{valid_country_codes}",
+          "unsupported_quantity_unit": "Només s'admeten les quantitats mesurades per unitat (C62) amb escala 0. Utilitza aquesta unitat o omet aquest valor."
+        }
+      },
+      "shop_wallet": {
+        "title": "Cartera digital de Shop Pay",
+        "description": "Tria el que vols utilitzar per a aquesta compra.",
+        "loading": "Carregant la cartera digital de Shop Pay…",
+        "cancel": "Cancel·lar",
+        "retry": "Tornar a intentar",
+        "return_to_hatch": "Tornar a Hatch",
+        "choose_again": "Torna a triar",
+        "payment_method": {
+          "heading": "Forma de pagament",
+          "expiry": "Vença el {{expiry}}"
+        },
+        "shipping_address": {
+          "heading": "Adreça d'enviament"
+        },
+        "confirm": {
+          "label": "Confirma la selecció",
+          "success_title": "Selecció confirmada",
+          "success_message": "La informació de la cartera digital seleccionada està a punt. Aquest prototip encara no la retorna a l'aplicació del soci.",
+          "retryable_error_title": "Selecció no compartida",
+          "retryable_error_message": "Torna a intentar confirmar la selecció de la cartera digital.",
+          "terminal_error_title": "Finalitzada la connexió amb la cartera digital",
+          "terminal_error_message": "Torna-hi i torna a obrir Shop Pay."
+        },
+        "cancelled": {
+          "title": "Selecció cancel·lada",
+          "message": "No es va compartir la informació de la cartera digital i no es va realitzar cap compra."
+        },
+        "empty": {
+          "title": "No hi ha targetes desades",
+          "message": "No hi ha targetes desades en aquesta cartera digital de Shop Pay."
+        },
+        "ineligible": {
+          "title": "No hi ha targetes elegibles",
+          "message": "Cap de les targetes desades es pot usar per a aquesta compra."
+        },
+        "expired": {
+          "title": "Aquesta sessió de la cartera digital ha caducat",
+          "message": "Torna a l'aplicació del soci i comença la compra de nou."
+        },
+        "revoked": {
+          "title": "Shop Pay ja no està connectat",
+          "message": "Torna a connectar Shop Pay a l'aplicació del soci abans de continuar."
+        },
+        "error": {
+          "title": "No s'ha pogut carregar la cartera digital de Shop Pay",
+          "message": "Torna a Hatch i intenta obrir Shop Pay de nou."
+        },
+        "ready_status": "La cartera digital de Shop Pay ja està a punt. Tria una forma de pagament."
+      },
+      "hsa_qualification_errors": {
+        "ineligible": "Aquesta comanda no és elegible per a HSA/FSA.",
+        "processing_error": "Hi ha hagut un problema en processar la teva sol·licitud d'HSA/FSA. Torna-ho a intentar o paga sense HSA/FSA.",
+        "unsupported_checkout": "HSA/FSA no està disponible per a aquesta comanda."
+      },
+      "tax": {
+        "attribution": {
+          "orders_sold_by_shop_marketplace": "Comandes venudes a través del mercat de Shop",
+          "orders_sold_by_shop_name": "Comandes venudes per %{shop_name}"
+        }
+      },
+      "split_delivery": {
+        "delivery_method": "Forma de lliurament dividida",
+        "delivery_method_menu": "Menú de forma de lliurament dividida",
+        "items_for_pickup": "Articles per al retir",
+        "inventory_issue_banner": {
+          "remove_items_or_ship": "%{ship_separately_link} o %{remove_items_link}",
+          "remove_items_or_pickup": "%{pickup_in_store_link} o %{remove_items_link}",
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "%{count} article no es pot retirar",
+              "other": "%{count} articles no es poden retirar",
+              "many": "%{count} articles no es poden retirar"
+            },
+            "cannot_be_shipped": {
+              "one": "%{count} article no es pot enviar",
+              "other": "%{count} articles no es poden enviar",
+              "many": "%{count} articles no es poden enviar"
+            }
+          },
+          "remove_item": {
+            "one": "eliminar article",
+            "other": "eliminar articles",
+            "many": "eliminar articles"
+          },
+          "ship_separately": {
+            "one": "Envia-ho per separat",
+            "other": "Enviar-los per separat",
+            "many": "Enviar-los per separat"
+          },
+          "pick_them_up_in_store": {
+            "one": "Recollir-ho a la botiga",
+            "other": "Recollir en botiga",
+            "many": "Recollir en botiga"
+          },
+          "remove_item_only": {
+            "one": "Eliminar article",
+            "other": "Eliminar articles",
+            "many": "Eliminar articles"
+          },
+          "merchandise_line_with_quantity": "%{title} (×%{quantity})"
+        },
+        "pickup_and_ship": "Retiro i enviament",
+        "ship_all_items": "Enviar tots els articles",
+        "items_for_shipping": "Articles per a enviament",
+        "separate_pickup_email_notice": "Rebràs un correu electrònic per separat quan la teva comanda estigui a punt per recollir.",
+        "pickup_items_count": {
+          "one": "Retira %{count} element",
+          "other": "Retirar %{count} articles",
+          "many": "Retirar %{count} articles"
+        },
+        "ship_items_count": {
+          "one": "Envia %{count} article",
+          "other": "Enviar %{count} articles",
+          "many": "Enviar %{count} articles"
+        },
+        "items_moved_to_shipping_toast": "Els articles que no es podien retirar es van passar a enviament",
+        "cross_border": {
+          "modal": {
+            "heading": "Canviar de país?",
+            "content": "Les adreces de retirada i d'enviament han de ser al mateix país. Si canvies de país, tots els articles es restabliran per a enviament.",
+            "change_country": "Canviar de país",
+            "country_changed_heading": "País canviat"
+          },
+          "banner": "S'ha actualitzat la forma de lliurament"
+        },
+        "all_items": "Tots els articles",
+        "items_count": {
+          "one": "%{count} article",
+          "other": "%{count} articles",
+          "many": "%{count} articles"
+        },
+        "accessibility": {
+          "status": {
+            "ship_separately": "%{items} s'enviaran per separat.",
+            "pickup_in_store": "%{items} es recolliran a la botiga.",
+            "remove_items": "S'han eliminat %{items} del carret."
+          }
+        }
+      },
+      "captcha": {
+        "title": "Completa el CAPTCHA per continuar",
+        "errors": {
+          "not_solved": "Completa el CAPTCHA per continuar"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "La teva comanda no s'ha pogut processar perquè el codi de descompte ja no està disponible. Revisa el total de la teva comanda i torna-ho a intentar."
+      },
+      "wallets": {
+        "return_to_store": "Tornar a la botiga",
+        "redirect_hint": "Se't demanarà que iniciïs sessió a {{walletName}}.",
+        "logged_in": "Connectat a {{email}}",
+        "shipping_line_label": "Enviament",
+        "payment_in_progress_title": "Pagament en curs",
+        "payment_in_progress_body": "El pagament s'està processant. La comanda es completarà de seguida.",
+        "continue_with": "Continuar amb {{walletName}}",
+        "call_to_action": "Pagar amb {{walletName}}",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} no està disponible",
+            "description": "{{walletName}} no estava disponible. Fes servir una forma de pagament diferent o torna-ho a intentar més tard.",
+            "instructions": "S'ha produït un error amb {{walletName}}. Torna a la botiga per a tornar-ho a provar o paga d'una altra manera.",
+            "unavailable_for_country": "{{walletName}} no està disponible a {{countryName}}. Selecciona una forma de pagament diferent per completar la compra."
+          },
+          "generic": "Hi ha hagut un problema amb {{walletName}}. Torna-ho a provar o utilitza una altra forma de pagament.",
+          "terminal": "Hi ha hagut un problema amb {{walletName}}. Fes servir una altra forma de pagament.",
+          "detour": {
+            "stock_problems": "Alguns articles ja no estan disponibles. Tanca {{walletName}} i torna-ho a provar.",
+            "price_change": "Els preus d'alguns articles han canviat. Tanca {{walletName}} per revisar la teva comanda i torna-ho a provar.",
+            "queue": "Se t'ha ubicat en una llista d'espera per a procedir amb el pagament. Tanca {{walletName}} per a continuar.",
+            "currency_change": "No pots utilitzar una adreça diferent amb {{walletName}}. Utilitza l'adreça original o prova-ho amb una altra forma de pagament."
+          },
+          "unsupported": {
+            "address": "El comerciant no pot realitzar lliuraments a l'adreça d'enviament seleccionada.",
+            "postal_code": "Aquesta sucursal no s'admet",
+            "wallet_is_unavailable": "{{walletName}} no es pot utilitzar amb aquesta adreça. Tria una adreça diferent o tanca {{walletName}} per completar la teva compra."
+          },
+          "outdated": {
+            "shipping_method": "Les opcions d'enviament de la comanda han canviat. Revisa la selecció.",
+            "payment_terms": "Les condicions de pagament han canviat. Revisa la comanda."
+          },
+          "invalid": {
+            "shipping_address": "Introduir una adreça d'enviament vàlida",
+            "billing_address": "Introduïu una adreça de facturació vàlida",
+            "shipping_option": "Seleccionar una opció d'enviament vàlida",
+            "email": "Introdueix un correu electrònic vàlid",
+            "zone": "Introdueix un estat o província vàlids",
+            "postal_code": "Introdueix un codi postal vàlid",
+            "reduction_code": "Introdueix un codi de descompte o una targeta regal vàlids",
+            "billing_must_match_shipping": "Ha de coincidir amb l'adreça d'enviament.",
+            "phone": "Introdueix un número de telèfon vàlid",
+            "emirate": "Introduir un emirat vàlid",
+            "billing_zone": "Introdueix un estat o província vàlid per a l'adreça de facturació",
+            "billing_phone": "Introdueix un número de telèfon vàlid per a l'adreça de facturació",
+            "billing_zip": "Introdueix un codi postal vàlid per a l'adreça de facturació"
+          },
+          "missing": {
+            "first_name": "Introdueix un nom",
+            "last_name": "Introdueix un cognom",
+            "address1": "Introdueix una adreça",
+            "address2": "Introdueix un apartament, suite, etc.",
+            "city": "Introdueix una ciutat",
+            "province": "Selecciona un estat o província",
+            "country": "Selecciona un país o regió",
+            "zip": "Introdueix un codi postal",
+            "phone": "Introduir un número de telèfon",
+            "billing_first_name": "Introdueix el nom de l'adreça de facturació",
+            "billing_address1": "Introdueix una adreça de facturació",
+            "billing_address2": "Introdueix un apartament, local, etc. per a l'adreça de facturació",
+            "billing_city": "Introdueix la ciutat de l'adreça de facturació",
+            "billing_province": "Selecciona un estat o província per a l'adreça de facturació"
+          }
+        }
+      }
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Següent"
+    },
+    "links": {
+      "powered_by_shopify": "Tecnologia de Shopify",
+      "learn_more": "Llegir més"
+    },
+    "feed": {
+      "more": "Més"
+    },
+    "attributes": {
+      "email": "correu electrònic",
+      "password": "contrasenya",
+      "password_confirmation": "la confirmació de la contrasenya",
+      "first_name": "Nom",
+      "last_name": "Cognom",
+      "body": "missatge",
+      "signature": "Adreça"
+    },
+    "addresses": {
+      "zip_code": "Codi postal",
+      "postal_code": "Codi postal",
+      "postcode": "Codi postal",
+      "pincode": "Codi postal",
+      "region": "Regió",
+      "prefecture": "Prefectura",
+      "province": "Província",
+      "state": "Estat",
+      "state_and_territory": "Estat/Territori",
+      "county": "Comtat",
+      "emirate": "Emirat",
+      "governorate": "Província",
+      "confirm": "Estàs segur que vols eliminar aquesta adreça?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Característiques"
       }
     }
   },
