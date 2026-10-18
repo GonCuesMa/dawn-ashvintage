@@ -688,7 +688,29 @@
         "address_city_contains_emojis": "La ciutat no pot contenir emojis",
         "address_company_contains_emojis": "El nom de l'empresa no pot contenir emojis",
         "address_phone_contains_emojis": "El número de telèfon no pot contenir emojis",
-        "address_zip_contains_emojis": "El codi postal no pot contenir emojis"
+        "address_zip_contains_emojis": "El codi postal no pot contenir emojis",
+        "address_line2_contains_mathematical_symbols": "La segona línia de l'adreça no pot contenir símbols matemàtics",
+        "address_block_too_long": "El bloc és massa llarg (el màxim és de {{count}} caràcters)",
+        "address_block_contains_emojis": "El bloc no pot contenir emojis",
+        "address_block_contains_html_tags": "El bloc no pot contenir etiquetes HTML",
+        "address_block_contains_mathematical_symbols": "El bloc no pot contenir símbols matemàtics",
+        "address_area_too_long": "L'àrea és massa llarga (el màxim és de {{count}} caràcters)",
+        "address_area_contains_emojis": "L'àrea no pot contenir emojis",
+        "address_area_contains_html_tags": "L'àrea no pot contenir etiquetes HTML",
+        "address_area_contains_mathematical_symbols": "L'àrea no pot contenir símbols matemàtics",
+        "custom_field": {
+          "cart_metafield_value_too_long_with_limit": {
+            "many": "Introdueix %{count} caràcters o menys."
+          },
+          "cart_metafield_value_too_short_with_limit": {
+            "many": "Introdueix almenys %{count} caràcters."
+          }
+        },
+        "gift_card_not_found": "No s'ha trobat aquesta targeta regal",
+        "delivery_address_code_too_long": "El codi de l'adreça és massa llarg (el màxim és de %{count} caràcters)",
+        "delivery_address_code_contains_emojis": "El codi de l'adreça no pot contenir emojis",
+        "delivery_address_code_contains_html_tags": "El codi de l'adreça no pot contenir etiquetes HTML",
+        "delivery_address_code_contains_mathematical_symbols": "El codi de l'adreça no pot contenir símbols matemàtics"
       },
       "b2b_errors": {
         "lost_permissions_title": "No hi ha permisos de sucursal"
@@ -1033,7 +1055,8 @@
             "pickup_in_store": "%{items} es recolliran a la botiga.",
             "remove_items": "S'han eliminat %{items} del carret."
           }
-        }
+        },
+        "pickup_all_items": "Retirar tots els articles"
       },
       "captcha": {
         "title": "Completa el CAPTCHA per continuar",
@@ -1109,6 +1132,265 @@
             "billing_province": "Selecciona un estat o província per a l'adreça de facturació"
           }
         }
+      },
+      "local_pickup": {
+        "no_stores_found": "No s'han trobat botigues",
+        "could_not_resolve_address": "No s'ha trobat l'adreça. Torna-ho a provar o fes servir una altra adreça.",
+        "paginator": {
+          "accessibility_label": "Paginació de recollida a la botiga",
+          "previous": "Pàgina anterior",
+          "next": "Pàgina següent",
+          "label": {
+            "one": "%{first} - %{last} de %{count} botiga",
+            "other": "%{first} - %{last} de %{count} botigues",
+            "many": "%{first} - %{last} de %{count} botigues"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Mostrar %{count} sucursal més",
+          "other": "Mostrar %{count} sucursals més",
+          "many": "Mostrar %{count} sucursals més"
+        },
+        "location_address_search_label": "Adreça",
+        "all_stores_far_away": {
+          "title": "Les sucursals més properes són a més de %{distance} de distància",
+          "description": "Selecciona una sucursal o %{ship_to_address_link}",
+          "ship_to_address_link": "enviar a l'adreça",
+          "title_with_location": "La sucursal més propera és a més de %{distance} de %{location}",
+          "description_with_location": "%{change_location_link} o %{ship_to_address_link}",
+          "change_location_link": "Canvia la teva ubicació",
+          "title_with_specific_location": "La sucursal més propera on el teu article es troba disponible està a més de %{distance} de %{location}",
+          "title_with_item": {
+            "one": "La sucursal més propera amb el teu article disponible és a més de %{distance} de %{location}",
+            "other": "La sucursal més propera amb els teus articles disponibles és a més de %{distance} de %{location}",
+            "many": "La sucursal més propera amb els teus articles disponibles és a més de %{distance} de %{location}"
+          }
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Les sucursals seleccionades prèviament ja no estan disponibles",
+          "description": "Hem seleccionat la sucursal més propera amb els teus articles en estoc"
+        },
+        "pick_up_location": "Lloc de retir",
+        "no_pickup_locations_found": "No s'han trobat llocs de retir",
+        "pickup_unavailable_banner_body": {
+          "try_different_location": "Prova amb una ubicació diferent",
+          "ship_to_address": "enviar a una adreça",
+          "there_are_no_stores": "No hi ha cap botiga prop de la teva adreça o els articles no estan disponibles per a recollida.",
+          "ship_items": "Envia els teus articles",
+          "search_elsewhere": "busca en un altre lloc",
+          "ship_items_or_search_elsewhere": "%{ship_items} o %{search_elsewhere}",
+          "search_elsewhere_standalone": "Cercar en un altre lloc"
+        },
+        "geolocation": {
+          "permission_not_allowed": "Permet compartir la ubicació o fes una cerca com a alternativa."
+        },
+        "location_address_search_placeholder": "%{postal_code_label} o adreça",
+        "location_closest": "Sucursal més propera amb el teu article disponible",
+        "toggle_multiple_locations": "Més de %{count} altres sucursals",
+        "location_information_far_away": {
+          "one": "%{count} sucursal té el teu article",
+          "other": "%{count} sucursals tenen el teu article",
+          "many": "%{count} sucursals tenen el teu article"
+        },
+        "location_nearby": {
+          "one": "Hi ha %{count} sucursal propera amb el teu article disponible",
+          "other": "Hi ha %{count} sucursals a prop amb el teu article disponible",
+          "many": "Hi ha %{count} sucursals a prop amb el teu article disponible"
+        },
+        "location_nearby_short": {
+          "one": "%{count} sucursal propera amb el teu article disponible",
+          "other": "%{count} sucursals properes amb el teu article disponible",
+          "many": "%{count} sucursals properes amb el teu article disponible"
+        },
+        "location_far_away": {
+          "one": "%{count} sucursal amb el teu article disponible",
+          "other": "%{count} sucursals amb el teu article disponible",
+          "many": "%{count} sucursals amb el teu article disponible"
+        },
+        "toggle_more_locations": {
+          "one": "%{count} sucursal més",
+          "other": "%{count} sucursals més",
+          "many": "%{count} sucursals més"
+        },
+        "pickup_unavailable_banner_title": {
+          "one": "No hi ha sucursals amb el teu article disponible",
+          "other": "No hi ha sucursals amb els teus articles disponibles",
+          "many": "No hi ha sucursals amb els teus articles disponibles"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "No hi ha sucursals a %{country} amb el teu article disponible",
+          "other": "No hi ha sucursals a %{country} amb els teus articles disponibles",
+          "many": "No hi ha sucursals a %{country} amb els teus articles disponibles"
+        },
+        "title": "Sucursal",
+        "location_closest_one_item": "Sucursal més propera amb el teu article",
+        "location_closest_other_items": "Sucursal més propera amb els teus articles",
+        "location_information_far_away_one_item": {
+          "one": "Hi ha %{count} sucursal amb el teu article",
+          "other": "Hi ha %{count} sucursals amb el teu article",
+          "many": "Hi ha %{count} sucursals amb el teu article"
+        },
+        "location_information_far_away_other_items": {
+          "one": "Hi ha %{count} sucursal amb els teus articles",
+          "other": "Hi ha %{count} sucursals amb els teus articles",
+          "many": "Hi ha %{count} sucursals amb els teus articles"
+        },
+        "location_nearby_one_item": {
+          "one": "Hi ha %{count} sucursal propera amb el teu article",
+          "other": "Hi ha %{count} sucursals properes amb el teu article",
+          "many": "Hi ha %{count} sucursals properes amb el teu article"
+        },
+        "location_nearby_other_items": {
+          "one": "Hi ha %{count} sucursal propera amb els teus articles",
+          "other": "Hi ha %{count} sucursals properes amb els teus articles",
+          "many": "Hi ha %{count} sucursals properes amb els teus articles"
+        },
+        "location_nearby_short_one_item": {
+          "one": "%{count} sucursal propera amb el teu article",
+          "other": "%{count} sucursals properes amb el teu article",
+          "many": "%{count} sucursals properes amb el teu article"
+        },
+        "location_nearby_short_other_items": {
+          "one": "%{count} sucursal propera amb els teus articles",
+          "other": "%{count} sucursals properes amb els teus articles",
+          "many": "%{count} sucursals properes amb els teus articles"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} sucursal amb el teu article",
+          "other": "%{count} sucursals amb el teu article",
+          "many": "%{count} sucursals amb el teu article"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} sucursal amb els teus articles",
+          "other": "%{count} sucursals amb els teus articles",
+          "many": "%{count} sucursals amb els teus articles"
+        },
+        "location_selected": "La teva sucursal seleccionada",
+        "stock_details": {
+          "out_of_stock": "Esgotat",
+          "ship_separately": {
+            "one": "L'article s'enviarà per separat",
+            "other": "Els articles s'enviaran per separat",
+            "many": "Els articles s'enviaran per separat"
+          },
+          "remove_items": {
+            "one": "L'article s'eliminarà de la teva comanda",
+            "other": "Els articles s'eliminaran de la teva comanda",
+            "many": "Els articles s'eliminaran de la teva comanda"
+          }
+        },
+        "unavailable_item_count": {
+          "one": "%{count} article no disponible",
+          "other": "%{count} articles no disponibles",
+          "many": "%{count} articles no disponibles"
+        },
+        "ship_separately_notice": {
+          "one": "%{count} article s'enviarà per separat",
+          "other": "%{count} articles s'enviaran per separat",
+          "many": "%{count} articles s'enviaran per separat"
+        }
+      },
+      "payment_errors": {
+        "generic_error": "S'ha produït un error en processar el teu pagament. Torna-ho a intentar o utilitza una forma de pagament diferent.",
+        "rejected_transaction": "S'ha rebutjat el teu pagament. Torna-ho a intentar o utilitza una forma de pagament diferent.",
+        "credit_card_processing": "No es pot processar el teu pagament per raons tècniques. Torna-ho a provar d'aquí a uns minuts o utilitza una forma de pagament diferent.",
+        "order_total_changed": "El total de la teva comanda ha canviat. Revisa-ho i torna-ho a intentar.",
+        "payment_processing": "No es pot processar el teu pagament per raons tècniques. Torna-ho a intentar o utilitza una forma de pagament diferent.",
+        "payment_processing_no_retry": "No es pot processar el teu pagament per raons tècniques. Prova amb una forma de pagament diferent.",
+        "paypal_zero_amount": "No pots utilitzar PayPal per a comandes de %{amount}. Confirma la teva comanda i continua amb el procés de pagament sense PayPal.",
+        "paypal_invalid_token": "PayPal no estava disponible. Torna-ho a provar o fes servir una opció de pagament diferent.",
+        "pay_later_failed": "S'ha produït un error en processar el teu pagament amb Pagament en 30 dies. Selecciona un altre mètode de pagament i torna-ho a provar.",
+        "three_d_secure_failed": "No s'ha pogut verificar el teu pagament. Torna-ho a intentar o utilitza una forma de pagament diferent.",
+        "three_d_secure_throttled": "Massa intents. Espera abans de tornar-ho a intentar",
+        "subscription_agreement_blank": "Per comprar una subscripció, has de desar les teves dades de pagament. Per continuar, confirma que hi estàs d'acord o elimina els articles de subscripció de la teva comanda.",
+        "three_d_secure_failed_duplicate": "L'autenticació 3D Secure de la targeta de crèdit ha fallat perquè ja hi ha una altra autenticació en curs.",
+        "insufficient_funds": "El teu pagament ha estat rebutjat a causa de saldo insuficient. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "checkout_amount_changed": "No s'ha pogut processar el pagament perquè l'import a pagar ha canviat. Revisa la comanda i torna-ho a intentar.",
+        "deferred_payment_not_allowed": "Els pagaments ajornats no estan permesos. Revisa la comanda i torna-ho a intentar.",
+        "deferred_payment_required": "Aquesta comanda requereix un pagament diferit. Revisa la comanda i torna-ho a provar.",
+        "deferred_amount_changed": "No s'ha pogut processar el pagament perquè l'import del pagament ajornat ha canviat. Revisa la comanda i torna-ho a intentar.",
+        "deferred_date_changed": "No s'ha pogut processar el pagament perquè la data del pagament diferit ha canviat. Revisa la comanda i torna-ho a intentar.",
+        "multiple_deferred_payment_not_allowed": "Només es permet un pagament ajornat per sol·licitud. Revisa la teva sol·licitud i torna-ho a intentar.",
+        "shipping_must_match_billing": "L'adreça de facturació ha de coincidir amb la d'enviament. Utilitza una forma de pagament diferent.",
+        "pick_up_card": "La teva targeta ha estat rebutjada. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "cannot_verify": "No s'han pogut verificar les teves dades de pagament. Verifica les dades de la teva targeta i torna-ho a provar.",
+        "invalid_number": "Introdueix un número de targeta vàlid",
+        "invalid_expiry_date": "Introdueix una data de venciment vàlida",
+        "invalid_cvc": "Introdueix un codi de seguretat vàlid",
+        "expired_card": "La teva targeta ha caducat. Fes servir una forma de pagament diferent.",
+        "card_declined": "La teva targeta ha estat rebutjada. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "processing_error": "S'ha produït un error en processar el pagament. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "call_issuer": "La teva targeta ha estat rebutjada. Fes servir una forma de pagament diferent o contacta amb el teu banc per obtenir més informació.",
+        "test_mode_live_card": "Aquesta botiga no pot acceptar comandes reals ni pagaments reals.",
+        "transient_error": "S'ha produït un error en processar el teu pagament. Intenta actualitzar aquesta pàgina o revisa la teva connexió a internet.",
+        "missing_shipping_address": "No s'ha pogut processar el teu pagament perquè falta la teva adreça d'enviament. Introdueix una adreça d'enviament i torna-ho a intentar.",
+        "invalid_shipping_address": "No s'ha pogut processar el teu pagament perquè no hem pogut trobar la teva adreça d'enviament. Comprova la teva adreça d'enviament i torna-ho a intentar.",
+        "successful_offsite_with_gift_card_error": "S'ha produït un error en processar el pagament amb targeta regal. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "development_store_order_limit_reached": "Has superat el nombre límit de comandes en una botiga en desenvolupament amb aquest processador de pagaments. Per fer una altra comanda, hauràs d'utilitzar una passarel·la de pagament de prova. Obtén més informació sobre %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Per fer una comanda de prova, hauràs d'utilitzar una passarel·la de pagament de prova. Obtén més informació sobre %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "les comandes de prova a les botigues en desenvolupament",
+        "method_not_available": "La forma de pagament sol·licitada no està disponible. Selecciona una altra forma de pagament i torna-ho a intentar.",
+        "available_methods_updated": "Les formes de pagament disponibles s'han actualitzat.",
+        "selected_payment_method": "S'ha produït un problema amb la teva forma de pagament seleccionada i no se t'ha fet el càrrec. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "payment_method_billing_address": "Hi ha hagut un problema amb l'adreça de facturació de la forma de pagament seleccionada. Revisa l'adreça i torna-ho a intentar o utilitza una altra forma de pagament.",
+        "processing_error_checkout_as_guest": "S'ha produït un error al processar el pagament. Torna-ho a intentar amb una altra forma de pagament o {{checkout_as_guest_link}}.",
+        "installments": {
+          "retry_same_instrument": {
+            "heading": "Revisa la informació de la targeta",
+            "body": "Actualitza la informació de la targeta o tria una altra targeta"
+          },
+          "retry_different_instrument": {
+            "heading": "S'ha rebutjat la targeta",
+            "body": "Torna-ho a intentar o tria una altra targeta"
+          },
+          "restart_payment_method": {
+            "heading": "S'ha esgotat el temps de la sessió",
+            "body": "Tria un pla de pagament per reiniciar"
+          }
+        },
+        "amount_too_small": "L'import mínim de pagament ha de ser superior a 0,50 USD. Torna-ho a provar amb un import superior.",
+        "payment_above_threshold": "L'import del pagament supera el límit monetari per a aquesta regió. Redueix el total i torna-ho a intentar.",
+        "risky": "S'ha produït un error en processar el teu pagament. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "expired_buyer_action": "El temps de la forma de pagament ha finalitzat. Torna-ho a intentar.",
+        "three_d_secure_failed_payment_method": "No s'ha pogut verificar la teva targeta. Torna-ho a provar o afegeix una targeta diferent.",
+        "name_mismatch": "Revisa les dades de la targeta. El nom de la targeta i l'adreça de facturació no coincideixen.",
+        "payment_method_not_applicable": "Aquesta forma de pagament no és aplicable. Utilitza una forma de pagament diferent.",
+        "shop_pay_wallet_not_available": "Shop Pay no està disponible per a aquest pagament.",
+        "market_manager_blocks_wallet_payments": "La forma de pagament no s'admet al teu país.",
+        "paypal_over_capture": "El total de la teva comanda s'ha actualitzat. Paga amb {{walletName}} per completar la teva comanda.",
+        "test_mode_enabled_only_test_cards": "El mode de prova està activat, només es poden afegir targetes de crèdit de prova.",
+        "captcha_required": "Introdueix la informació de pagament i resol el CAPTCHA per completar la compra.",
+        "captcha_required_without_payment_information": "Resol el CAPTCHA per completar la compra.",
+        "shipping_company_required_error": "{{shopName}} necessita un nom d'empresa per a l'adreça d'enviament.",
+        "payment_credential_delegation_error": "Hi ha hagut un problema en processar el pagament. Tria una nova forma de pagament.",
+        "cancelled_payment": "S'ha cancel·lat el teu pagament. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "currency": {
+          "no_longer_supported": "La moneda de la botiga ja no s'admet."
+        },
+        "installments_payment_method_incompatible": "La forma de pagament seleccionada no es pot utilitzar amb quotes. Tria una altra forma de pagament.",
+        "missing_cvc": "Introdueix un codi de seguretat",
+        "local_payment_method_amount_out_of_range": "%{payment_method} només es pot utilitzar per a pagaments entre %{minimum} i %{maximum}.",
+        "local_payment_method_unavailable": "%{payment_method} no està disponible",
+        "custom_redeemable_no_longer_available": "Aquesta oferta ja no està disponible.",
+        "duplicate_autopay_card": "Aquesta targeta està vinculada a quotes pròximes. Paga d'una altra manera o {{update_payment_details_link}}",
+        "duplicate_autopay_card_link": "actualitza la informació de pagament",
+        "duplicate_autopay_card_without_link": "Aquesta targeta està vinculada a quotes pendents. Paga d'una altra manera."
+      },
+      "shipping_errors": {
+        "shipping_method": "Les opcions d'enviament de la teva comanda han canviat. Revisa la selecció.",
+        "shipping_method_not_available": "El teu carret s'ha actualitzat i els articles que has afegit no es poden enviar a la teva adreça. Elimina els articles per completar la teva comanda.",
+        "shipping_method_not_available_generic": {
+          "one": "La comanda no es pot enviar a l'adreça seleccionada. Revisa la teva adreça per comprovar que sigui correcta i torna-ho a intentar, o bé selecciona'n una altra.",
+          "other": "Alguns articles del teu carret no es poden enviar a l'adreça que has indicat. Revisa la teva adreça per comprovar que sigui correcta i torna-ho a intentar, o bé selecciona'n una altra.",
+          "many": "Alguns articles del teu carret no es poden enviar a l'adreça que has indicat. Revisa la teva adreça per comprovar que sigui correcta i torna-ho a intentar, o bé selecciona'n una altra."
+        },
+        "shipping_method_not_available_updated": {
+          "one": "L'article que has afegit no es pot enviar a la teva ubicació. Elimina'l per completar el pagament, o posa't en contacte amb la botiga.",
+          "other": "Un o més articles que has afegit no es poden enviar a la teva ubicació. Elimina'ls per completar el pagament, o posa't en contacte amb la botiga.",
+          "many": "Un o més articles que has afegit no es poden enviar a la teva ubicació. Elimina'ls per completar el pagament, o posa't en contacte amb la botiga."
+        },
+        "payment_method_not_supported": "No pots utilitzar aquesta forma de pagament a %{country}. Utilitza una altra forma de pagament per fer l'enviament a aquest país.",
+        "empty_state": "Introdueix la teva adreça d'enviament per veure els mètodes disponibles."
       }
     },
     "pagination": {
