@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -563,6 +572,400 @@
       "tag_rework": "Rework",
       "tag_vintage": "Vintage",
       "tag_cuero": "Cuir"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "payment": {
+        "lpm": {
+          "konbini": {
+            "voucher": {
+              "expiry_date_time": "%{date} a les %{time} JST",
+              "copy_code": "Copiar %{label}",
+              "code_copied": "Copiat",
+              "keep_receipt": "Guarda el teu rebut com a comprovant de pagament",
+              "view_instructions": "Veure instruccions de pagament",
+              "view_instructions_accessibility_label": "Veure instruccions de pagament (s'obre en una pestanya nova)",
+              "expired_title": "Codi de pagament vençut",
+              "expired": "Va vèncer el %{date}"
+            }
+          }
+        },
+        "payment_method_unavailable_error": "Aquesta forma de pagament no està disponible en aquest moment. Tria una altra forma de pagament.",
+        "payment_method_loading_error": "Aquesta forma de pagament encara s'està carregant. Torna-ho a intentar d'aquí a uns segons.",
+        "bank_payment_method_label": "Forma de pagament bancària",
+        "set_as_default_card": "Estableix-la com a targeta predeterminada",
+        "loading": "Carregant pagament...",
+        "konbini_label": "Konbini",
+        "paynow_label": "Paga ara",
+        "paypay_label": "PayPay",
+        "shop_pay_hsa": {
+          "label": "Vull utilitzar fons de l'HSA/FSA per a aquesta compra",
+          "description": "Paga directament amb la teva targeta de beneficis o utilitza una targeta personal i sol·licita el reemborsament per l'import elegible.",
+          "pay_button_label": "Continuar amb l'enquesta de salut",
+          "eligibility_disclaimer_html": "Truemed determina l'elegibilitat per a HSA/FSA. %{terms_link}",
+          "truemed": "Truemed",
+          "view_terms": "Veure termes",
+          "login_message": "Inicia la sessió a Shop per fer servir els teus fons d'HSA/FSA",
+          "eligible_product": "Elegible per a HSA/FSA",
+          "mixed_cart_description": "El teu carret només pot contenir productes elegibles per a HSA/FSA"
+        },
+        "scalapay_label": "Scalapay"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Saldo actual %{amount}",
+        "credit_card_expires_on_notice": "Vence el %{month}/%{year}",
+        "express_payment_gateway_label": "Exprés",
+        "manual_payment_gateway_label": "Manual",
+        "billing_address_title": "Adreça de facturació",
+        "free_label": "Gratuït"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "Introdueix un número de telèfon vàlid",
+        "handle_email_invalid": "Introdueix un correu electrònic vàlid",
+        "email_invalid": "Introdueix un correu electrònic vàlid",
+        "email_or_phone_blank": "Introdueix un correu electrònic o número de telèfon.",
+        "email_or_phone_invalid": "Introdueix un correu electrònic o un número de telèfon mòbil vàlid",
+        "address_first_name_blank": "Introdueix un nom",
+        "address_last_name_blank": "Introdueix un cognom",
+        "address_address1_blank": "Introdueix una adreça",
+        "address_address2_blank": "Introdueix un apartament, suite, etc.",
+        "address_city_blank": "Presenta la ciutat",
+        "address_country_blank": "Selecciona un país/regió",
+        "address_country_not_supported": "No fem enviaments a aquest país o regió. Introdueix una adreça d'enviament nova i torna-ho a intentar.",
+        "address_province_blank": "Selecciona un estat o província",
+        "address_company_blank": "Introdueix un nom d'empresa",
+        "address_phone_blank": "Introdueix un número de telèfon vàlid",
+        "address_zip_blank": "Introdueix la zona o el codi postal",
+        "address_zip_invalid_for_country": "Introdueix una zona o codi postal vàlid per a %{country}",
+        "address_zip_invalid_for_country_and_province": "Introdueix una zona o codi postal vàlid per a %{province}, %{country}",
+        "credit_card_name_blank": "Introdueix el teu nom exactament com apareix a la teva targeta",
+        "credit_card_name_invalid": "Introdueix el teu nom exactament com apareix a la teva targeta",
+        "credit_card_number_invalid": "Introdueix un número de targeta vàlid",
+        "credit_card_expiry_invalid": "Introdueix una data de venciment vàlida",
+        "credit_card_month_invalid": "Introdueix un mes de venciment vàlid",
+        "credit_card_year_invalid": "Introdueix un any de venciment vàlid",
+        "credit_card_start_invalid": "Introdueix una data d'inici de targeta vàlida",
+        "credit_card_start_month_invalid": "Introdueix un mes d'inici de targeta vàlid",
+        "credit_card_start_year_invalid": "Introdueix un any d'inici de targeta vàlid",
+        "credit_card_verification_value_blank": "Introdueix el codi de seguretat (CVV) de la teva targeta",
+        "delivery_line_detail_changed": "Pot ser que alguns detalls de lliurament hagin canviat. Comprova el mètode d'enviament i torna-ho a intentar.",
+        "reduction_code_code_not_found": "Introdueix un codi de descompte o una targeta regal vàlids",
+        "reduction_code_discount_not_found": "Introdueix un codi de descompte vàlid",
+        "reduction_code_gift_card_code_invalid": "Introdueix una targeta regal vàlida",
+        "reduction_code_gift_card_unusable": "No pots utilitzar una targeta de regal per comprar una altra targeta de regal",
+        "shipping_line_phone_blank": "Introdueix un número de telèfon per utilitzar aquesta forma d'entrega",
+        "shipping_line_phone_invalid": "Introdueix un número de telèfon vàlid",
+        "gift_card_already_applied": "Aquesta targeta regal ja ha estat aplicada a la teva comanda",
+        "gift_card_disabled": "Aquesta targeta de regal ja no està disponible",
+        "gift_card_expired": "Aquesta targeta de regal ha caducat",
+        "gift_card_depleted": "Aquesta targeta regal no té saldo suficient",
+        "gift_card_currency_mismatch": "Per a aquesta comanda només es poden fer servir targetes regal en %{checkout_currency}",
+        "payment_gateway_needs_paid_plan_error": "Aquesta forma de pagament no està disponible a la botiga en aquest moment",
+        "payment_gateway_incompatible_with_multi_currency": "Per tal de completar el pagament en la teva moneda local, necessites pagar amb targeta de crèdit.",
+        "physical_gift_card_invalid_quantity": "Les línies d'articles de targetes de regal físiques han de tenir una quantitat que coincideixi amb la quantitat de codis de targetes de regal.",
+        "physical_gift_card_duplicate_code": "La línia d'article de la targeta de regal física conté un codi duplicat.",
+        "physical_gift_card_invalid_code": "El codi de la targeta de regal física no és vàlid.",
+        "payment_gateway_not_in_test_mode": "no està configurada per a comandes de prova. Aquesta botiga no pot acceptar comandes reals ni pagaments reals.",
+        "tips_invalid_tip_amount": "Introdueix una propina inferior a %{amount}",
+        "payment_gateway_unsupported_for_subscriptions": "Aquesta forma de pagament no està disponible per a comandes per subscripció.",
+        "address_first_name_too_long": "El nom és massa llarg (el màxim és de 255 caràcters)",
+        "address_last_name_too_long": "El cognom és massa llarg (el màxim és de 255 caràcters)",
+        "address_address1_too_long": "La primera línia de l'adreça és massa llarga (el màxim és de 255 caràcters)",
+        "address_address2_too_long": "La segona línia de l'adreça és massa llarga (el màxim és de 255 caràcters)",
+        "address_city_too_long": "El nom de la ciutat és massa llarg (el màxim és 255 caràcters)",
+        "address_company_too_long": "El nom de l'empresa és massa llarg (el màxim és de 255 caràcters)",
+        "address_first_name_contains_html_tags": "El nom no pot contenir etiquetes HTML",
+        "address_last_name_contains_html_tags": "El cognom no pot contenir etiquetes HTML",
+        "address_address1_contains_html_tags": "L'adreça 1 no pot contenir etiquetes HTML",
+        "address_address2_contains_html_tags": "L'adreça 2 no pot contenir etiquetes HTML",
+        "address_city_contains_html_tags": "La ciutat no pot contenir etiquetes HTML",
+        "address_company_contains_html_tags": "L'empresa no pot contenir etiquetes HTML",
+        "address_first_name_contains_emojis": "El nom no pot contenir emojis",
+        "address_last_name_contains_emojis": "El cognom no pot contenir emojis",
+        "address_address1_contains_emojis": "L'adreça 1 no pot contenir emojis",
+        "address_address2_contains_emojis": "L'adreça 2 no pot contenir emojis",
+        "address_city_contains_emojis": "La ciutat no pot contenir emojis",
+        "address_company_contains_emojis": "El nom de l'empresa no pot contenir emojis",
+        "address_phone_contains_emojis": "El número de telèfon no pot contenir emojis",
+        "address_zip_contains_emojis": "El codi postal no pot contenir emojis"
+      },
+      "b2b_errors": {
+        "lost_permissions_title": "No hi ha permisos de sucursal"
+      },
+      "units": {
+        "milligram": "m'agrada",
+        "kilogram": "kg",
+        "milliliter": "ml",
+        "centiliter": "cl",
+        "cubic_meter": "m³",
+        "millimeter": "mm",
+        "centimeter": "cm",
+        "square_meter": "m²",
+        "ounce": "onça",
+        "pound": "lliura",
+        "fluid_ounce": "fl oz",
+        "pint": "ca",
+        "quart": "qt",
+        "gallon": "noia",
+        "inch": "en",
+        "foot": "peus",
+        "yard": "i",
+        "square_foot": "peus²",
+        "item": "article"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "L'adreça no és compatible amb la subscripció actual.",
+        "items_split_across_locations_unsupported": "L'enviament amb Prime no està disponible per a la teva comanda. S'han actualitzat les teves opcions d'enviament."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Anar a la botiga en línia"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Més informació sobre %{context}",
+        "additional_payment_methods": "Formes de pagament addicionals"
+      },
+      "remote": {
+        "errors": {
+          "currency_mismatch": "Aquest article no es pot afegir al teu carret perquè és d'una botiga que utilitza una altra moneda.",
+          "max_remote_shops_exceeded": "No es pot afegir aquest producte perquè el teu carret ja ha assolit el màxim permès en altres botigues.",
+          "currency_mismatch_removal": "S'ha eliminat un article del teu carret perquè pertany a una botiga que utilitza una moneda diferent.",
+          "only_remote_merchandise_lines": "El pagament només conté mercaderia promocional d'una botiga remota. Cal un redireccionament a la botiga remota per completar el pagament."
+        }
+      },
+      "remote_merchandise_only": {
+        "title": "Completa la compra",
+        "remote_only_notice": "Aquests articles es venen i s'envien des d'altres botigues. Per completar la compra has de pagar a les botigues corresponents.",
+        "return_to_store_label": "Tornar a la botiga",
+        "checkout_on_shop_label": "Pagar a %{shop_name}",
+        "single_shop_transition": "T'estem redirigint a %{advertiser} perquè completis la teva compra.",
+        "detail_item_label": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles",
+          "many": "{{count}} articles"
+        }
+      },
+      "remote_policies": {
+        "unavailable_policy": "No s'ha proporcionat cap %{policy_name} per a aquesta botiga. Per a més informació, contacta directament amb %{shop_name}."
+      },
+      "offsite_payment_failed": {
+        "payment_not_processed_title": "Pagament fallit",
+        "payment_not_processed_text": "Intenta escanejar el codi QR de nou. Si encara no funciona, informa al nostre personal i prova amb una altra forma de pagament.",
+        "payment_link_expired_title": "L'enllaç de pagament ha caducat",
+        "payment_link_expired_text": "Intenta escanejar el codi QR de nou.",
+        "title": "Error en el pagament extern"
+      },
+      "taxes": {
+        "tax_details": "Informació fiscal addicional",
+        "vat_number": {
+          "field": {
+            "label": "Número d'IVA (opcional)",
+            "tooltip": "Valida el número d'IVA i aplica automàticament la inversió del subjecte passiu a les comandes elegibles"
+          },
+          "add": "Afegir un número d'IVA",
+          "vaulted": "Número d'IVA: %{number}",
+          "badge": "Número d'IVA: %{number}",
+          "domestic_order": "L'exempció d'inversió del subjecte passiu només s'aplica a les comandes transfrontereres dins de la UE. A les comandes locals s'hi aplica l'IVA estàndard.",
+          "status": {
+            "invalid_format": {
+              "at": "Els números d'IVA d'Àustria contenen AT i 9 caràcters",
+              "be": "Els números d'IVA de Bèlgica contenen BE i 10 caràcters",
+              "bg": "Els números d'IVA de Bulgària contenen BG i de 9 a 10 caràcters",
+              "hr": "Els números d'IVA de Croàcia contenen HR i 11 caràcters",
+              "cy": "Els números d'IVA de Xipre contenen CY i 9 caràcters",
+              "cz": "Els números d'IVA de la República Txeca contenen CZ i de 8 a 10 caràcters",
+              "dk": "Els números d'IVA de Dinamarca contenen DK i 8 caràcters",
+              "ee": "Els números d'IVA d'Estònia contenen EE i 9 caràcters",
+              "fi": "Els números d'IVA de Finlàndia contenen FI i 8 caràcters",
+              "fr": "Els números d'IVA de França contenen FR i 11 caràcters",
+              "de": "Els números d'IVA d'Alemanya contenen DE i 9 caràcters",
+              "gr": "Els números d'IVA de Grècia contenen EL i nou caràcters",
+              "hu": "Els números d'IVA d'Hongria contenen HU i 8 caràcters",
+              "ie": "Els números d'IVA d'Irlanda contenen IE i de 8 a 9 caràcters",
+              "it": "Els números d'IVA d'Itàlia contenen IT i 11 caràcters",
+              "lv": "Els números d'IVA de Letònia contenen LV i 11 caràcters",
+              "lt": "Els números d'IVA de Lituània contenen LT i de 9 a 12 caràcters",
+              "lu": "Els números d'IVA de Luxemburg contenen LU i 8 caràcters",
+              "mt": "Els números d'IVA de Malta contenen MT i 8 caràcters",
+              "nl": "Els números d'IVA dels Països Baixos contenen NL i 12 caràcters",
+              "pl": "Els números d'IVA de Polònia contenen PL i 10 caràcters",
+              "pt": "Els números d'IVA de Portugal contenen PT i 9 caràcters",
+              "ro": "Els números d'IVA de Romania contenen RO i 10 caràcters",
+              "sk": "Els números d'IVA d'Eslovàquia contenen SK i 10 caràcters",
+              "si": "Els números d'IVA d'Eslovènia contenen SI i 8 caràcters",
+              "es": "Els números d'IVA d'Espanya contenen ES i 9 caràcters",
+              "se": "Els números d'IVA de Suècia contenen SE i 12 caràcters",
+              "gb": "Els números d'IVA del Regne Unit contenen GB o XI i de 5 a 12 caràcters"
+            },
+            "invalid_number": {
+              "at": "Introdueix un número d'IVA vàlid d'Àustria",
+              "be": "Introdueix un número d'IVA vàlid de Bèlgica",
+              "bg": "Introdueix un número d'IVA vàlid de Bulgària",
+              "hr": "Introdueix un número d'IVA vàlid de Croàcia",
+              "cy": "Introdueix un número d'IVA vàlid de Xipre",
+              "cz": "Introdueix un número d'IVA vàlid de la República Txeca",
+              "dk": "Introdueix un número d'IVA vàlid de Dinamarca",
+              "ee": "Introdueix un número d'IVA estonià vàlid",
+              "fi": "Introdueix un número d'IVA vàlid de Finlàndia",
+              "fr": "Introduïu un número d'IVA vàlid de França",
+              "de": "Introdueix un número d'IVA vàlid d'Alemanya",
+              "gr": "Introdueix un número d'IVA vàlid de Grècia",
+              "hu": "Introdueix un número d'IVA vàlid d'Hongria",
+              "ie": "Introdueix un número d'IVA vàlid d'Irlanda",
+              "it": "Introdueix un número d'IVA vàlid d'Itàlia",
+              "lv": "Introdueix un número d'IVA vàlid de Letònia",
+              "lt": "Introdueix un número d'IVA vàlid de Lituània",
+              "lu": "Introdueix un número d'IVA vàlid de Luxemburg",
+              "mt": "Introdueix un número d'IVA vàlid de Malta",
+              "nl": "Introdueix un número d'IVA vàlid dels Països Baixos",
+              "pl": "Introdueix un número d'IVA vàlid de Polònia",
+              "pt": "Introdueix un número d'IVA vàlid de Portugal"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customer_accounts": {
+    "ui_components": {
+      "november": "Novembre",
+      "december": "Desembre",
+      "monday": "Dilluns",
+      "tuesday": "Dimarts",
+      "wednesday": "Dimecres",
+      "thursday": "Dijous",
+      "friday": "Divendres",
+      "saturday": "Dissabte",
+      "sunday": "Diumenge",
+      "mondayAbbreviation": "Dl.",
+      "tuesdayAbbreviation": "Ma.",
+      "wednesdayAbbreviation": "El meu.",
+      "thursdayAbbreviation": "Ju.",
+      "fridayAbbreviation": "Vi.",
+      "saturdayAbbreviation": "Sa.",
+      "sundayAbbreviation": "Fes.",
+      "showNextMonth": "Mostrar el mes que ve, {{month}} {{year}}",
+      "showPreviousMonth": "Mostra el mes anterior, {{month}} {{year}}",
+      "rangeStart": "Inici del rang",
+      "inRange": "Dins del rang",
+      "rangeEnd": "Fi del rang",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} article disponible",
+        "other": "{{count}} articles disponibles",
+        "many": "{{count}} articles disponibles"
+      },
+      "removeItem": "Eliminar {{label}}",
+      "removeTag": "Eliminar etiqueta",
+      "mapClusterTitle": {
+        "one": "Grup de {{number}} marcador",
+        "other": "Grup de {{number}} marcadors",
+        "many": "Grup de {{number}} marcadors"
+      },
+      "expandSheet": "Expandir",
+      "qrCode": "Codi QR",
+      "addFile": "Afegir fitxer",
+      "dropzoneInvalidFileType": "El tipus d'arxiu no és compatible.",
+      "dropzoneDraggedOver": "Deixa anar l'arxiu per pujar-lo",
+      "clipboardCopied": "Copiat",
+      "clipboardFailedToCopy": "Error en copiar",
+      "clear": "Esborrar",
+      "external": "Obre un lloc web extern.",
+      "externalNewWindow": "Obre un lloc web extern en una finestra nova.",
+      "loading": "Carregant…",
+      "moneyLinesHeaderItem": "Article",
+      "moneyLinesHeaderValue": "Valor",
+      "newWindow": "S'obre en una finestra nova.",
+      "productThumbnailQuantityLabel": "Quantitat",
+      "removeChip": "Eliminar article",
+      "reviewItemHeaderChangeValue": "Canviar valor",
+      "reviewItemHeaderSection": "Secció",
+      "reviewItemHeaderValue": "Valor"
+    },
+    "profile_preview_bar": {
+      "customize_button": "Personalitzar",
+      "hide_bar": "Amagar barra",
+      "navigate_to_admin": "Navegar fins al tauler de control",
+      "previewing": "Previsualització de:",
+      "saved_at": "Desat el {{date}} a les {{time}}",
+      "viewing": "Estàs veient:",
+      "not_available": "Dades del perfil no disponibles",
+      "close_preview": "Tancar previsualització",
+      "actions_button": "Accions",
+      "badge_active": "Actiu",
+      "badge_draft": "Esborrany",
+      "badge_launches": "Es llança el {{date}}",
+      "badge_paused": "En pausa",
+      "badge_scheduled": "Programat",
+      "badge_traffic": "{{percentage}} del trànsit",
+      "edit": "Editar",
+      "exit_preview": "Sortir de la previsualització",
+      "hide_bar_action": "Amagar barra",
+      "rollout_label": "Desplegament"
+    },
+    "settings": {
+      "loading_accessibility_message": "S'està carregant la pàgina de configuració",
+      "title": "Configuració",
+      "log_out_everywhere": {
+        "title": "Tancar totes les sessions",
+        "description": "Si has perdut un dispositiu o tens inquietuds relacionades amb la seguretat, tanca totes les sessions per garantir la seguretat del teu compte.",
+        "button": "Tancar la sessió en tots els dispositius",
+        "warning_message": "També es tancarà la teva sessió en aquest dispositiu."
+      }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneMinuteAgo": "Ara",
+        "yesterday": "Ahir a la(s) {{time}}",
+        "today": "Avui a les {{time}}",
+        "tomorrow": "Demà a les {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "Fa {{count}} minut",
+          "other": "Fa {{count}} minuts",
+          "many": "Fa {{count}} minuts"
+        }
+      }
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "Selecciona l'extensió anomenada \"{{extensionName}}\"",
+        "unselect": "Desselecciona l'extensió anomenada \"{{extensionName}}\"",
+        "move_down": "Mou l'extensió a la següent posició",
+        "move_up": "Mou l'extensió a la posició anterior",
+        "remove": "Elimina l'extensió",
+        "move_down_tooltip": "Moure a la posició següent",
+        "move_up_tooltip": "Moure a la posició anterior",
+        "remove_tooltip": "Eliminar"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Aquest enllaç no es pot obrir des de l’editor. S’obrirà en una finestra nova ({{resolved_to_link}}). Fes clic a D’acord per continuar."
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "Massa intents",
+        "description": "Torna-ho a provar d'aquí a uns minuts"
+      }
+    },
+    "shop_ads": {
+      "title": "Altres productes que podrien interessar-te",
+      "subtitle": "Disponible per temps limitat",
+      "button": "Explora a Shop",
+      "previous_button": "Anterior",
+      "next_button": "Següent"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Els clients poden sol·licitar i gestionar devolucions pel seu compte des de la compte de client.",
+        "disabled": "Les devolucions d'autoservei als comptes de client no estan disponibles en aquesta botiga. És possible que encara s'acceptin devolucions. Consulta la política de devolució o el lloc web de la botiga per saber com iniciar-ne una, o contacta amb la botiga."
+      }
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Preferències de cookies"
+    },
+    "announcement_bar": {
+      "expand_label": "Expandir barra d'anuncis"
     }
   }
 }
