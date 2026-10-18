@@ -737,6 +737,142 @@
         "receiver_payment_experience_hint": "Després de fer la comanda, rebràs els detalls del pagament. Fes el pagament per Multibanco o en línia en un termini de %{due_days} dies.",
         "pending_payment": {
           "due_notice": "El pagament de %{amount_due} venç el %{due_date}."
+        },
+        "gift_card_wrapper": {
+          "manage_label": "Gestionar targetes regal"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Confirmació de pagament al lloc personalitzada"
+        },
+        "markets_pro_disclaimer_label": "Quan fas una comanda, acceptes utilitzar Global-e com a responsable del processament de pagaments, els %{markets_pro_terms} i la %{privacy_policy} de Global-e i compartir les teves dades amb %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Termes i condicions",
+        "markets_pro_disclaimer_privacy_policy": "Política de privacitat",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Termes i condicions del responsable del processament de pagaments",
+        "markets_pro_disclaimer_privacy_policy_title": "Política de privacitat del responsable del processament de pagaments",
+        "purchase_order_number": {
+          "title": "Número de comanda",
+          "label": "Número de comanda (opcional)"
+        },
+        "alternative_payment_currency_total_notice": "Nota: Se us cobrarà %{amount_due}.",
+        "waiting_on_taxes_message": "Si els teus impostos no es calculen en els propers segons, actualitza la pàgina.",
+        "waiting_on_taxes_notice": "Calculant impostos",
+        "order_edit_banner_single_item_returned": "Retornat",
+        "order_edit_banner_multiple_items_returned": "Es va retornar {{amount}}.",
+        "shop_pay_installments_label": "Quotes de Shop Pay",
+        "add_credit_card_modal": {
+          "title": "Afegir targeta",
+          "cancel": "Cancel·lar",
+          "save": "Desar"
+        },
+        "delete_credit_card_modal": {
+          "title": "Eliminar targeta",
+          "confirmation": "Confirmeu que voleu suprimir la {{brandName}} que acaba en {{lastDigits}}?",
+          "cancel": "Cancel·lar",
+          "delete": "Eliminar"
+        },
+        "order_edit_banner_items_added": {
+          "one": "Afegit",
+          "other": "S'ha afegit %{count}.",
+          "many": "S'ha afegit %{count}."
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "Eliminat",
+          "with_quantities": "S'han eliminat {{delta}} de {{quantity}}."
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Es van retornar {{quantity}}",
+          "with_quantities": "Es van retornar {{delta}} de {{quantity}}."
+        },
+        "saved_credit_card_actions": {
+          "edit": "Editar",
+          "delete": "Eliminar"
+        },
+        "edit_credit_card_modal": {
+          "title": "Editar targeta",
+          "done": "A punt",
+          "cancel": "Cancel·lar",
+          "description": "Només pots modificar l'adreça de facturació de la teva targeta.",
+          "fields": {
+            "default": "Establir com a predeterminat",
+            "card_number": "Número de targeta",
+            "expiry": "Data de venciment",
+            "security_code": "Codi de seguretat",
+            "name": "Nom del titular de la targeta",
+            "billing": "Facturar a"
+          }
+        },
+        "payment_method": "Forma de pagament",
+        "expired_payment_method": "La forma de pagament seleccionada ha caducat.",
+        "subscription_heading": "Acord de subscripció",
+        "use_order_billing_address_label": "Utilitzar l'adreça de facturació de la comanda",
+        "use_location_billing_address_label": "Utilitzar l'adreça de facturació de la sucursal",
+        "use_location_shipping_address_label": "Utilitzar l'adreça d'enviament de la sucursal",
+        "purchase_options_agreement_label_wallets": "Si continues amb el pagament, acceptes els càrrecs futurs indicats en aquesta pàgina i la %{cancellation_policy_label}.",
+        "gift_card_store_credit": {
+          "add_label": "Afegir una targeta de regal o crèdit a la botiga",
+          "manage_label": "Gestionar targetes de regal o de crèdit a la botiga"
+        },
+        "saved_credit_card_cvv_verification": "Per a fins de verificació, introdueix el codi de seguretat de la teva targeta.",
+        "order_edit_banner_updated_order_label": "Comanda actualitzada",
+        "afterpay_label": "Afterpay",
+        "cashapppay_label": "Cash App Pay",
+        "card_nickname_label": "Sobrenom (opcional)",
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "S'ha eliminat de la devolució",
+          "with_quantities": "Es va eliminar {{delta}} de la devolució."
+        },
+        "order_edit_banner_single_item_return_line_item_removed": "S'ha eliminat de la devolució",
+        "order_edit_banner_multiple_items_return_line_item_removed": "S'han eliminat {{amount}} de la devolució.",
+        "proposed_gateway_unavailable": "La passarel·la de pagament proposada no està disponible.",
+        "pay_in_installments_split_pay_short": "Quatre pagaments de %{amount}",
+        "payment_method_not_available_for_shipping_address_error": "La forma de pagament no està disponible per a l'adreça d'enviament seleccionada. Tria una altra forma de pagament.",
+        "shop_pay_ideal_unavailable_error": "iDEAL | Wero no està disponible per a aquesta comanda. Tria una altra forma de pagament.",
+        "paypal_disconnect": "Desconnectar",
+        "paypal_wallet_label": "Cartera de PayPal",
+        "payment_method_update_failed": "Error en intentar actualitzar la forma de pagament.",
+        "alternative_payment_currency_total_manual_payment_notice": "Nota: el total després de la conversió és %{amount_due}.",
+        "gift_cards_unavailable": "La teva targeta regal ja no es pot aplicar a aquesta comanda, així que s'ha eliminat.",
+        "network_card_payment_options": "Tria una xarxa de targetes",
+        "payment_flexibility_terms_id_mismatch": "Error de coincidència en la identificació dels termes de flexibilitat de pagaments",
+        "offsite_gateway_review_page_redirect_hint": "Després de revisar la teva comanda, se't redirigirà a %{gateway_label} per completar la compra",
+        "przelewy24_label": "Przelewy24",
+        "twint_label": "TWINT",
+        "mobilepay_label": "MobilePay",
+        "gift_card_checkbox_label": "Aplicar targeta regal",
+        "blik_label": "BLIK",
+        "simulated_express_checkout": "Les carteres no estan disponibles a la vista prèvia de l'editor a causa de la teva regió o navegador.",
+        "vipps_label": "Vipps",
+        "grabpay_label": "GrabPay",
+        "kcp_creditcard_label": "Targeta de crèdit KCP",
+        "offsite_gateway_redirect_hint_no_button_label": "Se't redirigirà a %{gateway_label} per completar la compra",
+        "swish_label": "Xiuet",
+        "network_card_persistence_description": "La xarxa seleccionada es desarà amb la teva forma de pagament per a futures transaccions.",
+        "usdc_label": "USDC",
+        "payment_method_incompatible_with_payment_terms": "La forma de pagament no és compatible amb les condicions de pagament.",
+        "payment_option": {
+          "accessibility_label": "Tria una opció de pagament"
+        },
+        "billing_address_rollup_accessibility_label": "Opcions d'adreça de facturació",
+        "payment_method_rollup_accessibility_label": "Opcions de forma de pagament",
+        "crypto_modal": {
+          "header": "Paga a %{shop_name} %{total_price} USDC",
+          "error": {
+            "refresh": "Actualitzar",
+            "close": "tancar",
+            "sandbox_error": "Alguna cosa ha anat malament",
+            "web_component_error": "S'ha produït un problema en carregar aquesta pàgina"
+          }
+        },
+        "bank_account_type": {
+          "checking": "Corrent",
+          "savings": "Estalvi"
+        },
+        "bank_account_choose": "Tria un compte per completar la teva compra de manera segura",
+        "bank_account_connect_another": "Connecta un altre compte bancari",
+        "bank_account_connect": "Connecta un compte bancari",
+        "crypto_payment_method": {
+          "description": "Connecta la teva cartera digital de forma segura. El teu saldo i adreça no es compartiran.",
+          "tooltip": "El saldo de la teva cartera digital i la teva adreça no es compartiran i només es pot deduir l'import sol·licitat"
         }
       },
       "payment_summary": {
