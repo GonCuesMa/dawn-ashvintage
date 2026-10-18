@@ -3139,7 +3139,82 @@
         "confirmation": "Has cancel·lat la teva subscripció a la nostra llista de distribució.",
         "disclaimer": "No t'enviarem més notícies de màrqueting. Pots subscriure-t'hi de nou en qualsevol moment.",
         "preview": "Estàs revisant la vista prèvia del que veuran els clients quan es donen de baixa."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>T'has subscrit al seguiment de correus oberts.</b>",
+          "visibility": "Les taxes d'obertura de correus s'informaran de manera anònima. Només veurem si has obert un correu electrònic com a part d'una taxa agregada d'obertura de correus.",
+          "opt_out_html": "Pots <a style=\"text-decoration:underline;\" href=\"%{link}\">donar-te de baixa</a> del seguiment de correus oberts si no vols compartir aquesta informació.",
+          "preview_bar": "Estàs revisant la vista prèvia del que veuran els clients quan se subscriguin al seguiment de correus oberts."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>T'has donat de baixa del seguiment de correus oberts.</b>",
+          "visibility": "No veurem si has obert els nostres correus electrònics.",
+          "opt_in_html": "<a style=\"text-decoration:underline;\" href=\"%{link}\">Accepta</a> el seguiment de correus oberts.",
+          "preview_bar": "Estàs revisant la vista prèvia del que veuran els clients quan es donin de baixa del seguiment de correus oberts."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Ja no fem seguiment de correus oberts.</b>",
+          "privacy_policy": "Després d'enviar aquest correu electrònic, hem actualitzat la nostra política de privacitat i ja no fem seguiment d'obertures."
+        },
+        "track": {
+          "status_html": "<b>El seguiment de correus oberts s'informa.</b>",
+          "visibility": "Només veurem si has obert el correu electrònic com a part de la taxa total de correus oberts."
+        },
+        "updated_policy": {
+          "status_html": "<b>El seguiment de correus oberts s'informa.</b>",
+          "visibility": "Hem actualitzat la nostra política i ara fem seguiment dels correus oberts. Les taxes de correus oberts s'informaran de manera anònima. Només veurem si has obert un correu electrònic com a part de la taxa total de correus oberts.",
+          "opt_out_html": "Si no vols compartir aquesta informació, pots <a style=\"text-decoration:underline;\" href=\"%{link}\">donar-te de baixa</a>."
+        }
+      },
+      "sms_unsubscribe_confirm": {
+        "message": "Confirmeu que voleu donar-vos de baixa del màrqueting per SMS?",
+        "button": "Donar de baixa"
       }
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Normalment està llest en 1 hora",
+        "two_hours": "Normalment està llest en 2 hores",
+        "four_hours": "Normalment està llest en 4 hores",
+        "twenty_four_hours": "Normalment està llest en 24 hores",
+        "two_to_four_days": "Normalment està llest en 2 a 4 dies",
+        "five_or_more_days": "Normalment està llest en 5 dies o més",
+        "zero_to_two_hours": "Normalment està llest en 2 hores",
+        "two_to_four_hours": "Normalment està llest en 4 hores",
+        "immediately": "A punt per recollir ara",
+        "next_day": "A punt per recollir l'endemà"
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "En estoc",
+          "out_of_stock": "Esgotat"
+        }
+      },
+      "boolean": {
+        "true_label": "Sí",
+        "false_label": "No"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "Rellevància",
+        "price_ascending": "Preu, de menor a major",
+        "price_descending": "Preu, de més gran a més petit"
+      },
+      "error": "Hi ha hagut un problema en carregar els resultats de cerca. Actualitza la pàgina o torna-ho a intentar més tard."
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Aquest article és una compra recurrent o diferida. En continuar, accepto la %{cancellationPolicyLink} i autoritzo a realitzar càrrecs en la meva forma de pagament segons els preus, la freqüència i les dates indicades en aquesta pàgina fins que es prepari la meva comanda o jo la cancel·li, si està permès.",
+      "buyer_consent_cart": "Un o més dels articles que hi ha al teu carret formen part d'una compra recurrent o diferida. En continuar, accepto la %{cancellationPolicyLink} i autoritzo a realitzar càrrecs en la meva forma de pagament segons els preus, la freqüència i les dates indicades en aquesta pàgina fins que es prepari la meva comanda o jo la cancel·li, si està permès.",
+      "cancellation_policy": "política de cancel·lació"
+    },
+    "managed_markets": {
+      "buyer_consent": "En fer la teva comanda, acceptes comprar a Global-e com a responsable del processament de pagaments, de conformitat amb els %{termsAndConditionsLink} i la %{privacyPolicyLink} de Global-e, i compartir la teva informació amb %{shopName}.",
+      "terms_and_conditions": "Termes i condicions",
+      "privacy_policy": "Política de privacitat"
     }
   },
   "customer_accounts": {
@@ -3835,7 +3910,16 @@
           "email_cant_be_blank": "El correu electrònic no pot estar en blanc",
           "invalid_email_format": "Introdueix un correu electrònic vàlid"
         },
-        "editable_email_help_text": "Aquest correu electrònic s'utilitza per iniciar sessió i actualitzar comandes."
+        "editable_email_help_text": "Aquest correu electrònic s'utilitza per iniciar sessió i actualitzar comandes.",
+        "cancel": "Cancel·lar",
+        "cancel_accessibility_label": "Cancel·lar l'edició del perfil",
+        "edit": "Editar",
+        "edit_accessibility_label": "Editar perfil",
+        "email_help_text": "El correu electrònic no es pot editar",
+        "first_name": "Nom",
+        "last_name": "Cognom",
+        "phone_number_help_text": "No es pot editar el número de telèfon",
+        "save": "Desar"
       },
       "profile_update_confirmation_message": "Perfil actualitzat",
       "title": "Perfil",
@@ -3890,7 +3974,9 @@
           "description": "Hi ha hagut un problema en actualitzar les vostres preferències de màrqueting. Proveu d'actualitzar aquesta pàgina o reviseu la vostra connexió a internet."
         },
         "update_success": "Preferències de màrqueting actualitzades"
-      }
+      },
+      "loading_accessibility_message": "S'està carregant la informació del compte",
+      "loading_finished_accessibility_message": "La informació del compte s'ha carregat."
     },
     "payment_methods": {
       "card_fields": {
@@ -4195,6 +4281,64 @@
       "edit_section_accessibility_label": "Edita {{address}}",
       "loading_accessibility_message": "S'està carregant l'adreça",
       "loading_addresses_accessibility_message": "Carregant adreces"
+    },
+    "callback": {
+      "try_again": "Reintentar"
+    },
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Ocultar el menú Compte",
+        "show_accessibility_label": "Mostrar el menú Compte",
+        "nav_accessibility_label": "Navegació del compte",
+        "open_menu_accessibility_label": "Obrir la navegació del compte",
+        "close_menu_accessibility_label": "Tancar la navegació del compte",
+        "loading_message": "S'està carregant la navegació del compte",
+        "label": "Compte"
+      },
+      "action_menu_accessibility_label": "Més accions",
+      "close_menu_accessibility_label": "Tancar la navegació principal",
+      "contact_email_subject": "Contactar des de la botiga online {{shopName}}",
+      "contact_link": "Informació de contacte",
+      "delete_confirmation": {
+        "cancel": "Cancel·lar",
+        "delete": "Eliminar"
+      },
+      "dismiss_toast": "Descarta",
+      "document_title": "{{sectionName}} - {{shopName}} - Compte",
+      "loading_message": "Carregant",
+      "log_out_link": "Tancar sessió",
+      "logout_overlay_label": "S'està tancant la sessió…",
+      "nav_label_accessibility_label": "Navegació principal",
+      "navigation_accessibility_message": "Heu anat a {{sectionName}}",
+      "open_menu_accessibility_label": "Obrir la navegació principal",
+      "shop_logo_accessibility_label": "Logotip de {{shopName}}",
+      "settings_link": "Configuració",
+      "country_switcher_toast_message": "S'ha canviat el país a {{countryName}}",
+      "switch_country": "Canviar país",
+      "search": "Cercar",
+      "location_switcher_toast_message": "S'ha canviat la ubicació a {{locationName}}",
+      "switch_location": "Canviar ubicació",
+      "view_details": "Veure informació",
+      "company_location": "Ubicació de l'empresa",
+      "no_countries_found": "No s'han trobat països",
+      "no_locations_found": "No s'han trobat sucursals",
+      "try_new_search": "Intentar una cerca nova",
+      "skip_to_content": "Anar directament al contingut",
+      "loading_policy_content_accessibility_label": "Carregant el contingut de la política",
+      "policy_load_error": "{{policyName}} no s'ha pogut carregar",
+      "policy_try_again": "Tornar a intentar",
+      "loading_section_accessibility_label": "Carregant {{sectionName}}",
+      "back_button_accessibility_label": "Tornar",
+      "go_to_store_link": "Anar a la botiga",
+      "orders_link_label": "Comandes",
+      "subscriptions_link_label": "Subscripcions",
+      "store_credit_accessibility_label": "{{formattedBalance}} de crèdit en botiga",
+      "store_credit_balances_list_accessibility_label": "Saldos de crèdit a la botiga",
+      "store_credit_multi_currency_accessibility_label": {
+        "one": "{{formattedBalance}} de crèdit en botiga i en {{count}} divisa més",
+        "other": "{{formattedBalance}} de crèdit en botiga i en {{count}} monedes més",
+        "many": "{{formattedBalance}} de crèdit en botiga i en {{count}} monedes més"
+      }
     }
   }
 }
