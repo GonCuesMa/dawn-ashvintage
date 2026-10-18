@@ -3131,7 +3131,52 @@
         "discount_title_with_position": "Descompte %{position}",
         "item_discounts_label": "Descomptes en articles",
         "tax_label": "Impostos",
-        "duty_label": "Aranzels"
+        "duty_label": "Aranzels",
+        "title": "Resum de la comanda",
+        "order_name_label": "Comanda %{name}",
+        "shopping_cart_label": "Cistell",
+        "discount_title": "Descompte",
+        "discount_label": "Codi de descompte",
+        "discount_placeholder": "Codi de descompte",
+        "gift_card_title": "Targeta de regal",
+        "gift_card_label": "Targeta de regal",
+        "gift_card_placeholder": "Targeta de regal",
+        "gift_card_and_discount_title": "Codi de descompte o targeta regal",
+        "gift_card_and_discount_label": "Codi de descompte o targeta regal",
+        "gift_card_and_discount_placeholder": "Codi de descompte o targeta regal",
+        "add_discount_or_gift_card": "Afegeix un codi de descompte o una targeta de regal",
+        "remove_gift_card_label": "Esborrar targeta regal",
+        "remove_discount_label": "Eliminar descompte",
+        "free_shipping_discount_label": "Enviament gratuït",
+        "apply_discount_button_label": "Aplicar",
+        "applied_discount_message": "%{amount} van ser reduïts del preu total",
+        "discount_has_been_applied": "El descompte ha estat aplicat",
+        "discount_has_been_removed": "El descompte ha estat eliminat",
+        "gift_card_has_been_applied": "La targeta regal ha estat aplicada",
+        "gift_card_has_been_removed": "La targeta regal ha estat eliminada",
+        "discount_already_applied": "Hem aplicat un descompte a la teva comanda. No és possible aplicar un descompte addicional.",
+        "cart_does_not_meet_discount_requirements_notice": "El codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> no és vàlid per als articles del teu carretó",
+        "discount_requires_customer_notice": "Introdueix la teva informació d'enviament per aplicar el codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "El codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> no està disponible per a tu en aquest moment",
+        "shipping_information_does_not_meet_discount_requirements_notice": "El codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> no està disponible per a la teva adreça d'enviament",
+        "customer_already_used_once_per_customer_discount_notice": "El codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> ja s'ha utilitzat",
+        "subtotal_label": "Subtotal",
+        "shipping_label": "Enviament",
+        "tip_label": "Propina",
+        "shipping_default_value": "Calculat en el següent pas",
+        "shipping_pending_message": "Encara no està disponible",
+        "shipping_policy_link": "Despeses d'enviament",
+        "taxes_label": "Impostos",
+        "total_label": "Total",
+        "total_outstanding_label": "Import a pagar",
+        "partial_total_label": "Total",
+        "free_total_label": "Gratuït",
+        "free_shipping_total_label": "Gratuït",
+        "paid_label": "Pagat",
+        "payment_due_label": "Pendent de pagament",
+        "vat_label_html": "Inclou %{amount} d'impostos",
+        "discount_and_gift_card_savings_notice": "Després del %{discount_amount} de descompte i %{gift_card_amount} en targetes regal",
+        "discount_savings_notice": "Després del %{discount_amount} de descompte"
       },
       "alternative_payment_method_banner": {
         "express_checkout": "Pagament exprés",
@@ -3213,6 +3258,97 @@
         "bank_account_label": "Compte bancari",
         "credit_or_debit_card_label": "Crèdit/dèbit",
         "bogus_label": "Passarel·la de pagament de prova"
+      },
+      "stock": {
+        "reduced_with_quantity_label": "Només en queden %{quantity_available}",
+        "remove_from_cart_button_label": "Eliminar del carretó",
+        "continue_shopping_button_label": "Continuar",
+        "go_back_to_cart_button_label": "Tornar al meu carretó",
+        "remove": "Treure",
+        "empty_cart_label": "El teu carret està buit",
+        "quantity_update": {
+          "page_title": "Actualització de quantitat",
+          "title": "Actualització de quantitat",
+          "description": "Les quantitats disponibles d'aquests articles han canviat i s'han actualitzat al teu carret."
+        },
+        "unpurchasable_product": {
+          "title": "Un producte no es pot comprar",
+          "header": "S'han tret alguns articles del carret.",
+          "message": "Aquests articles no estan disponibles per a les comandes B2B.",
+          "status_column_header": "No disponible"
+        },
+        "unpurchasable_product_generic": {
+          "title": "Un producte no es pot comprar",
+          "header": "S'han tret alguns articles del carret.",
+          "message": "Aquests articles no estan disponibles.",
+          "status_column_header": "No disponible"
+        },
+        "unshippable_product": {
+          "title": "No hi ha lliurament disponible",
+          "header": {
+            "one": "No hi ha cap lliurament disponible per a %{count} article",
+            "other": "No hi ha cap lliurament disponible per a %{count} articles",
+            "many": "No hi ha cap lliurament disponible per a %{count} articles"
+          },
+          "message": {
+            "one": "Aquest article s'eliminarà del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça.",
+            "other": "Aquests articles s'eliminaran del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça.",
+            "many": "Aquests articles s'eliminaran del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça."
+          },
+          "status_column_header": "Sense lliurament"
+        },
+        "price_update": {
+          "title": "Actualització de preus",
+          "description": "Els preus d'aquests articles han canviat i s'han actualitzat al carret.",
+          "updated_price": "Preu actualitzat"
+        },
+        "return_to_store_label": "Tornar a la botiga",
+        "item_label": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles",
+          "many": "{{count}} articles"
+        },
+        "continue_cta_label": "Continuar amb el pagament",
+        "out_of_stock": {
+          "description": "Aquests articles ja no estan disponibles i s'eliminaran del carret.",
+          "items_unavailable": "Alguns articles ja no estan disponibles i se suprimiran del carretó.",
+          "missing_items": {
+            "mixed_issues_title": "Alguns articles ja no estan disponibles",
+            "title": {
+              "one": "{{count}} article ja no està disponible",
+              "other": "{{count}} articles ja no estan disponibles",
+              "many": "{{count}} articles ja no estan disponibles"
+            },
+            "some_available_notice": {
+              "one": "Els articles restants encara estan disponibles per al pagament. L'article no disponible s'eliminarà del carretó.",
+              "other": "Els articles restants encara estan disponibles per al pagament. Els articles no disponibles s'eliminaran del carretó.",
+              "many": "Els articles restants encara estan disponibles per al pagament. Els articles no disponibles s'eliminaran del carretó."
+            },
+            "none_available_notice": {
+              "one": "Aquest article ja no està disponible i s'ha eliminat del cistell.",
+              "other": "Aquests articles ja no estan disponibles i s'han eliminat del carretó.",
+              "many": "Aquests articles ja no estan disponibles i s'han eliminat del carretó."
+            }
+          }
+        },
+        "unfulfillable_product": {
+          "title": "Lliurament no disponible",
+          "message": {
+            "one": "%{delivery_method} ja no està disponible per a aquest article.",
+            "other": "%{delivery_method} ja no està disponible per a aquests articles.",
+            "many": "%{delivery_method} ja no està disponible per a aquests articles."
+          },
+          "default_message": {
+            "one": "La modalitat de lliurament escollida ja no està disponible per a aquest article.",
+            "other": "La forma de lliurament escollida ja no està disponible per a aquests articles.",
+            "many": "La forma de lliurament escollida ja no està disponible per a aquests articles."
+          }
+        },
+        "price_and_quantity_update": {
+          "title": "Actualització de preu i quantitat",
+          "description": "Els preus i les quantitats disponibles d'aquests articles han canviat i s'han actualitzat al carretó."
+        },
+        "out_of_stock_in_context_label": "Aquest producte no està disponible al teu país o regió."
       }
     },
     "pagination": {
