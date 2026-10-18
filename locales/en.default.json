@@ -529,6 +529,28 @@
     }
   },
   "ash": {
-    "drawer_view_all": "View all: {{ title }}"
+    "drawer_view_all": "View all: {{ title }}",
+    "lot": {
+      "kg_range_from": "{{ range }} kg · from {{ price }}/kg",
+      "kg_range": "{{ range }} kg · {{ price }}/kg",
+      "pieces_range_from": "{{ range }} pieces · from {{ price }}/piece",
+      "pieces_range": "{{ range }} pieces · {{ price }}/piece",
+      "per_kg": "/kg",
+      "per_piece": "/piece",
+      "row_lot": "Lot",
+      "row_type": "Type",
+      "row_quality": "Quality",
+      "row_brands": "Brands",
+      "row_for": "For",
+      "for_mujer": "Women",
+      "for_hombre": "Men",
+      "tag_grado_a": "Grade A",
+      "tag_grado_b": "Grade B",
+      "tag_premium": "Premium",
+      "tag_bala": "Bale",
+      "tag_rework": "Rework",
+      "tag_vintage": "Vintage",
+      "tag_cuero": "Leather"
+    }
   }
 }

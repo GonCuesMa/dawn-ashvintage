@@ -1,0 +1,214 @@
+{% doc %}
+  Resumen automático de un lote a partir de los datos del producto (sin escribir nada a mano):
+  - Modo por kilos (etiqueta "venta-kilos"): kilos de cada variante = peso de la variante.
+  - Modo por prendas (etiqueta "lotes-prendas"): prendas = número al inicio del valor de la opción
+    ("10 prendas"); si la opción no lo trae, se usa el SKU con formato "...-P20".
+  - Calidad y extras salen de las etiquetas (grado-a, grado-b, premium, bala, rework, vintage, cuero).
+  Los productos que no son lotes (p. ej. mayoristas) no muestran nada.
+
+  @param {product} product - Producto a resumir.
+  @param {string} [mode] - "card" (una línea + etiquetas) o "full" (caja completa de la ficha).
+  @param {boolean} [show_tiers] - En modo full, lista cada opción con su precio por unidad.
+  @param {string} [heading] - Título de la caja (modo full).
+  @param {string} [guarantee_text] - Frase de garantía, solo en productos grado A (modo full).
+  @param {string} [return_note] - Nota sobre devoluciones (modo full).
+{% enddoc %}
+
+{%- liquid
+  assign is_kilos = false
+  assign is_pieces = false
+  if product.tags contains 'venta-kilos'
+    assign is_kilos = true
+  endif
+  if product.tags contains 'lotes-prendas'
+    assign is_pieces = true
+  endif
+  assign min_qty = 0
+  assign max_qty = 0
+  assign min_unit = 0
+
+  if is_kilos or is_pieces
+    for variant in product.variants
+      assign qty = 0
+      if is_kilos
+        assign qty = variant.weight | times: 1.0 | divided_by: 1000
+      else
+        assign first_word = variant.option1 | split: ' ' | first
+        assign qty = first_word | plus: 0
+        if qty == 0
+          assign sku_parts = variant.sku | split: '-P'
+          if sku_parts.size == 2
+            assign qty = sku_parts.last | plus: 0
+          endif
+        endif
+      endif
+      if qty > 0
+        assign unit_price = variant.price | times: 1.0 | divided_by: qty
+        if min_unit == 0 or unit_price < min_unit
+          assign min_unit = unit_price
+        endif
+        if min_qty == 0 or qty < min_qty
+          assign min_qty = qty
+        endif
+        if qty > max_qty
+          assign max_qty = qty
+        endif
+      endif
+    endfor
+  endif
+-%}
+
+{%- if min_qty > 0 -%}
+  {%- liquid
+    assign min_label = min_qty | round: 1 | remove: '.0'
+    assign max_label = max_qty | round: 1 | remove: '.0'
+    assign range_label = min_label
+    assign has_range = false
+    if min_label != max_label
+      assign range_label = min_label | append: '–' | append: max_label
+      assign has_range = true
+    endif
+    assign unit_money = min_unit | round | money
+
+    assign chip_tags = 'grado-a,grado-b,premium,bala,rework,vintage,cuero' | split: ','
+    assign chips_limit = 2
+    if mode == 'full'
+      assign chips_limit = 7
+    endif
+  -%}
+
+  {%- capture chips_html -%}
+    {%- assign chips_shown = 0 -%}
+    {%- for tag in chip_tags -%}
+      {%- if product.tags contains tag and chips_shown < chips_limit -%}
+        {%- assign chip_key = 'ash.lot.tag_' | append: tag | replace: '-', '_' -%}
+        <span class="ash-lot__chip ash-lot__chip--{{ tag }}">{{ chip_key | t }}</span>
+        {%- assign chips_shown = chips_shown | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if is_kilos -%}
+    {%- if has_range -%}
+      {%- capture line_text -%}{{ 'ash.lot.kg_range_from' | t: range: range_label, price: unit_money }}{%- endcapture -%}
+    {%- else -%}
+      {%- capture line_text -%}{{ 'ash.lot.kg_range' | t: range: range_label, price: unit_money }}{%- endcapture -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- if has_range -%}
+      {%- capture line_text -%}{{ 'ash.lot.pieces_range_from' | t: range: range_label, price: unit_money }}{%- endcapture -%}
+    {%- else -%}
+      {%- capture line_text -%}{{ 'ash.lot.pieces_range' | t: range: range_label, price: unit_money }}{%- endcapture -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if mode == 'full' -%}
+    <section class="ash-lot ash-lot--full" aria-label="{{ heading | escape }}">
+      {%- if heading != blank -%}
+        <h2 class="ash-lot__heading h4">{{ heading | escape }}</h2>
+      {%- endif -%}
+
+      <dl class="ash-lot__list">
+        <div class="ash-lot__row">
+          <dt>{{ 'ash.lot.row_lot' | t }}</dt>
+          <dd>{{ line_text }}</dd>
+        </div>
+        {%- if product.type != blank -%}
+          <div class="ash-lot__row">
+            <dt>{{ 'ash.lot.row_type' | t }}</dt>
+            <dd>{{ product.type | escape }}</dd>
+          </div>
+        {%- endif -%}
+        {%- if chips_html contains 'ash-lot__chip' -%}
+          <div class="ash-lot__row">
+            <dt>{{ 'ash.lot.row_quality' | t }}</dt>
+            <dd class="ash-lot__chips">{{ chips_html }}</dd>
+          </div>
+        {%- endif -%}
+
+        {%- capture brands -%}
+          {%- for tag in product.tags -%}
+            {%- case tag -%}
+              {%- when 'ralph-lauren' -%}Ralph Lauren|
+              {%- when 'lacoste' -%}Lacoste|
+              {%- when 'tommy-hilfiger' -%}Tommy Hilfiger|
+              {%- when 'the-north-face' -%}The North Face|
+              {%- when 'burberry' -%}Burberry|
+              {%- when 'barbour' -%}Barbour|
+              {%- when 'levis' -%}Levi's|
+              {%- when 'wrangler' -%}Wrangler|
+            {%- endcase -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- assign brand_list = brands | split: '|' -%}
+        {%- if brand_list.size > 0 and brands != blank -%}
+          <div class="ash-lot__row">
+            <dt>{{ 'ash.lot.row_brands' | t }}</dt>
+            <dd>
+              {%- for brand in brand_list -%}
+                {%- if brand != blank -%}{{ brand | strip | escape }}{% unless forloop.last %}, {% endunless %}{%- endif -%}
+              {%- endfor -%}
+            </dd>
+          </div>
+        {%- endif -%}
+
+        {%- if product.tags contains 'mujer' or product.tags contains 'hombre' -%}
+          <div class="ash-lot__row">
+            <dt>{{ 'ash.lot.row_for' | t }}</dt>
+            <dd>
+              {%- if product.tags contains 'mujer' -%}{{ 'ash.lot.for_mujer' | t }}{%- endif -%}
+              {%- if product.tags contains 'mujer' and product.tags contains 'hombre' -%}, {% endif -%}
+              {%- if product.tags contains 'hombre' -%}{{ 'ash.lot.for_hombre' | t }}{%- endif -%}
+            </dd>
+          </div>
+        {%- endif -%}
+      </dl>
+
+      {%- if show_tiers and product.variants.size > 1 -%}
+        <ul class="ash-lot__tiers list-unstyled" role="list">
+          {%- for variant in product.variants -%}
+            {%- liquid
+              assign tier_qty = 0
+              if is_kilos
+                assign tier_qty = variant.weight | times: 1.0 | divided_by: 1000
+              else
+                assign tier_word = variant.option1 | split: ' ' | first
+                assign tier_qty = tier_word | plus: 0
+                if tier_qty == 0
+                  assign tier_sku = variant.sku | split: '-P'
+                  if tier_sku.size == 2
+                    assign tier_qty = tier_sku.last | plus: 0
+                  endif
+                endif
+              endif
+            -%}
+            {%- if tier_qty > 0 -%}
+              <li class="ash-lot__tier">
+                <span class="ash-lot__tier-name">{{ variant.title | escape }}</span>
+                <span class="ash-lot__tier-price">{{ variant.price | money }}</span>
+                <span class="ash-lot__tier-unit">
+                  {{- variant.price | times: 1.0 | divided_by: tier_qty | round | money -}}
+                  {%- if is_kilos -%}{{ 'ash.lot.per_kg' | t }}{%- else -%}{{ 'ash.lot.per_piece' | t }}{%- endif -%}
+                </span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if guarantee_text != blank and product.tags contains 'grado-a' -%}
+        <p class="ash-lot__note ash-lot__note--guarantee">{{ guarantee_text | escape }}</p>
+      {%- endif -%}
+      {%- if return_note != blank -%}
+        <p class="ash-lot__note">{{ return_note | escape }}</p>
+      {%- endif -%}
+    </section>
+  {%- else -%}
+    <div class="ash-lot ash-lot--card">
+      <p class="ash-lot__line">{{ line_text }}</p>
+      {%- if chips_html contains 'ash-lot__chip' -%}
+        <p class="ash-lot__chips">{{ chips_html }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}

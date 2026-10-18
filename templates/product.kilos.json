@@ -82,6 +82,12 @@
         "kilo_tiers": {
           "type": "kilo_tiers",
           "settings": {}
+        },
+        "lot_summary": {
+          "type": "lot_summary",
+          "settings": {
+            "show_tiers": false
+          }
         }
       },
       "block_order": [
@@ -92,6 +98,7 @@
         "kilo_tiers",
         "quantity_selector",
         "buy_buttons",
+        "lot_summary",
         "description",
         "tab_details",
         "tab_shipping",

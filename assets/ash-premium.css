@@ -471,3 +471,128 @@ body .cart-notification__links .button {
     transition: none;
   }
 }
+
+/* ---------- Resumen de lote: tarjeta y ficha ---------- */
+.ash-lot--card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.ash-lot--card p {
+  margin: 0;
+}
+
+.ash-lot__line {
+  color: rgba(var(--color-foreground), 0.75);
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.ash-lot__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ash-lot__chip {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: 1px solid rgba(var(--color-foreground), 0.25);
+  border-radius: 4rem;
+  color: var(--ash-ink);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.ash-lot__chip--grado-a,
+.ash-lot__chip--premium {
+  border-color: var(--ash-accent);
+  color: var(--ash-accent);
+}
+
+.ash-lot--full {
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px solid rgba(var(--color-foreground), 0.12);
+  border-radius: 1.6rem;
+  background: var(--ash-cream);
+}
+
+.ash-lot__heading {
+  margin: 0 0 1.2rem;
+}
+
+.ash-lot__list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+}
+
+.ash-lot__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.2rem;
+  align-items: baseline;
+  font-size: 1.4rem;
+}
+
+.ash-lot__row dt {
+  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ash-lot__row dd {
+  margin: 0;
+  color: var(--ash-ink);
+  font-weight: 600;
+}
+
+.ash-lot__tiers {
+  display: grid;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(var(--color-foreground), 0.12);
+}
+
+.ash-lot__tier {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  font-size: 1.4rem;
+}
+
+.ash-lot__tier-name {
+  color: var(--ash-ink);
+  font-weight: 600;
+}
+
+.ash-lot__tier-price {
+  font-weight: 600;
+}
+
+.ash-lot__tier-unit {
+  min-width: 11rem;
+  color: rgba(var(--color-foreground), 0.65);
+  text-align: right;
+}
+
+.ash-lot__note {
+  margin: 1.2rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.ash-lot__note--guarantee {
+  color: var(--ash-accent);
+  font-weight: 600;
+}

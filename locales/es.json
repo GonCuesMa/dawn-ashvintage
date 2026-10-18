@@ -541,6 +541,28 @@
     }
   },
   "ash": {
-    "drawer_view_all": "Ver todo: {{ title }}"
+    "drawer_view_all": "Ver todo: {{ title }}",
+    "lot": {
+      "kg_range_from": "{{ range }} kg · desde {{ price }}/kg",
+      "kg_range": "{{ range }} kg · {{ price }}/kg",
+      "pieces_range_from": "{{ range }} prendas · desde {{ price }}/prenda",
+      "pieces_range": "{{ range }} prendas · {{ price }}/prenda",
+      "per_kg": "/kg",
+      "per_piece": "/prenda",
+      "row_lot": "Lote",
+      "row_type": "Tipo",
+      "row_quality": "Calidad",
+      "row_brands": "Marcas",
+      "row_for": "Para",
+      "for_mujer": "Mujer",
+      "for_hombre": "Hombre",
+      "tag_grado_a": "Grado A",
+      "tag_grado_b": "Grado B",
+      "tag_premium": "Premium",
+      "tag_bala": "Bala",
+      "tag_rework": "Rework",
+      "tag_vintage": "Vintage",
+      "tag_cuero": "Cuero"
+    }
   }
 }

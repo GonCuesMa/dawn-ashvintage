@@ -541,6 +541,28 @@
     }
   },
   "ash": {
-    "drawer_view_all": "Mostra-ho tot: {{ title }}"
+    "drawer_view_all": "Mostra-ho tot: {{ title }}",
+    "lot": {
+      "kg_range_from": "{{ range }} kg · des de {{ price }}/kg",
+      "kg_range": "{{ range }} kg · {{ price }}/kg",
+      "pieces_range_from": "{{ range }} peces · des de {{ price }}/peça",
+      "pieces_range": "{{ range }} peces · {{ price }}/peça",
+      "per_kg": "/kg",
+      "per_piece": "/peça",
+      "row_lot": "Lot",
+      "row_type": "Tipus",
+      "row_quality": "Qualitat",
+      "row_brands": "Marques",
+      "row_for": "Per a",
+      "for_mujer": "Dona",
+      "for_hombre": "Home",
+      "tag_grado_a": "Grau A",
+      "tag_grado_b": "Grau B",
+      "tag_premium": "Premium",
+      "tag_bala": "Bala",
+      "tag_rework": "Rework",
+      "tag_vintage": "Vintage",
+      "tag_cuero": "Cuir"
+    }
   }
 }

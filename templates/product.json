@@ -81,6 +81,12 @@
           "settings": {
             "share_label": "Compartir"
           }
+        },
+        "lot_summary": {
+          "type": "lot_summary",
+          "settings": {
+            "show_tiers": true
+          }
         }
       },
       "block_order": [
@@ -90,6 +96,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "lot_summary",
         "description",
         "tab_details",
         "tab_shipping",

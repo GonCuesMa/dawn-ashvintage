@@ -457,6 +457,17 @@
                   </div>
                 {%- when 'kilo_tiers' -%}
                   {%- render 'kilo-tiers', block: block, product: product, section_id: section.id -%}
+                {%- when 'lot_summary' -%}
+                  <div {{ block.shopify_attributes }}>
+                    {%- render 'ash-lot-summary',
+                      product: product,
+                      mode: 'full',
+                      heading: block.settings.heading,
+                      show_tiers: block.settings.show_tiers,
+                      guarantee_text: block.settings.guarantee_text,
+                      return_note: block.settings.return_note
+                    -%}
+                  </div>
                 {%- when 'popup' -%}
                   <modal-opener
                     class="product-popup-modal__opener quick-add-hidden"
@@ -1233,6 +1244,41 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        }
+      ]
+    },
+    {
+      "type": "lot_summary",
+      "name": "Resumen del lote",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Se genera solo a partir del producto: kilos o prendas, precio por unidad, calidad y marcas (según sus etiquetas). Solo aparece en productos con la etiqueta venta-kilos o lotes-prendas."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título",
+          "default": "Qué incluye este lote"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_tiers",
+          "label": "Mostrar la lista de opciones con precio por unidad",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "guarantee_text",
+          "label": "Garantía (solo en productos grado A)",
+          "default": "Al menos el 90% de las prendas de este lote es de Clase A."
+        },
+        {
+          "type": "text",
+          "id": "return_note",
+          "label": "Nota de devoluciones",
+          "default": "Los lotes se devuelven completos: no se aceptan devoluciones parciales."
         }
       ]
     },
