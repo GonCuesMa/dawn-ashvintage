@@ -4928,7 +4928,30 @@
       "edit_button_accessibility_label": "Edita {{address}}",
       "edit_section_accessibility_label": "Edita {{address}}",
       "loading_accessibility_message": "S'està carregant l'adreça",
-      "loading_addresses_accessibility_message": "Carregant adreces"
+      "loading_addresses_accessibility_message": "Carregant adreces",
+      "loading_billing_accessibility_message": "S'estan carregant les adreces de facturació",
+      "loading_finished_accessibility_message": "S'ha carregat una pàgina nova d'adreces",
+      "loading_shipping_accessibility_message": "S'està carregant l'adreça d'enviament",
+      "pagination": {
+        "load_more": "Mostra més",
+        "load_more_accessibility_label": "Mostra més adreces"
+      },
+      "save_new_address_accessibility_label": "Desar adreça",
+      "title": "Adreces",
+      "delete_confirmation_title": "Voleu esborrar l'adreça?",
+      "delete_confirmation_description": "Les comandes existents no es veuran afectades.",
+      "edit_modal_title": {
+        "default": "Editar adreça",
+        "billing": "Editar adreça de facturació",
+        "shipping": "Editar l'adreça d'enviament"
+      },
+      "add_address_banner": "Afegeix les adreces que vols fer servir a la pantalla de pagament",
+      "billing_address_dropdown_placeholder": "Adreça de facturació",
+      "add_button_text": "Afegir",
+      "add_button_accessibility_label": "Afegir adreça",
+      "back_button": "Enrere",
+      "back_button_accessibility_label": "Tornar a l'edició de l'adreça {{address}}",
+      "no_addresses_banner": "No s'han afegit adreces."
     },
     "callback": {
       "try_again": "Reintentar"
@@ -4986,6 +5009,101 @@
         "one": "{{formattedBalance}} de crèdit en botiga i en {{count}} divisa més",
         "other": "{{formattedBalance}} de crèdit en botiga i en {{count}} monedes més",
         "many": "{{formattedBalance}} de crèdit en botiga i en {{count}} monedes més"
+      }
+    },
+    "address_form": {
+      "auto_complete_close_accessibility_label": "Tanca els suggeriments.",
+      "auto_complete_title": "Suggeriments",
+      "billing_address": "Utilitzar com a adreça de facturació",
+      "cancel": "Cancel·lar",
+      "cancel_accessibility_label": "Cancel·lar l'edició de l'adreça {{address}}",
+      "creation_success_notification": "Adreça afegida",
+      "default_address": "Aquesta és la meva adreça predeterminada.",
+      "default_address_creation_success_notification": "Adreça predeterminada afegida",
+      "default_address_update_success_notification": "Adreça predeterminada actualitzada",
+      "loading_add_form_accessibility_message": "S'està carregant el formulari de nova adreça",
+      "loading_edit_form_accessibility_message": "S'està carregant el formulari d'edició de l'adreça",
+      "loading_finished_accessibility_message": "Formulari d'adreça carregat",
+      "save": "Desar",
+      "save_accessibility_label": "Desar l'adreça {{address}}",
+      "section_title_accessibility_label": "Afegir adreça",
+      "update_success_notification": "Adreça actualitzada",
+      "attention": "Atenció",
+      "attention_help_text": "Nom d'una persona o departament",
+      "loading_form_accessibility_message": "S'està carregant el formulari d'adreça",
+      "attention_company": "Empresa/destinatari"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Nom de l'empresa",
+        "company_card_section_accessibility_label": "Empresa"
+      },
+      "locations": {
+        "contact_email": "Correu electrònic",
+        "contact_list_title": "Gent",
+        "contact_name": "Nom",
+        "contact_permissions": "Permisos",
+        "contact_phone_number": "Número de telèfon",
+        "location_picker_label": "Nom de la sucursal",
+        "net_payment_terms_description": "{{name}}: pagaments que vencen en {{numberOfDays}} dies",
+        "payment_details_title": "Detalls del pagament",
+        "payment_terms": "Condicions de pagament",
+        "permissions_label": "Els seus permisos",
+        "permissions_title": "Permisos",
+        "section_title": "Sucursal",
+        "shipping_address_required": "Afegeix una adreça d'enviament a aquesta sucursal per començar a fer comandes",
+        "tax_details_title": "Informació fiscal",
+        "tax_id": "Identificació fiscal",
+        "tax_exemptions": "Exempcions d'impostos",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} més",
+        "tax_exemptions_modal_close": "Tancar",
+        "taxes_none": "Cap",
+        "tax_exemption_not_applicable": "N/A",
+        "tax_exemptions_modal_button_accessibility_label": "Veure totes les exempcions fiscals",
+        "pagination": {
+          "load_more": "Mostra més",
+          "load_more_accessibility_label": "Mostrar més sucursals"
+        },
+        "own_role_contact_name": "Tu",
+        "staff_and_permissions_title": "Empleats i permisos",
+        "location_picker_accessibility_label": "Nom de la sucursal: {{locationName}}",
+        "deposit_percentage": "Dipòsit del {{percentage}}",
+        "contact_contact": "Contacte"
+      },
+      "location_selection": {
+        "description": "Si ja tens articles al carretó, el canvi de sucursal pot afectar els preus i les quantitats del carretó.",
+        "list_accessibility_label": "Llista de sucursals",
+        "list_item_without_address_accessibility_label": "{{name}}: sense adreça",
+        "list_loading_accessibility_message": "S'està carregant la llista de sucursals",
+        "list_loading_address_accessibility_message": "S'està carregant l'adreça per a {{locationName}}",
+        "list_loading_finished_accessibility_message": "S'ha carregat la llista de sucursals.",
+        "loading_store_accessibility_message": "Anar a la botiga",
+        "selection_cancel_button": "Cancel·lar",
+        "selection_confirmation_button": "Triar sucursal",
+        "title": "Per a quina sucursal compres?",
+        "continue_to_store": "Continuar a la botiga",
+        "no_location_title": "Només comandes personals",
+        "no_location_description": "Ja no tens permís per fer comandes per a {{company}}. Encara pots fer comandes personals.",
+        "no_locations_found": "No s'ha trobat cap sucursal",
+        "search": "Cercar sucursals",
+        "clear_search": "Esborrar cerca",
+        "try_new_search": "Intentar una cerca nova",
+        "search_location_title": "Seleccionar una sucursal",
+        "selection_continue_button": "Continuar",
+        "description_switch_later": "Pots canviar-la més endavant",
+        "title_choose_location": "Selecciona una sucursal",
+        "error_loading_locations": "Hi va haver un problema en carregar les sucursals. Revisa la teva connexió a internet i torna-ho a intentar."
+      },
+      "addresses": {
+        "add_billing_address_button": "Afegir adreça de facturació",
+        "add_billing_address_section_accessibility_label": "Afegir adreça de facturació",
+        "add_shipping_address_button": "Afegir adreça d'enviament",
+        "add_shipping_address_section_accessibility_label": "Afegir adreça d'enviament",
+        "billing_address_card_title": "Adreça de facturació",
+        "cancel_adding_billing_address_accessibility_label": "Cancel·lar l'addició de l'adreça de facturació",
+        "cancel_adding_shipping_address_accessibility_label": "Cancel·lar l'addició de l'adreça d'enviament",
+        "save_new_billing_address_accessibility_label": "Desar l'adreça de facturació",
+        "save_new_shipping_address_accessibility_label": "Desar l'adreça d'enviament"
       }
     }
   }
