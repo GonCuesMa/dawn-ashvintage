@@ -2101,6 +2101,142 @@
           "other": "elimina els articles no disponibles",
           "many": "elimina els articles no disponibles"
         }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Envia'm novetats i ofertes per correu electrònic",
+        "unsubscribe": {
+          "title": "Ha cancel·lat la seva subscripció",
+          "description": "No rebrà més recordatoris nostres de cistelles de la compra."
+        },
+        "accept_sms_checkbox_label": "Enviar-me novetats i ofertes per SMS",
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Política de privacitat",
+            "terms_of_service": "Termes del servei",
+            "description_html": "En registrar-te per SMS, acceptes rebre missatges automatitzats de màrqueting recurrents al número de telèfon proporcionat, incloent-hi recordatoris de carrets. El consentiment no és una condició de compra. Respon STOP per donar-te de baixa. Respon HELP per obtenir ajuda. La freqüència dels missatges varia. Poden aplicar-se tarifes de missatges i dades. Consulta la nostra %{privacy_policy_link} i els nostres %{terms_of_service_link}.",
+            "description_transactional_html": "Pots rebre missatges de text relacionats amb la confirmació de la comanda i actualitzacions d'enviament. Respon STOP per donar-te de baixa. Respon HELP per obtenir ajuda. La freqüència dels missatges varia. Poden aplicar-se tarifes de missatges i dades. Consulta la nostra %{privacy_policy_modal_link} i els nostres %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Número de telèfon mòbil",
+          "get_offers_by_text": "Rebre ofertes per missatge de text"
+        },
+        "post_accept_marketing_checkbox_label": "Estàs subscrit per rebre notícies i ofertes per correu electrònic",
+        "pending_accept_marketing_checkbox_label": "Revisa el teu correu electrònic i confirma la teva subscripció a les notícies i ofertes",
+        "accept_shop_pay_marketing_checkbox_label": "Registra'm per rebre notícies i ofertes d'aquesta botiga",
+        "disclaimer": {
+          "privacy_policy": "Política de privacitat",
+          "terms_of_service": "Termes del Servei"
+        },
+        "accept_whatsapp_marketing_checkbox_label": "Enviar-me missatges per WhatsApp amb novetats i ofertes",
+        "whatsapp": {
+          "disclaimer": {
+            "description_html": "Si et subscrius a través de WhatsApp, acceptes rebre missatges de màrqueting per WhatsApp al número de telèfon proporcionat. El consentiment no és una condició de compra. Respon STOP per cancel·lar la subscripció. La freqüència dels missatges varia. Es poden aplicar tarifes per missatges i dades. Consulta la %{privacy_policy_link} i els %{terms_of_service_link}."
+          }
+        }
+      },
+      "shop_policies": {
+        "refund_policy": "Política de reemborsament",
+        "privacy_policy": "Política de privacitat",
+        "terms_of_service": "Termes del servei",
+        "legal_notice": "Avís legal",
+        "shipping_policy": "Enviament",
+        "terms_of_sale": "Condicions de venda",
+        "subscription_policy": "Cancel·lacions",
+        "purchase_options_policy": "Política d'opcions de compra",
+        "contact_information": "Contacte",
+        "purchase_options_cancellation_policy": "Cancel·lacions",
+        "cookie_preferences": "Galetes",
+        "policy_label": "Política",
+        "policies_label": "Polítiques",
+        "select_policy_label": "Seleccioneu una política",
+        "terms_and_policies": "Termes i polítiques"
+      },
+      "notifications": {
+        "title": "Notificacions"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Import a pagar per la comanda %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "Afegit",
+            "other": "S'ha afegit %{count}.",
+            "many": "S'ha afegit %{count}."
+          },
+          "removed": "Eliminada",
+          "subtracted": "S'ha eliminat %{count}.",
+          "returned": "S'ha retornat %{count}.",
+          "return_line_item_removed": "S'ha eliminat %{count} de la devolució."
+        },
+        "additional_payment_requested": "Es requereix el pagament de %{total_outstanding}",
+        "checkout_review_and_pay": "La teva comanda %{order_name} s'ha actualitzat. Revisa aquests canvis i, tot seguit, paga per confirmar la teva comanda.",
+        "order_updated_on": "La teva comanda s'ha actualitzat el %{last_edited_at}.",
+        "order_review_and_pay": "La teva comanda s'ha actualitzat. Revisa-la i paga per confirmar-la.",
+        "pay_now": "Pagar ara"
+      },
+      "change_currency": {
+        "currency_button_label": "%{currency} (%{currency_symbol})",
+        "credit_card_will_be_charged_html": "Es cobrarà %{amount} a la teva targeta de crèdit",
+        "payment_total_label": "Total del pagament",
+        "conversion_rate": "1 %{from_currency_code} = %{rate} %{to_currency_code}",
+        "change_currency_link": "Canvia a %{currency_name}",
+        "card_provider_fx_charges_warning": "És possible que el teu proveïdor de targeta apliqui alguna comissió per transaccions en %{currency_code}.",
+        "currency_not_supported_by_shop": "La moneda que has seleccionat ja no està disponible. Tots els preus ara són en %{currency_code}."
+      },
+      "tips": {
+        "title": "Afegir propina",
+        "description": "Dona una mostra de suport a l'equip de %{shop_name}",
+        "presets_description": "Selecciona un percentatge de propina",
+        "custom_label": "Propina personalitzada",
+        "add_tip": "Afegir propina",
+        "update_tip": "Actualitzar propina",
+        "message": "Moltes gràcies.",
+        "preset_label": "%{tip_percent}%",
+        "no_tip_label": "Cap",
+        "not_available_with_spi": "No disponible amb quotes de Shop Pay"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Comprar %{product_name}",
+          "one": "Comprar %{product_name} i %{count} article més",
+          "other": "Comprar %{product_name} i %{count} articles més",
+          "many": "Comprar %{product_name} i %{count} articles més"
+        }
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Informació addicional",
+          "tax_credential_br": "CPF/CNPJ",
+          "shipping_credential_br": "CPF/CNPJ",
+          "shipping_credential_kr": "Codi personal de duanes",
+          "shipping_credential_cn": "Número d'identificació de resident",
+          "tax_credential_it": "Codi fiscal (opcional)",
+          "tax_email_it": "Correu electrònic certificat (PEC) (opcional)",
+          "tax_credential_cl": "RUT",
+          "shipping_credential_cl": "RUT",
+          "tax_credential_co": "Cèdula/IVA",
+          "tax_credential_type_co": "Tipus de document",
+          "shipping_credential_co": "Cèdula/IVA",
+          "shipping_credential_type_co": "Tipus de document",
+          "tax_credential_cr": "Número d'identificació/RUT",
+          "shipping_credential_cr": "Número d'identificació/RUT",
+          "tax_credential_ec": "CI/NIF/IVA",
+          "shipping_credential_ec": "CI/NIF/IVA",
+          "tax_credential_gt": "NIF/IVA",
+          "shipping_credential_gt": "NIF/IVA",
+          "tax_credential_id": "NPWP",
+          "shipping_credential_id": "NPWP",
+          "tax_credential_my": "TIN/Número de registre",
+          "shipping_credential_my": "TIN/Número de registre",
+          "shipping_credential_mx": "RFC",
+          "tax_credential_mx": "RFC",
+          "tax_credential_type_mx": "Règim fiscal",
+          "tax_credential_use_mx": "Ús de CFDI",
+          "tax_credential_py": "CI/NIF/IVA",
+          "shipping_credential_py": "CI/NIF/IVA",
+          "tax_credential_pe": "DNI/RUC/CE",
+          "shipping_credential_pe": "DNI/RUC/CE",
+          "tax_credential_pt": "NIF/IVA",
+          "shipping_credential_pt": "NIF/IVA"
+        }
       }
     },
     "pagination": {
@@ -2922,6 +3058,148 @@
           "description": "Hi ha hagut un problema en actualitzar les vostres preferències de màrqueting. Proveu d'actualitzar aquesta pàgina o reviseu la vostra connexió a internet."
         },
         "update_success": "Preferències de màrqueting actualitzades"
+      }
+    },
+    "payment_methods": {
+      "card_fields": {
+        "tooltip": {
+          "card_verification_value_explanation_amex": "Codi de seguretat de 4 dígits a la part frontal de la teva targeta",
+          "card_verification_value_explanation_other": "Codi de seguretat de 3 dígits al revers de la teva targeta",
+          "card_verification_value_explanation": "Codi de seguretat de 3 dígits situat normalment al revers de la teva targeta. Les targetes American Express tenen un codi de 4 dígits situat a l'anvers.",
+          "card_security_notice": "Totes les transaccions són segures i estan encriptades."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Introdueix el teu nom exactament com apareix a la teva targeta",
+          "credit_card_number_invalid": "Introdueix un número de targeta vàlid",
+          "credit_card_expiry_invalid": "Introdueix una data de caducitat de targeta vàlida",
+          "credit_card_verification_value_blank": "Introdueix el codi de seguretat (CVV) de la teva targeta"
+        },
+        "unavailable": {
+          "text": "Els pagaments amb targeta de crèdit i dèbit no estan disponibles en aquest moment.",
+          "link_text": "Recarrega la pàgina",
+          "suffix": "o torna-ho a intentar més tard."
+        }
+      },
+      "add_payment_method": {
+        "title": "Afegir mètode de pagament",
+        "payment_method_added_confirmation": "Mètode de pagament afegit",
+        "billing_address": {
+          "title": "Adreça de facturació",
+          "add_billing_address_button": "Afegir nova",
+          "add_billing_address_button_accessibility_label": "Afegir nova adreça de facturació",
+          "choose_billing_address_from_list_button": "Triar de la llista",
+          "choose_billing_address_from_list_button_accessibility_label": "Trieu una adreça de facturació de la llista",
+          "missing_billing_address_error_message": "Escriu una adreça de facturació.",
+          "default_checkbox": "Establir com a mètode de pagament predeterminat"
+        },
+        "replace_mode_warning": "Eliminar aquesta forma de pagament afectarà les subscripcions i les comandes en precompra. Reemplaça-la per una altra forma de pagament alternativa per continuar rebent les properes comandes.",
+        "choose_from_list": "Triar de la llista",
+        "add_new_button": "Afegir nova",
+        "button_title": "Afegir",
+        "missing_customer_error": "S'ha produït un error. Torna-ho a intentar o contacta amb atenció al client.",
+        "subscription_contracts": {
+          "title": "Utilitzar forma de pagament per a les comandes recurrents",
+          "product_details": "Informació del producte",
+          "load_more": "Mostra més",
+          "more_items": {
+            "one": "{{count}} producte més",
+            "other": "{{count}} productes més",
+            "many": "{{count}} productes més"
+          },
+          "product_count": {
+            "one": "{{count}} producte",
+            "other": "{{count}} productes",
+            "many": "{{count}} productes"
+          }
+        },
+        "contracts_update_failed": "No s'han pogut actualitzar alguns contractes de subscripció",
+        "subscription_contracts_updated": "S'han actualitzat {{succeeded}} de {{total}} subscripcions",
+        "invalid_wallet_type_error": "Tipus de cartera digital no vàlid.",
+        "updating_contracts": {
+          "one": "Actualitzant {{count}} contracte de subscripció...",
+          "other": "Actualitzant {{count}} contractes de subscripció...",
+          "many": "Actualitzant {{count}} contractes de subscripció..."
+        },
+        "contracts_updated": {
+          "one": "S'ha actualitzat correctament {{count}} contracte de subscripció",
+          "other": "S'han actualitzat correctament {{count}} contractes de subscripció",
+          "many": "S'han actualitzat correctament {{count}} contractes de subscripció"
+        }
+      },
+      "expires_soon": "Aquesta targeta expirarà aviat",
+      "expired": "Aquesta targeta ha caducat",
+      "card_update_consent": "Aquesta forma de pagament es desarà per a futures compres.",
+      "digital_wallet_title": "Cartera digital",
+      "credit_or_debit_card_title": "Targeta de crèdit o dèbit",
+      "google_pay": {
+        "errors": {
+          "generic": "S'ha produït un error amb Google Pay. Torna-ho a provar o utilitza una altra forma de pagament.",
+          "missing_billing_address": "Google Pay requereix una adreça de facturació. Afegeix-ne una al teu compte."
+        },
+        "loading": "Carregant Google Pay",
+        "iframe_title_accessibility_label": "Afegeix una forma de pagament Google Pay",
+        "loading_accessibility_message": "Carregant Google Pay"
+      },
+      "apple_pay": {
+        "loading": "S'està carregant Apple Pay",
+        "errors": {
+          "generic": "S'ha produït un problema amb Apple Pay. Torna-ho a intentar o utilitza una altra forma de pagament.",
+          "not_available": "Apple Pay no està disponible en aquest dispositiu.",
+          "missing_billing_address": "Apple Pay requereix una adreça de facturació. Afegeix-ne una al teu compte."
+        }
+      },
+      "add_payment_method_banner": "Afegeix una forma de pagament per agilitzar el procés de pagament o els serveis amb autorització prèvia.",
+      "edit_payment_method_button_accessibility_label": "Edita {{paymentMethodName}} que acaba en {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "Edita {{paymentMethodName}}",
+      "expiration_warning_button_accessibility_label": "Mostra avís de venciment per a {{paymentMethodName}} que acaba en {{lastDigits}}",
+      "no_payment_methods_banner": "No s'han afegit formes de pagament.",
+      "default": "Predeterminada",
+      "store_credit": {
+        "label": "Crèdit a la botiga",
+        "expirable_amounts_button": "Veure imports que poden vèncer",
+        "details_modal": {
+          "title": "Crèdit en botiga que pot caducar",
+          "balance_label": "Saldo",
+          "expiration_date_label": "Data de venciment",
+          "amount_label": "Import",
+          "expirable_balance_info": "Una part del saldo venç més endavant",
+          "expirable_amount_label": "Import total que pot vèncer",
+          "expirable_amounts_info": "Els imports que vencen abans s'apliquen primer durant el pagament",
+          "expired_amounts_button": "Veure imports vençuts",
+          "pagination": {
+            "load_more_label": "Mostra més",
+            "load_more_accessibility_label": "Mostra més imports que vencen",
+            "expirable_transactions_loading": "Carregant més imports per vèncer",
+            "transactions_loading": "Carregant més transaccions",
+            "load_more_transactions_accessibility_label": "Mostrar més transaccions",
+            "expirable_transactions_loaded": "Es van carregar més imports a vèncer",
+            "transactions_loaded": "S'hi van carregar més transaccions"
+          },
+          "date_label": "Data",
+          "expirable_amounts_button": "Veure",
+          "event_label": "Esdeveniment",
+          "events": {
+            "adjustment": "Ajust",
+            "order_payment": "Pagament de la comanda",
+            "order_refund": "Reemborsament de la comanda",
+            "payment_failure": "Error en el pagament",
+            "payment_returned": "Pagament retornat",
+            "order_cancellation": "Cancel·lació de la comanda",
+            "tax_finalization": "Determinació d'impostos"
+          },
+          "load_error": "No s'ha pogut carregar el crèdit a la botiga.",
+          "expirable_indicator": "{{formattedAmount}} venciment",
+          "expirable_indicator_accessibility_label": "{{formattedAmount}} vencerà. Veure imports per vèncer.",
+          "expirable_indicator_with_date_accessibility_label": "{{formattedAmount}} venç el {{date}}. Veure imports per vèncer.",
+          "expires_at": "Venç el {{date}}",
+          "expirable_transactions_list_accessibility_label": "Transaccions de crèdit en botiga per vèncer",
+          "loading_accessibility_message": "Carregant els detalls del crèdit a la botiga",
+          "transactions_list_accessibility_label": "Transaccions de crèdit en botiga",
+          "transaction_types": {
+            "credit": "Afegit",
+            "debit": "Desgastat"
+          }
+        }
       }
     }
   }
