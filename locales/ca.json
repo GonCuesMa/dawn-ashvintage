@@ -2192,7 +2192,31 @@
           "other": "Arriba en %{count} enviaments",
           "many": "Arriba en %{count} enviaments"
         },
-        "includes_recurring_items": "Inclou articles recurrents"
+        "includes_recurring_items": "Inclou articles recurrents",
+        "title": "Enviament",
+        "shipping_method_title": "Mètodes d'enviament",
+        "waiting_on_rate_notice": "Obtenint les tarifes d'enviament disponibles...",
+        "waiting_on_pickup_location_notice": "Obtenció de les sucursals disponibles per a recollida...",
+        "no_rates_for_cart_or_destination_notice": "No hi ha mètodes d'enviament disponibles per al teu carretó o adreça",
+        "no_pickup_location_notice": "Almenys un dels teus productes no està disponible per ser recollit",
+        "no_rates_for_country_notice": "No s'han trobat tarifes d'enviament per a aquesta adreça.",
+        "no_rates_contact_notice": "Posat en contacte amb nosaltres per obtenir més informació",
+        "free_rate_label": "Gratuït",
+        "cheapest_rate_label": "Més econòmic",
+        "estimated_delivery_date": {
+          "one": "%{count} dia hàbil",
+          "other": "%{count} dies hàbils",
+          "many": "%{count} dies hàbils"
+        },
+        "estimated_delivery_date_range": "%{minimum} a %{maximum} dies hàbils",
+        "shipping_line_phone_label": "Número de telèfon mòbil (obligatori)",
+        "shipping_line_phone": "El teu servei de missatgeria i paqueteria pot utilitzar aquest número per contactar amb tu.",
+        "other_method": {
+          "zero": "No hi ha altres mètodes d'enviament disponibles",
+          "one": "%{count} mètode diferent disponible per",
+          "other": "Altres %{count} mètodes d'enviament disponibles a partir de",
+          "many": "Altres %{count} mètodes d'enviament disponibles a partir de"
+        }
       },
       "thank_you": {
         "thank_you_payments_app_pending_payment_description_default_with_email_payment": "Rebràs en breu un correu electrònic de confirmació amb el número de comanda.",
@@ -2830,7 +2854,115 @@
         "total_savings": "Estalvi total",
         "return_restocking_fee_label": "Despeses de reposició",
         "return_shipping_fee_label": "Enviament de devolució",
-        "enter_shipping_address": "Introduir l'adreça d'enviament"
+        "enter_shipping_address": "Introduir l'adreça d'enviament",
+        "shipping_discount_title": "Descompte d'enviament",
+        "discount_code_applied": "Codi de descompte aplicat",
+        "discount_code_applied_with_code": "S'ha aplicat el codi de descompte %{code}",
+        "gift_card_applied": "Targeta regal aplicada",
+        "duties_included_label": "El total inclou impostos i aranzels. No s'apliquen càrrecs addicionals pel lliurament.",
+        "deferred_balance_info": {
+          "title": "El saldo de {{amount_due}} venç el {{due_at}}",
+          "due_on_fulfillment_title": "El saldo de {{amount_due}} venç en completar la preparació de la comanda"
+        },
+        "eligible_customer_missing_notice": "El codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> requereix un client elegible.",
+        "subtotal_label_with_quantity": {
+          "one": "Subtotal · %{count} article",
+          "other": "Subtotal · %{count} articles",
+          "many": "Subtotal · %{count} articles"
+        },
+        "cost_table_item_column_header": "Article",
+        "cost_table_value_column_header": "Valor",
+        "product_image_quantity_label": "Quantitat",
+        "more_items_modal": {
+          "clear_search": "Esborrar cerca",
+          "empty_results": "No s'ha trobat cap resultat per a %{searchText}. Revisa l'ortografia o utilitza una paraula o frase diferent.",
+          "number_items_shown": "%{shownNumber} de %{totalNumber} articles",
+          "search_item": "Cercar"
+        },
+        "number_items": {
+          "one": "%{count} article",
+          "other": "%{count} articles",
+          "many": "%{count} articles"
+        },
+        "view_all_items": {
+          "one": "Veure %{count} article",
+          "other": "Veure els %{count} articles",
+          "many": "Veure els %{count} articles"
+        },
+        "price_before_discount_aria_text": "Preu original",
+        "price_after_discount_aria_text": "Preu rebaixat",
+        "discount_code_aria_text": "Codi de descompte",
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Envia-ho a una adreça",
+          "ship_to_address_instead_html": "%{link}"
+        },
+        "pickup_unavailable_banner_title": {
+          "one": "No hi ha botigues disponibles amb el teu article",
+          "other": "No hi ha botigues disponibles amb els teus articles",
+          "many": "No hi ha botigues disponibles amb els teus articles"
+        },
+        "deposit_label": "Dipòsit",
+        "total_due_today_label": "Total a pagar avui",
+        "total_due_later_label": "Total a pagar més endavant",
+        "discount_code_allocations_mismatch": "El teu codi de descompte <strong style=\"text-transform:uppercase\">%{code}</strong> ha canviat. Revisa el teu carret i torna-ho a intentar.",
+        "deferred_total_due_date_label_next": "Venc el %{date}",
+        "total_due_label": "Total a pagar",
+        "total_price_label": "Preu total",
+        "for_add_on": "Per a: %{group_title}",
+        "unconfirmed_label": "Sense confirmar",
+        "total_paid_label": "Total pagat",
+        "from_shop_heading": "De: %{shop_name}",
+        "from_other_stores_heading": "D'altres botigues",
+        "order_discounts_apply_to_local_shop": "Els descomptes de comanda només s'apliquen a articles de %{shop_name}",
+        "gift_cards_apply_to_local_shop": "Les targetes regal només s'apliquen a articles de %{shop_name}",
+        "estimated_taxes_label_short": "Benvolgut",
+        "discount_code_removed": "S'ha eliminat el codi de descompte %{code}",
+        "discount_code_replaced": "S'ha eliminat el codi de descompte %{old_code} i s'ha aplicat %{code}",
+        "discount_code_replaced_multiple": "S'han eliminat diversos codis de descompte i s'ha aplicat %{code}",
+        "from_multiple_stores_heading": "De diverses botigues",
+        "pay_merchant_label": "Pagar a %{merchant_name}",
+        "discount_applies_to_subscription_items_only": "Aquest descompte només s'aplica a articles de subscripció",
+        "estimated_taxes_finalization_tooltip_content_short": "Impostos definitius després del pagament",
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "No hi ha botigues disponibles a %{country} amb el teu article",
+          "other": "No hi ha botigues disponibles a %{country} amb els teus articles",
+          "many": "No hi ha botigues disponibles a %{country} amb els teus articles"
+        },
+        "compare_at_sale": "Oferta (%{sale_amount})",
+        "discount_code_applied_count": {
+          "many": "Mostrar %{count} descomptes"
+        },
+        "tax_line": {
+          "hst": "HST",
+          "gst": "GST",
+          "pst": "PST",
+          "rst": "RST",
+          "qst": "QST",
+          "vpt": "VPT"
+        },
+        "automatic_discount_tooltip": "Els descomptes aplicats automàticament no es poden eliminar",
+        "alternative_payment_currency_chinese_yuan": "Confirma el total final en CNY a l'app %{wallet}.",
+        "product_disclosures": {
+          "title": "Avisos sobre el producte"
+        },
+        "lpm": {
+          "wechat_pay": {
+            "checkout_disclosure": "Confirma el total final en CNY a l'app de WeChat",
+            "post_purchase_disclosure": "Consulta el total en CNY a WeChat",
+            "checkout_disclosure_with_alternative_payment_currency": "%{shop_name} processarà aquest pagament com a %{amount_due} %{processing_currency}, que WeChat converteix a CNY",
+            "checkout_disclosure_charged_in_cny": "%{shop_name} processarà aquest pagament com a %{amount_due} %{processing_currency}"
+          },
+          "alipay": {
+            "checkout_disclosure": "Confirma el total final en CNY a l'app d'Alipay",
+            "post_purchase_disclosure": "Consulta el total en CNY a Alipay",
+            "checkout_disclosure_with_alternative_payment_currency": "%{shop_name} processarà aquest pagament com a %{amount_due} %{processing_currency}, que Alipay converteix a CNY",
+            "checkout_disclosure_charged_in_cny": "%{shop_name} processarà aquest pagament com a %{amount_due} %{processing_currency}"
+          }
+        },
+        "discount_title_with_position": "Descompte %{position}",
+        "item_discounts_label": "Descomptes en articles",
+        "tax_label": "Impostos",
+        "duty_label": "Aranzels"
       }
     },
     "pagination": {
