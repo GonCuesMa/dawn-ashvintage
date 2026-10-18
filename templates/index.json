@@ -309,53 +309,33 @@
         "p1": {
           "type": "pack",
           "settings": {
-            "product": "",
-            "image": "shopify://shop_images/inicial.jpg",
-            "badge": "Para empezar",
-            "title": "Lote Inicial",
-            "kilos": "10 kg",
-            "price_text": "Desde 16 €/kg",
-            "highlight": "+5 prendas gratis",
-            "link": "shopify://products/lote-marcas-variadas-por-kilos"
+            "product": "camisetas-mix-marca-grado-a-por-kg",
+            "badge": "Grado A",
+            "highlight": "Hasta un 15% de descuento"
           }
         },
         "p2": {
           "type": "pack",
           "settings": {
-            "product": "",
-            "image": "shopify://shop_images/seleccion.jpg",
-            "badge": "Para crecer",
-            "title": "Lote Selección",
-            "kilos": "25 kg",
-            "price_text": "Desde 14 €/kg",
-            "highlight": "+10 prendas gratis",
-            "link": "shopify://products/lote-marcas-variadas-por-kilos"
+            "product": "sudaderas-mix-marca-grado-a-por-kg",
+            "badge": "Grado A",
+            "highlight": ""
           }
         },
         "p3": {
           "type": "pack",
           "settings": {
-            "product": "",
-            "image": "shopify://shop_images/premium.jpg",
-            "badge": "Más pedido",
-            "title": "Lote Premium",
-            "kilos": "50 kg",
-            "price_text": "Desde 10 €/kg",
-            "highlight": "El más vendido",
-            "link": "shopify://products/lote-marcas-variadas-por-kilos"
+            "product": "jerseis-mix-marca-grado-a-por-kg",
+            "badge": "Grado A",
+            "highlight": ""
           }
         },
         "p4": {
           "type": "pack",
           "settings": {
-            "product": "",
-            "image": "shopify://shop_images/profesional.jpg",
-            "badge": "Para negocios",
-            "title": "Lote Profesional",
-            "kilos": "100 kg",
-            "price_text": "Desde 8 €/kg",
-            "highlight": "Mejor precio por kilo",
-            "link": ""
+            "product": "mix-chaquetas-grado-a",
+            "badge": "Grado A",
+            "highlight": ""
           }
         }
       },

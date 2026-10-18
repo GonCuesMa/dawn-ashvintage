@@ -1,7 +1,9 @@
 {%- comment -%}
   Packs por kilos: tarjetas con foto, etiqueta, título, kilos y precio por kilo.
-  Cada bloque puede enlazar a un producto y sacar de él título, foto, kilos y precio por kilo
-  (se calculan con el peso y el precio de sus variantes), o rellenarse a mano. Máximo 4 bloques.
+  Cada bloque se alimenta de un producto real: saca de él título, foto, kilos y precio por kilo
+  (se calculan con el peso y el precio de sus variantes). Los campos manuales solo sustituyen
+  esos valores. Un bloque sin producto, o con un producto no publicado, no se muestra.
+  Si ninguna tarjeta es visible, la sección no se pinta (sí en el editor). Máximo 4 bloques.
 {%- endcomment -%}
 
 {%- style -%}
@@ -18,7 +20,16 @@
   }
 {%- endstyle -%}
 
-{%- assign block_count = section.blocks.size -%}
+{%- liquid
+  assign block_count = 0
+  for block in section.blocks
+    if block.settings.product != blank
+      assign block_count = block_count | plus: 1
+    endif
+  endfor
+-%}
+
+{%- if block_count > 0 or request.design_mode -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
@@ -39,6 +50,9 @@
         role="list"
       >
         {%- for block in section.blocks -%}
+          {%- if block.settings.product == blank -%}
+            {%- continue -%}
+          {%- endif -%}
           {%- liquid
             assign pack_product = block.settings.product
             assign pack_title = block.settings.title | default: pack_product.title
@@ -136,6 +150,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% stylesheet %}
   .kilo-packs__header {
@@ -284,13 +299,13 @@
       "type": "pack",
       "name": "Pack",
       "settings": [
-        { "type": "product", "id": "product", "label": "Producto", "info": "Si lo eliges, se rellenan solos el título, la foto, los kilos y el precio por kilo (usa el peso de las variantes)." },
+        { "type": "product", "id": "product", "label": "Producto", "info": "Obligatorio: sin producto (o si no está publicado) la tarjeta no se muestra. Rellena solos el título, la foto, los kilos y el precio por kilo (usa el peso de las variantes)." },
         { "type": "image_picker", "id": "image", "label": "Imagen", "info": "Sustituye a la imagen del producto." },
-        { "type": "text", "id": "badge", "label": "Etiqueta sobre la imagen", "default": "Para empezar" },
+        { "type": "text", "id": "badge", "label": "Etiqueta sobre la imagen" },
         { "type": "text", "id": "title", "label": "Título", "info": "Sustituye al nombre del producto." },
         { "type": "text", "id": "kilos", "label": "Kilos", "info": "Sustituye al valor calculado. Ejemplo: 7 kg" },
         { "type": "text", "id": "price_text", "label": "Precio por kilo", "info": "Sustituye al valor calculado. Ejemplo: Desde 16 €/kg" },
-        { "type": "text", "id": "highlight", "label": "Destacado", "default": "+5 prendas gratis" },
+        { "type": "text", "id": "highlight", "label": "Destacado" },
         { "type": "url", "id": "link", "label": "Enlace", "info": "Sustituye al enlace del producto." }
       ]
     }
@@ -299,10 +314,10 @@
     {
       "name": "Packs por kilos",
       "blocks": [
-        { "type": "pack", "settings": { "badge": "Para empezar", "title": "Lote Inicial", "kilos": "7 kg", "price_text": "Desde 16 €/kg", "highlight": "+5 prendas gratis" } },
-        { "type": "pack", "settings": { "badge": "Para crecer", "title": "Lote Selección", "kilos": "15 kg", "price_text": "Desde 14 €/kg", "highlight": "+10 prendas gratis" } },
-        { "type": "pack", "settings": { "badge": "Más pedido", "title": "Lote Premium", "kilos": "25 kg", "price_text": "Desde 10 €/kg", "highlight": "El más vendido" } },
-        { "type": "pack", "settings": { "badge": "Para negocios", "title": "Lote Profesional", "kilos": "100 kg", "price_text": "Desde 8 €/kg", "highlight": "Mejor precio por kilo" } }
+        { "type": "pack" },
+        { "type": "pack" },
+        { "type": "pack" },
+        { "type": "pack" }
       ]
     }
   ]
