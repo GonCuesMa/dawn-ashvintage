@@ -1545,6 +1545,152 @@
       },
       "online_store_chat": {
         "title": "Tens alguna pregunta? Xateja amb nosaltres"
+      },
+      "shipping": {
+        "shipping_rate_discounted_amount": "Abans: %{original_amount}. Ara: %{amount}",
+        "shipping_line_delivery_phone": "És possible que es posin en contacte amb tu amb informació actualitzada sobre el teu lliurament.",
+        "optional_shipping_line_delivery_instructions_label": "Instruccions de lliurament (opcional)",
+        "shipping_line_delivery_phone_label": "Número de telèfon",
+        "shipping_line_delivery_instructions": "Introdueix les dades necessàries, com ara codis de portes o instruccions per al lliurament.",
+        "local_delivery": "Lliurament local",
+        "subscription_shipping": "Enviament per subscripció",
+        "shipping_method_one_time_purchase_group_title": "Compra única",
+        "shipping_method_subscription_group_title": "Subscripció",
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "one": "per a %{count} lliurament",
+            "other": "per a %{count} entregues",
+            "many": "per a %{count} entregues"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "cada dia",
+              "other": "cada %{count} dies",
+              "many": "cada %{count} dies"
+            },
+            "week": {
+              "one": "cada setmana",
+              "other": "cada %{count} setmanes",
+              "many": "cada %{count} setmanes"
+            },
+            "month": {
+              "one": "cada mes",
+              "other": "cada %{count} mesos",
+              "many": "cada %{count} mesos"
+            },
+            "year": {
+              "one": "cada any",
+              "other": "cada %{count} anys",
+              "many": "cada %{count} anys"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} per lliurament",
+          "prepaid_shipping_price_label": "%{shipping_price} per lliurament x %{delivery_interval_count}",
+          "initial_order_discounted": "Cost del primer enviament %{discounted_shipping_cost}, després %{frequency_description}",
+          "prepaid_initial_order_discounted": "Cost del primer enviament %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Cost del primer enviament %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Cost del primer enviament %{discounted_shipping_price} %{prepaid_delivery_frequency}, després %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Cost del primer enviament %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), després %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Inclòs",
+          "recurring_order_shipping_price": "seguit de %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Primer enviament inclòs, seguit de %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per lliurament), seguit de %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Primer encàrrec gratuït",
+            "other": "Primers %{count} comandes gratis",
+            "many": "Primers %{count} comandes gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "Per a la primera comanda",
+            "other": "Per a les primeres %{count} comandes",
+            "many": "Per a les primeres %{count} comandes"
+          },
+          "subscription_free_with_frequency_label": "Enviament gratuït %{delivery_frequency}",
+          "free_shipping_cycles": {
+            "one": "Enviament gratuït per a %{count} lliurament més",
+            "other": "Enviament gratuït per a %{count} lliuraments més",
+            "many": "Enviament gratuït per a %{count} lliuraments més"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Enviament gratuït per a %{count} lliurament",
+            "other": "Enviament gratuït per a %{count} lliuraments",
+            "many": "Enviament gratuït per a %{count} lliuraments"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Enviament gratuït per a %{count} lliurament més i després per %{recurring_order_shipping_price}",
+            "other": "Enviament gratuït per a %{count} lliuraments més i després per %{recurring_order_shipping_price}",
+            "many": "Enviament gratuït per a %{count} lliuraments més i després per %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Enviament gratuït per a %{count} lliurament i després per %{recurring_order_shipping_price}",
+            "other": "Enviament gratuït per a %{count} entregues i després per %{recurring_order_shipping_price}",
+            "many": "Enviament gratuït per a %{count} entregues i després per %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} lliurament més per %{shipping_price}",
+            "other": "%{count} lliuraments més per %{shipping_price} cadascun",
+            "many": "%{count} lliuraments més per %{shipping_price} cadascun"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} lliurament per %{shipping_price}",
+            "other": "%{count} lliuraments més per %{shipping_price} cadascun",
+            "many": "%{count} lliuraments més per %{shipping_price} cadascun"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Enviament gratuït durant el primer %{cycle} i després per %{recurring_order_shipping_price}",
+            "other": "Enviament gratuït durant el primer %{cycle} i després per %{recurring_order_shipping_price}",
+            "many": "Enviament gratuït durant el primer %{cycle} i després per %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} per a %{count} lliurament més",
+            "other": "%{shipping_price} per a %{count} lliuraments més (%{per_delivery_cost})",
+            "many": "%{shipping_price} per a %{count} lliuraments més (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} per a %{count} lliurament",
+            "other": "%{shipping_price} per a %{count} lliuraments (%{per_delivery_cost})",
+            "many": "%{shipping_price} per a %{count} lliuraments (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} per a %{count} lliurament més i després per %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} per %{count} entregues més (%{per_delivery_cost}) i després per %{recurring_order_shipping_price}",
+            "many": "%{shipping_price} per %{count} entregues més (%{per_delivery_cost}) i després per %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} per a %{count} lliurament i després per %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} per a %{count} lliuraments (%{per_delivery_cost}) i després per %{recurring_order_shipping_price}",
+            "many": "%{shipping_price} per a %{count} lliuraments (%{per_delivery_cost}) i després per %{recurring_order_shipping_price}"
+          }
+        },
+        "one_time_purchase_shipping": "Enviament únic",
+        "estimated_delivery_time": "Data de lliurament estimada: %{time}",
+        "estimated_delivery_time_range": "Data de lliurament estimada: %{min_time}–%{max_time}",
+        "arrives_time": "Arriba en %{time}",
+        "arrives_time_range": "Arriba entre %{min_time}–%{max_time}",
+        "estimated_time": "Arribada prevista: %{time}",
+        "estimated_time_range": "Hora estimada: %{min_time}-%{max_time}",
+        "delivery_date_range": "%{min_time}–%{max_time}",
+        "subscription_local_delivery": "Subscripció amb lliurament local",
+        "subscription_pickup": "Subscripció amb retirada",
+        "delivery_today": "Lliurament el mateix dia %{time}",
+        "delivery_tomorrow": "Lliurament l'endemà %{time}",
+        "two_day_delivery": "Lliurament en dos dies a les %{time}",
+        "delivery": "Lliurament a les %{time}",
+        "duties_and_taxes_title": "Aranzels i impostos",
+        "shipping_information_required_notice": "La informació d'enviament és obligatòria. {{link}}.",
+        "shipping_information_redirect_link": "Introdueix la teva informació aquí",
+        "loading_progressive_rates": "Cercant més tarifes...",
+        "no_other_methods_available": "No hi ha altres mètodes d'enviament disponibles",
+        "duties_and_taxes_options": {
+          "ddu_title": "Pagar en el moment del lliurament",
+          "ddu_caption": "És possible que s'apliquin càrrecs addicionals",
+          "ddp_title": "Pagar ara",
+          "ddp_caption": "No hi ha càrrecs addicionals per al lliurament"
+        },
+        "shipping_method_combinations": {
+          "without_separator": "%{firstMethod}, %{secondMethod}",
+          "with_separator": "%{rest}, %{current},"
+        }
       }
     },
     "pagination": {
