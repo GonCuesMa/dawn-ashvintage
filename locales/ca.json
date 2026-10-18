@@ -1288,7 +1288,16 @@
           "one": "%{count} article s'enviarà per separat",
           "other": "%{count} articles s'enviaran per separat",
           "many": "%{count} articles s'enviaran per separat"
-        }
+        },
+        "location_information": {
+          "one": "Hi ha %{count} sucursal amb existències a prop teu",
+          "other": "Hi ha %{count} sucursals amb existències a prop teu",
+          "many": "Hi ha %{count} sucursals amb existències a prop teu"
+        },
+        "toggle_location": "Canviar de lloc",
+        "cancel": "Cancel·lar",
+        "your_location": "la teva ubicació",
+        "search_button": "Cercar botigues"
       },
       "payment_errors": {
         "generic_error": "S'ha produït un error en processar el teu pagament. Torna-ho a intentar o utilitza una forma de pagament diferent.",
@@ -1391,6 +1400,151 @@
         },
         "payment_method_not_supported": "No pots utilitzar aquesta forma de pagament a %{country}. Utilitza una altra forma de pagament per fer l'enviament a aquest país.",
         "empty_state": "Introdueix la teva adreça d'enviament per veure els mètodes disponibles."
+      },
+      "pickup_point": {
+        "selector_tab_list": "Llista",
+        "could_not_resolve_address": "No s'ha trobat l'adreça. Torna-ho a provar o fes servir una altra adreça.",
+        "no_pickup_points_near_you": "No s'ha trobat cap punt de recollida a prop de l'adreça seleccionada",
+        "no_pickup_points_near_location": "No s'ha trobat cap punt de recollida a prop de la teva ubicació",
+        "no_pickup_points_found": "No s'han trobat punts de recollida",
+        "paginator": {
+          "next_accessibility_label": "Pàgina següent",
+          "previous_accessibility_label": "Pàgina anterior",
+          "header": {
+            "one": "Mostrant %{first} - %{last} de %{count} punt",
+            "other": "Mostrant %{first} - %{last} de %{count} punts",
+            "many": "Mostrant %{first} - %{last} de %{count} punts"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} de %{count} punt",
+            "other": "%{pickup_point_index} de %{count} punts",
+            "many": "%{pickup_point_index} de %{count} punts"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} de %{count} punt",
+            "other": "%{first} - %{last} de %{count} punts",
+            "many": "%{first} - %{last} de %{count} punts"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} punt de recollida a prop de la teva ubicació",
+          "other": "%{count} punts de recollida a prop de la teva ubicació",
+          "many": "%{count} punts de recollida a prop de la teva ubicació"
+        },
+        "change": "Canviar ubicació",
+        "waiting_on_pickup_point_location_notice": "Cercant punts de recollida…",
+        "geolocation": {
+          "shared_location_button": "Utilitzar la meva ubicació",
+          "errors": {
+            "unsuported_by_browser": "El navegador no admet la geolocalització. Torna-ho a provar o fes servir un altre navegador.",
+            "permission_not_allowed": "Permet compartir la teva ubicació.",
+            "permission_denied": "No s'ha pogut obtenir la teva ubicació. Torna-ho a intentar."
+          }
+        },
+        "no_business_hours": "No hi ha horari comercial disponible.",
+        "open_twenty_four_hours": "Obert 24 hores, 7 dies a la setmana",
+        "address_label": "Adreça",
+        "pickup_unavailable_banner_title": {
+          "one": "No hi ha punts de recollida disponibles per al teu article",
+          "other": "No hi ha punts de recollida disponibles per als teus articles",
+          "many": "No hi ha punts de recollida disponibles per als teus articles"
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Hi ha hagut un problema amb la nostra pantalla de pagament",
+          "message": "Actualitza aquesta pàgina o torna-ho a intentar d'aquí a uns minuts",
+          "action": {
+            "cta": "Actualitzar la pàgina"
+          },
+          "request_id": "Identificació de sol·licitud: {{requestId}}"
+        },
+        "embed_errors": {
+          "storefront_password_required": "Aquesta botiga està protegida amb contrasenya",
+          "customer_account_required": "Es requereix un compte de client per completar el pagament",
+          "cart_completed": "Aquest pagament ja s'ha completat",
+          "invalid_cart": "El carretó ja no és vàlid",
+          "not_authorized": "L'autenticació del pagament ha fallat. Verifica les teves credencials de l'aplicació.",
+          "killswitch_enabled": "El pagament no està disponible temporalment",
+          "policy_violation": "No s'ha pogut completar el pagament a causa de restriccions en la configuració de la política",
+          "unrecoverable_failure": "No s'ha pogut carregar el pagament. Torna-ho a provar."
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Tornar al carretó",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} per modificar les quantitats",
+        "subscription_changed": "Una de les teves subscripcions ha canviat.",
+        "company_location_changed": "S'ha actualitzat el carret. Revisa la teva comanda abans de realitzar-la.",
+        "violations_title": "Falta {{violation}} o té un valor no vàlid",
+        "individual_violations_title": {
+          "DeliveryViolations": "Adreça d'enviament",
+          "PaymentViolations": "Adreça de facturació",
+          "OtherViolations": "Informació sobre comandes",
+          "UnhandledViolations": "Informació de la comanda"
+        },
+        "all_violations_content": "Truqui'ns o {{emailLink}} per actualitzar aquesta informació i completar la comanda:",
+        "all_violations_email_link": "envieu-nos un correu electrònic",
+        "editable_shipping_address_violations_message_title": "Afegeix aquesta informació per completar la teva comanda:",
+        "editable_shipping_address_violations_message_footer": "Per modificar permanentment l'adreça d'aquesta sucursal, {{emailLink}}.",
+        "editable_shipping_address_violations_email_link": "contacta amb nosaltres",
+        "company_location_changed_product_removed": "El carret s'ha modificat perquè alguns productes no estan disponibles en aquesta sucursal. Revisa la comanda abans d'enviar-la.",
+        "shipping_address_incomplete_title": "L'adreça d'enviament està incompleta",
+        "calculating_shipping": "Encara s'està calculant l'enviament. Torna-ho a intentar en uns segons. No se t'ha cobrat.",
+        "calculating_taxes": "Encara s'estan calculant els impostos. Torna-ho a provar en uns segons. No se t'ha cobrat.",
+        "generic_processing_error": {
+          "title": "Hi ha hagut un problema en processar la comanda",
+          "body": "No se t'ha cobrat. Torna-ho a intentar o utilitza una altra forma de pagament."
+        },
+        "contact_information": {
+          "title": "La informació de contacte no és vàlida",
+          "header": "Per actualitzar la teva informació, {{emailLink}}.",
+          "email_link": "contacta amb nosaltres"
+        },
+        "payment_method_not_available_with_payment_terms": "La forma de pagament seleccionada ja no està disponible perquè el pagament d'aquesta comanda ara és a {{paymentTerms}} dies",
+        "payment_method_not_available_with_fulfillment_terms": "La forma de pagament seleccionada ja no està disponible perquè el pagament d'aquesta comanda ara venç en la preparació de la comanda",
+        "payment_method_not_available_with_fixed_terms": "La forma de pagament seleccionada ja no està disponible perquè el pagament d'aquesta comanda venç més tard",
+        "payment_method_not_available_with_review_requirement": "La forma de pagament que has seleccionat ja no està disponible perquè el pagament vèncerà una vegada que la teva comanda es confirmi.",
+        "validation_errors_banner": {
+          "section_label": {
+            "delivery": "Lliurament",
+            "contact": "Contacte",
+            "payment": "Pagament",
+            "billing": "Facturació"
+          },
+          "heading": {
+            "one": "Hi ha {{count}} error:",
+            "other": "Hi ha {{count}} errors:",
+            "many": "Hi ha {{count}} errors:"
+          }
+        },
+        "delivery_address_validation_errors_banner": {
+          "title": "L'adreça d'enviament no és vàlida",
+          "text_html": "%{contact_us} per editar l'adreça",
+          "contact_us": "Contacta amb nosaltres",
+          "use_different_address": "Utilitza una altra adreça d'enviament"
+        }
+      },
+      "review_address_modal": {
+        "title": "Revisar adreça",
+        "subtitle": {
+          "one": "Aquesta comanda s'enviarà a l'adreça proporcionada per {{merchant}}.",
+          "other": "Aquesta comanda s'enviarà a una adreça proporcionada per {{merchant}}. Selecciona una adreça d'enviament.",
+          "many": "Aquesta comanda s'enviarà a una adreça proporcionada per {{merchant}}. Selecciona una adreça d'enviament."
+        },
+        "subtitle_no_match": "Aquesta adreça no coincideix amb cap de les teves adreces desades.",
+        "subtitle_must_use": "La teva comanda s'enviarà a aquesta adreça.",
+        "continue": "Continuar amb aquesta direcció",
+        "use_saved_address": "Utilitzar una adreça diferent",
+        "return_to_cart": "Tornar al carretó"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Revisar els",
+          "link_label": "termes i condicions de {{partnerDisplayName}}"
+        }
+      },
+      "online_store_chat": {
+        "title": "Tens alguna pregunta? Xateja amb nosaltres"
       }
     },
     "pagination": {
@@ -1430,7 +1584,141 @@
     },
     "collections": {
       "sorting": {
-        "manual": "Característiques"
+        "manual": "Característiques",
+        "best_selling": "Més venuts",
+        "az": "Alfabèticament, A-Z",
+        "za": "Alfabèticament, Z-A",
+        "price_ascending": "Preu, de menor a major",
+        "price_descending": "Preu, de més gran a més petit",
+        "date_ascending": "Data: del més antic al més recent",
+        "date_descending": "Data: recent a antic",
+        "most_relevant": "Més rellevants"
+      }
+    },
+    "errors": {
+      "blank": "no pot estar en blanc",
+      "credit_card_session_expired": "L'autorització de la targeta de crèdit ha caducat. Si us plau, introdueix la teva informació de pagament una vegada més. No s'ha efectuat el càrrec a la teva targeta.",
+      "empty": "no pot quedar buit",
+      "invalid_email": "Ha de ser una adreça de correu electrònic vàlida",
+      "discount_disabled": "Aquest descompte s'ha desactivat",
+      "discount_expired": "Aquest descompte ja no és vàlid",
+      "discount_limit_reached": "Aquest descompte ha arribat al límit del seu ús",
+      "discount_not_found": "No ha estat possible trobar un descompte vàlid que coincideixi amb el codi introduït",
+      "customer_already_used_once_per_customer_discount_notice": "Aquest descompte ha arribat al límit del seu ús",
+      "gift_card_already_applied": "El codi ja s'ha aplicat a la teva comanda",
+      "gift_card_code_invalid": "Codi no vàlid",
+      "gift_card_currency_mismatch": "Aquesta targeta regal no es pot usar per a aquesta compra. Contacta amb %{shop_name} perquè la tornin a emetre.",
+      "gift_card_depleted": "No queden fons disponibles en aquesta targeta regal",
+      "gift_card_disabled": "La targeta regal està desactivada",
+      "gift_card_expired": "La targeta de regal ha caducat",
+      "invalid": "no vàlid",
+      "bad_domain": "conté un nom de domini invàlid",
+      "taken": "ja s'ha pres",
+      "contains_html_tags": "no pot contenir etiquetes HTML",
+      "too_short": "és massa curt (ha de contenir un mínim de %{count} caràcters)",
+      "too_long": "és massa llarg (el màxim són %{count} caràcters)",
+      "password_mismatch": "ha de coincidir amb la contrasenya subministrada",
+      "contains_spaces": "comença o acaba amb espais.",
+      "invalid_for_country": "no és vàlid per a %{country}",
+      "invalid_for_country_and_province": "no és vàlid per a %{province} i %{country}",
+      "invalid_province_in_country": "no és una província vàlida a %{country}",
+      "invalid_state_in_country": "no és un estat vàlid a %{country}",
+      "invalid_region_in_country": "no és una regió vàlida a %{country}",
+      "less_than_or_equal_to": "ha de ser menor o igual a %{count}",
+      "not_supported": "no és compatible",
+      "full_name_required": "Introdueix un nom i cognom",
+      "invalid_for_card_type": "no és vàlid per a aquest tipus de targeta",
+      "invalid_type": "Ho sentim, no acceptem targetes d'aquest tipus",
+      "invalid_format": "no és un número de targeta de crèdit",
+      "expired": "La targeta de crèdit ha caducat",
+      "invalid_start_date_or_issue_number_for_debit": "Es requereix una data d'inici o un número d'expedició vàlids",
+      "invalid_expiry_year": "no és un any de venciment vàlid",
+      "reset_password_html": "Aquesta adreça de correu electrònic ja s'ha associat amb un compte. Si el compte és teu, pots <a href=\"/account/login#recover\">restablir la contrasenya aquí</a>",
+      "verify_email": "Hem enviat un correu electrònic a %{customer_email}, si us plau, fes clic a l'enllaç inclòs per verificar la teva adreça de correu electrònic.",
+      "blocked_address": "No s'admet aquesta ubicació",
+      "product_not_available": "el producte no apareix publicat per a aquest client.",
+      "shop_404": {
+        "title": "Crea un lloc web d'ecommerce i ven en línia! Programari d'ecommerce fet per Shopify",
+        "heros": {
+          "store_unavailable": "Aquesta botiga no està disponible en aquest moment.",
+          "store_not_exist": "Aquesta botiga no existeix.",
+          "no_storefront": "Aquesta botiga encara no té lloc web.",
+          "store_will_be_right_back": "Aquesta botiga tornarà aviat"
+        },
+        "links": {
+          "explore_other_stores": "Explorar altres botigues",
+          "start_free_trial": "Començar una prova gratuïta",
+          "refresh_page": "Actualitzar la pàgina"
+        },
+        "owner_ctas": {
+          "header": "Ets el propietari de la botiga?",
+          "fix_domain": "Per acabar de configurar la teva nova adreça web, ves a %{domain_settings_link}. Fes clic a \"Connect domain\" (Connecta el domini) i introdueix: %{domain}.<br>Si tens problemes per accedir a la botiga, prova la pàgina %{forgot_your_store_link}.",
+          "fix_domain_link_text": "la configuració del teu domini",
+          "forgot_your_store_link_text": "Has oblidat la teva botiga?",
+          "add_storefront": "Per configurar el teu lloc web, pots configurar el canal de Botiga en línia a %{admin_link}. Si tens problemes per accedir a la botiga, prova la pàgina %{forgot_your_store_link}.",
+          "admin_link_text": "panell de control"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Ven en persona",
+            "caption": "Obtén les funcions que necessites per gestionar la teva botiga física, tant si està començant com si està creixent.",
+            "link_text": "Comença la prova gratuïta"
+          },
+          "open_a_store": {
+            "header": "Obre una botiga Shopify nova",
+            "caption": "Comença una prova gratuïta de 3 dies i continua per 1 $/mes durant els 3 mesos següents.",
+            "link_text": "Registra't ara"
+          },
+          "editions": {
+            "header": "Coneix Shopify Editions",
+            "caption": "Amb més de 100 actualitzacions de productes, pots ser més productiu, creatiu i poderós en el comerç del que mai havies imaginat.",
+            "link_text": "Explorar el més recent d'Editions"
+          },
+          "store_owner": {
+            "header": "Ets el propietari de la botiga?",
+            "caption": "Tens problemes per accedir a la botiga? Prova la funció %{forgot_your_store_link}. Si vols reactivar la teva botiga, contacta amb %{shopify_support_link}.",
+            "shopify_support_link_text": "atenció al client de Shopify"
+          }
+        },
+        "title_unavailable": "Botiga no disponible",
+        "subtitles": {
+          "store_will_be_right_back": "Shopify està treballant perquè torni a estar en línia com més aviat millor."
+        },
+        "status_card": {
+          "eyebrow": "Ajuda per a propietaris de botigues",
+          "header": "Revisa l'estat de Shopify",
+          "caption": "Esbrina si hi ha una interrupció del servei a Shopify que afecti més botigues i no només aquesta.",
+          "link_text": "Veure l'estat dels sistemes de Shopify"
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Error en restablir la contrasenya",
+        "no_account_found": "No s'ha trobat cap compte amb aquesta adreça de correu electrònic.",
+        "invalid_credentials": "Correu electrònic o contrasenya incorrectes.",
+        "denylisted_reset_password": "No es pot accedir al teu compte perquè la contrasenya actual no és segura. Rebràs un correu electrònic per actualitzar la teva contrasenya.",
+        "signup_disabled": "La creació del compte de client s'ha desactivat.",
+        "subscribe_error": "Error de subscripció",
+        "unsubscribe_error": "Error en cancel·lar la subscripció",
+        "open_tracking_error": "Error de seguiment d'obertura"
+      },
+      "address": {
+        "updated": "Adreça actualitzada amb èxit.",
+        "error_updating": "Error en l'actualització de l'adreça.",
+        "created": "Adreça creada amb èxit",
+        "error_creating": "Error en crear l'adreça.",
+        "deleted": "Adreça eliminada amb èxit.",
+        "error_deleting": "Error en eliminar l'adreça."
+      },
+      "order": {
+        "not_available": "Aquesta comanda no està disponible.",
+        "financial_status": {
+          "authorized": "Autoritzada",
+          "pending": "Pendent",
+          "paid": "Pagada",
+          "unpaid": "No pagada"
+        }
       }
     }
   },
