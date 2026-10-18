@@ -610,7 +610,22 @@
           "eligible_product": "Elegible per a HSA/FSA",
           "mixed_cart_description": "El teu carret només pot contenir productes elegibles per a HSA/FSA"
         },
-        "scalapay_label": "Scalapay"
+        "scalapay_label": "Scalapay",
+        "amazon_payments_label": "Amazon Pay",
+        "amazon_payments_login_hint": "Se't demanarà que iniciïs sessió a Amazon.",
+        "amazon_payments_logout": "Tanca la sessió d'Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "No s'ha pogut utilitzar el mètode de pagament seleccionat. Selecciona un mètode diferent o posa't en contacte amb el teu banc o l'emissor de la targeta.",
+        "amazon_payments_abandoned_mfa_challenge": "No s'ha pogut completar el teu pagament. Tria una forma de pagament diferent o posa't en contacte amb el teu banc o l'emissor de la targeta.",
+        "amazon_payments_could_not_enqueue_authorize": "S'ha produït un error en processar el teu pagament. Torna-ho a intentar o utilitza una forma de pagament diferent.",
+        "title": "Pagament",
+        "amount_left_to_pay_label": "Pagament pendent:",
+        "discount_button_action_label": "Aplicar codi de descompte",
+        "gift_card_code_label": "Codi de targeta regal",
+        "apply_gift_card_button_label": "Aplicar",
+        "gift_card_balance_label": "Saldo:",
+        "supported_card_brands_more_label": "i més…",
+        "detected_card_brand": "Marca de la targeta detectada: {brand}",
+        "card_number_label": "Número de targeta"
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "Saldo actual %{amount}",
@@ -1723,8 +1738,113 @@
         },
         "shipping_method_combinations": {
           "without_separator": "%{firstMethod}, %{secondMethod}",
-          "with_separator": "%{rest}, %{current},"
-        }
+          "with_separator": "%{rest}, %{current},",
+          "combination": "%{rest} i %{current}"
+        },
+        "shipping_used_as_billing_notice": "També s'utilitzarà com a adreça de facturació per a aquesta comanda.",
+        "address_update": "Modificar adreça",
+        "shipping_address_title": "Enviar a",
+        "add_address": "Utilitzar una adreça diferent",
+        "add_delivery_instructions": "Afegir instruccions de lliurament",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "address_more": "Més accions per a aquesta adreça",
+        "address_edit": "Editar adreça",
+        "address_delete": "Eliminar adreça",
+        "address_confirm": "Confirmes que vols eliminar aquesta adreça del compte?",
+        "address_form": {
+          "add_address": "Afegir adreça",
+          "save": "Desar",
+          "cancel": "Cancel·lar",
+          "generic_error": "Hi ha hagut un problema en desar l'adreça. Torna-ho a intentar.",
+          "one_time_address_subtitle": "Utilitzar una adreça una sola vegada per a aquesta comanda",
+          "edit": "Editar adreça",
+          "update": "Desar canvis"
+        },
+        "different_shipping_method_summary": "Introdueix una adreça d'enviament diferent per veure els mètodes d'enviament disponibles.",
+        "invalid_shipping_method_summary": "Introdueix una adreça d'enviament vàlida per veure els mètodes d'enviament disponibles",
+        "method_summary": {
+          "incomplete_address_entered": "Introdueix una adreça d'enviament completa per veure els mètodes d'enviament disponibles.",
+          "incomplete_address_selected": "Selecciona una adreça d'enviament completa per veure els mètodes d'enviament disponibles."
+        },
+        "local_pickup": {
+          "search_address": "Cercar l'adreça",
+          "rollup_title": "Lloc de retir",
+          "rollup_accessibility_label": "Opcions de lloc de retir"
+        },
+        "missing_shipping_address": "Falta l'adreça d'enviament.",
+        "delivery_title": "Lliurament",
+        "shipping_method_first_shipment_group_title": {
+          "one": "Primer enviament",
+          "other": "Primers enviaments",
+          "many": "Primers enviaments"
+        },
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "Enviament recurrent",
+          "other": "Enviaments recurrents",
+          "many": "Enviaments recurrents"
+        },
+        "address_default": "Establir com a predeterminada",
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} articles",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} més",
+        "split_shipping_merchandise_shipment_number": "Enviant %{number} de %{total}",
+        "pre_order_ships_now": "S'envia ara",
+        "pre_order_ships_later": "S'envia més tard",
+        "pre_order_ships_date": "S'envia el %{date}",
+        "split_shipping_shipped_by_shop": "Enviament realitzat per %{shop_name}",
+        "split_shipping_multiple_shipment_label": "Diversos enviaments",
+        "split_shipping_shipping_label": "Mètode",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} enviaments",
+        "split_shipping_multiple_shipment_notice": "La teva comanda arribarà en diversos enviaments",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "La teva comanda arribarà en %{quantity} enviaments",
+        "split_shipping_more_shipping_options": "Més opcions d'enviament",
+        "split_shipping_shipment_number": "Enviament %{number}",
+        "split_shipping_option_free": "Enviament gratuït",
+        "split_shipping_option_lowest_price": "Preu més baix",
+        "split_shipping_option_fastest": "Enviament més ràpid",
+        "split_shipping_option_recommended": "Recomanat",
+        "split_shipping_option_custom": "Personalitzat",
+        "default_description": "S'envia en un dia hàbil",
+        "split_shipping_shipment_notice": "La teva comanda arribarà en %{quantity_shipments}",
+        "unbranded_default_description": "A punt per enviar",
+        "prime_not_available": {
+          "default": "L'enviament amb Prime no està disponible per a la teva comanda. S'han actualitzat les teves opcions d'enviament."
+        },
+        "split_shipping_first_shipment_notice": "La teva primera comanda arribarà en %{quantity_shipments}",
+        "shipping_method_rollup_accessibility_label": "Opcions de mètode d'enviament",
+        "shipping_address_rollup_accessibility_label": "Opcions d'enviament a una adreça",
+        "third_party_address_timeout": "No s'han pogut carregar les adreces. Torna-ho a intentar o fes servir una altra adreça.",
+        "third_party_address_error": "S'ha produït un error en carregar la selecció de l'adreça. Introdueix la teva adreça manualment a continuació.",
+        "back": "Enrere",
+        "invalid_shipping_method_summary_selected": "Selecciona una adreça d'enviament diferent per veure els mètodes d'enviament disponibles",
+        "third_party_payment_timeout": "No s'han pogut carregar les formes de pagament. Torna-ho a intentar o utilitza una altra forma de pagament.",
+        "third_party_payment_error": "Hi ha hagut un error en carregar la selecció del pagament. Fes servir una forma de pagament diferent.",
+        "add_shipping_address": "Afegir adreça d'enviament",
+        "choose_new_address": "Tria una adreça nova",
+        "unbranded_description_same_day": "S'envia el mateix dia hàbil",
+        "unbranded_description_with_fulfillment_days": {
+          "one": "S'envia el següent dia hàbil",
+          "other": "S'envia en %{count} dies hàbils",
+          "many": "S'envia en %{count} dies hàbils"
+        },
+        "unbranded_description_with_fulfillment_weeks": {
+          "one": "S'envia en %{count} setmana",
+          "other": "S'envia en %{count} setmanes",
+          "many": "S'envia en %{count} setmanes"
+        },
+        "add_new_delivery_address": "Afegir una nova adreça de lliurament",
+        "delivery_to": "Lliurament a",
+        "split_shipping_shipment_count_notice_one_time_purchase": {
+          "one": "La teva comanda arribarà en %{count} enviament",
+          "other": "La teva comanda arribarà en %{count} enviaments",
+          "many": "La teva comanda arribarà en %{count} enviaments"
+        },
+        "split_shipping_arrives_in_shipments": {
+          "one": "Arriba en %{count} enviament",
+          "other": "Arriba en %{count} enviaments",
+          "many": "Arriba en %{count} enviaments"
+        },
+        "includes_recurring_items": "Inclou articles recurrents"
       },
       "thank_you": {
         "thank_you_payments_app_pending_payment_description_default_with_email_payment": "Rebràs en breu un correu electrònic de confirmació amb el número de comanda.",
