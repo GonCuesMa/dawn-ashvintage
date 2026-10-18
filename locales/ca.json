@@ -1863,8 +1863,142 @@
           "authorized": "Autoritzada",
           "pending": "Pendent",
           "paid": "Pagada",
-          "unpaid": "No pagada"
+          "unpaid": "No pagada",
+          "voided": "Anul·lada",
+          "partially_paid": "Pagada parcialment",
+          "partially_refunded": "Reemborsada parcialment",
+          "refunded": "Reemborsada",
+          "expired": "Vençut"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Conclosa",
+          "complete": "Completar",
+          "partial": "Parcial",
+          "unfulfilled": "No realitzada",
+          "restocked": "Recanvi"
+        },
+        "transaction_status": {
+          "success": "Èxit",
+          "pending": "Pendent",
+          "failure": "Error",
+          "error": "Error"
+        },
+        "cancel_reason": {
+          "declined": "Pagament rebutjat",
+          "inventory": "Articles no disponibles",
+          "fraud": "Comanda fraudulenta",
+          "customer": "El client ha canviat/cancel·lat la comanda",
+          "other": "Un altre",
+          "many": "Un altre",
+          "staff": "Error d'un empleat"
+        },
+        "cash_on_delivery": "Pagament contra reemborsament"
+      },
+      "cart": {
+        "only_n_items_available": "Només pots afegir %{count} %{name} al carret.",
+        "too_many_items_in_cart": "No pots afegir més %{name} al carret.",
+        "all_items_in_cart": "El teu carret conté: %{count} %{name}.",
+        "empty_update": "No es pot actualitzar un carretó buit",
+        "missing_parameters": "Identificació o paràmetre lineal no vàlids",
+        "generic_error": "Error al carret",
+        "too_many_line_items_error": "El carretó no pot contenir més de %{max} articles.",
+        "link_expired": "L'enllaç ha caducat",
+        "link_no_longer_exists": "L'enllaç ja no existeix.",
+        "stock_problems_html": "Un o més articles ja no estan disponibles. Hem actualitzat el teu <a href=\"%{link}\">carret</a>.",
+        "changed": "El carret s'ha modificat",
+        "items_changed": "S'han canviat un o més articles.",
+        "product_sold_out": "L'article '%{name}' ja està exhaurit.",
+        "variant_not_found": "No s'ha trobat la variant",
+        "variant_requires_selling_plan": "La variant només es pot comprar amb un pla de vendes.",
+        "shipping_address_not_required": "Aquest carret no requereix enviament",
+        "shipping_address_invalid": "Hi ha hagut un problema en calcular les teves tarifes d'enviament. Continua amb el pagament per seleccionar una tarifa d'enviament abans de completar la teva comanda.",
+        "selling_plan_not_applicable": "No es pot aplicar el pla de venda a la variant",
+        "selling_plan_not_available_for_company_locations": "Només s'admeten compres úniques per a les comandes B2B.",
+        "digital_product_not_available_for_company_locations": "Aquest article no es pot afegir a una comanda B2B",
+        "product_not_available": "El producte no està disponible",
+        "less_than_minimum": "Aquest article té un mínim de %{min}.",
+        "more_than_maximum": "Aquest article té un màxim de %{max}.",
+        "not_respect_step": "Només pots afegir aquest article en increments de %{step}.",
+        "bundle_requires_components": "El producte %{name} del paquet no es pot afegir al carret.",
+        "gift_card_with_components_not_supported": "El producte %{name} del paquet no es pot afegir al carret.",
+        "view_lines_limit_reached": "Només es permet un màxim de %{limit} línies",
+        "merchandise_line_transformers": {
+          "run_error": "S'ha produït un error al teu carret."
+        },
+        "gift_card_price_must_be_greater_than_zero": "El producte %{name} del paquet no es pot afegir al carret.",
+        "cart_too_large": "El carretó és massa gran.",
+        "gift_card_recipient_validation_error": "La targeta de regal especificada no és vàlida",
+        "invalid_input": "El paràmetre %{parameter} no és vàlid.",
+        "buyer_cannot_purchase_for_company_locations": "No es pot comprar per a aquesta sucursal",
+        "only_one_added_to_cart": "A causa de la disponibilitat, només s'ha afegit un article al carret.",
+        "only_n_added_to_cart": "A causa de la disponibilitat, només s'han afegit %{quantity} articles al carret.",
+        "maximum_available_quantity_reached": "El teu carret ja té la quantitat màxima d'aquest article.",
+        "cart_attributes_error": "Els atributs del carretó inclouen dades no vàlides.",
+        "merchandise_not_applicable": "No es pot comprar l'article amb aquesta configuració.",
+        "not_found": "No s'ha trobat el carret"
+      },
+      "storefront": {
+        "invalid_password": "Contrasenya incorrecta, si us plau torna-ho a intentar."
+      },
+      "tags": {
+        "add_articles": "Refinar la cerca als articles que també tenen l'etiqueta %{tag}",
+        "add_products": "Refinar la selecció als productes que coincideixen amb l'etiqueta %{tag}",
+        "remove_articles": "Ampliar la cerca als articles que no estan etiquetats amb %{tag}",
+        "remove_products": "Eliminar l'etiqueta %{tag}"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "S'ha afegit %{delta}",
+          "increment_item": "S'ha afegit %{delta}",
+          "decrement_item": "S'ha eliminat %{delta} de %{total}",
+          "decrement_fulfilled_line_item": "S'han retornat %{delta} de %{total}",
+          "decrement_return_line_item": "S'ha eliminat %{delta} de la devolució"
         }
+      }
+    },
+    "page_titles": {
+      "products": "Productes",
+      "shopping_cart": "El teu carretó",
+      "account": "Compte",
+      "create_account": "Crear compte",
+      "reset_account": "Restablir compte",
+      "addresses": "Adreces",
+      "order": "Comanda %{name}",
+      "search": "Cercar",
+      "collections": "Col·leccions",
+      "not_found": "404 No trobat",
+      "challenge": "Repte",
+      "checkpoint": "Punt de control",
+      "search_results": {
+        "one": "Cerca: %{count} resultat trobat per a \"%{terms}\"",
+        "other": "Cerca: %{count} resultats trobats per a \"%{terms}\"",
+        "many": "Cerca: %{count} resultats trobats per a \"%{terms}\""
+      },
+      "blog_or_article_with_error": "Error: %{title}"
+    },
+    "cart": {
+      "discounts_with_count": "s'han aplicat %{count} descomptes"
+    },
+    "challenge": {
+      "message": "Per continuar, indica'ns que no ets un robot.",
+      "error": "La teva resposta no va ser la correcta, si us plau, torna-ho a intentar.",
+      "submit_button_text": "Enviar"
+    },
+    "checkpoint": {
+      "message": "Resol el Captcha per continuar",
+      "error": "La validació de Captcha ha fallat",
+      "submit_button_text": "Enviar"
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Gràcies per subscriure't a la nostra llista de distribució.",
+        "disclaimer": "Et pots donar de baixa en qualsevol moment.",
+        "unsubscribe": "Donar-se de baixa"
+      },
+      "unsubscribed": {
+        "confirmation": "Has cancel·lat la teva subscripció a la nostra llista de distribució.",
+        "disclaimer": "No t'enviarem més notícies de màrqueting. Pots subscriure-t'hi de nou en qualsevol moment.",
+        "preview": "Estàs revisant la vista prèvia del que veuran els clients quan es donen de baixa."
       }
     }
   },
