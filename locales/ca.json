@@ -736,10 +736,73 @@
         "multibanco_label": "Multibanc",
         "receiver_payment_experience_hint": "Després de fer la comanda, rebràs els detalls del pagament. Fes el pagament per Multibanco o en línia en un termini de %{due_days} dies.",
         "pending_payment": {
-          "due_notice": "El pagament de %{amount_due} venç el %{due_date}."
+          "due_notice": "El pagament de %{amount_due} venç el %{due_date}.",
+          "multibanco": {
+            "instruction_html": "Realitza el pagament a Multibanco o en línia amb les dades següents. Si tens preguntes o desitges actualitzar les dades de pagament, %{contact_us}.",
+            "entity": "Entitat",
+            "reference": "Referència",
+            "amount": "Quantitat",
+            "find_nearest_atm": "Trobar el caixer automàtic més proper",
+            "buyer_action_info": "Has de realitzar el pagament de %{amount_due}.",
+            "label": "Multibanc",
+            "pay": "Pagar %{amount}",
+            "expiry_date_time": "%{date} a les %{time}",
+            "expires_at": "Venc el %{date}",
+            "expired": "Va vèncer el %{date}",
+            "expired_title": "Referència de pagament vençuda",
+            "labelled_code": "%{label}: %{code}"
+          },
+          "oxxo": {
+            "label": "OXXO",
+            "number": "Número de referència",
+            "steps": {
+              "1": "Escaneja el codi de barres a l'OXXO més proper.",
+              "2": "Paga l'import exacte en efectiu a la caixa."
+            },
+            "print_voucher": "Imprimir comprovant",
+            "barcode_alt": "Codi de barres del comprovant d'OXXO per al número de referència %{reference_number}",
+            "expires_at": "Venc el %{date}",
+            "expires_when_unknown": "Fes-lo servir abans que caduqui el comprovant",
+            "print": {
+              "instructions_title": "Instruccions per a pagar a OXXO:",
+              "important_details_title": "Detalls importants:"
+            },
+            "important_details": {
+              "canceled_by_expiry": "La comanda es cancel·larà si no es rep el pagament abans del %{date}.",
+              "canceled_when_expired": "La comanda es cancel·larà si no es rep el pagament abans que venci el comprovant.",
+              "non_refundable": "Les comandes d'OXXO no són reemborsables.",
+              "tracking_after_payment": "Rebràs la informació de seguiment de l'enviament en el termini d'un dia laborable després de realitzar el pagament."
+            },
+            "days_left": {
+              "one": "%{count} dia",
+              "other": "%{count} dies",
+              "many": "%{count} dies"
+            },
+            "pay": "Paga %{amount}",
+            "expiry_date_time": "%{date} a les %{time}",
+            "reference_number": "Número de referència:"
+          },
+          "apple_wallet": {
+            "badge_alt": "Afegir a l'Apple Wallet",
+            "pass": {
+              "description": "Comprovant de pagament de %{shop_name}",
+              "logo_text": "Comprovant de pagament",
+              "store_label": "Botiga",
+              "expiry_date_label": "Data de venciment",
+              "payment_due_label": "Pagament pendent",
+              "reference_number_label": "Número de referència",
+              "ordered_on_label": "Data de la comanda"
+            }
+          }
         },
         "gift_card_wrapper": {
-          "manage_label": "Gestionar targetes regal"
+          "manage_label": "Gestionar targetes regal",
+          "heading": "Targeta de regal",
+          "apply_gift_card_label": "Sol·licitar una targeta regal",
+          "payment_tag": "Targeta de regal",
+          "apply_another_gift_card_label": "Sol·licitar una altra targeta de regal",
+          "gift_card_label": "Targeta de regal %{identifier}",
+          "add_label": "Afegir una targeta regal"
         },
         "custom_onsite_payment_method_modal": {
           "title": "Confirmació de pagament al lloc personalitzada"
@@ -873,7 +936,78 @@
         "crypto_payment_method": {
           "description": "Connecta la teva cartera digital de forma segura. El teu saldo i adreça no es compartiran.",
           "tooltip": "El saldo de la teva cartera digital i la teva adreça no es compartiran i només es pot deduir l'import sol·licitat"
-        }
+        },
+        "purchase_options_agreement_label": "Un o més articles del teu carret corresponen a una compra diferida o recurrent. Si continues amb el pagament, acceptes que s'apliqui un càrrec automàtic a la teva forma de pagament amb el preu i la freqüència que s'indiquen en aquesta pàgina fins que finalitzi o cancel·lis. Totes les cancel·lacions estan subjectes a la %{cancellation_policy_label}.",
+        "update_payment_method": "Actualitzar la forma de pagament",
+        "paypal_modal": {
+          "order_contains_subscriptions": "Subscripció",
+          "order_contains_fixed_selling_plans": "Pot ser que el total no inclogui impostos, enviament, càrrecs diferits i alguns descomptes. Continua a la pantalla de pagament per veure l'import que venç avui."
+        },
+        "purchase_options_agreement_label_html": "Entenc que un o més articles del meu carretó corresponen a una compra diferida o recurrent. Si continuo, accepto la\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">política de cancel·lació</a>\ni autoritzo que s'apliquin càrrecs a la meva forma de pagament segons els preus, la freqüència i les dates que s'indiquen en aquesta pàgina fins que la meva\ncomanda estigui preparada o cancel·li, si està permès.\n",
+        "payment_method_saved": "Mètode de pagament desat",
+        "card_vaulted_company_location": "Targeta desada per a aquesta sucursal",
+        "order_covered_by_store_credit_notice": "La comanda està coberta pel teu crèdit a la botiga.",
+        "order_covered_by_redeemables_notice": "La comanda està coberta.",
+        "store_credit": {
+          "label": "Crèdit a la botiga",
+          "apply_label": "Aplicar crèdit a la botiga",
+          "add_label": "Afegir crèdit a la botiga",
+          "manage_label": "Gestionar crèdit a la botiga",
+          "buying_gift_card": "No pots utilitzar el crèdit de la botiga per comprar una targeta regal.",
+          "no_fixed_selling_plans": "No pots utilitzar el crèdit a la botiga amb les opcions de compra ajornada."
+        },
+        "clear": "Esborrar",
+        "billing_must_match_shipping_notice": "La vostra adreça de facturació que consta en el pagament ha de coincidir amb l'adreça d'enviament.",
+        "same_billing_address_checkbox_label": "Utilitzar l'adreça d'enviament com a adreça de facturació",
+        "location_billing_address_label": "Adreça de facturació de la sucursal",
+        "fact_billing_address_label": "Adreça de facturació",
+        "location_shipping_address_label": "Adreça d'enviament de la sucursal",
+        "no_working_method_error": "Aquesta botiga no pot acceptar pagaments en aquest moment. Actualitza la pàgina o torna-hi més tard.",
+        "brand_not_available": "Aquesta botiga no accepta {{brand}}. Fes servir una targeta diferent en el pagament.",
+        "shipping_rate_updated": "S'han actualitzat els mètodes d'enviament disponibles. Confirma la teva elecció abans d'iniciar el procés de pagament.",
+        "billing_address_invalid_phone": "Actualitza el número de telèfon de la teva adreça de facturació per a {{label}} {{last_digits}} per continuar.",
+        "billing_address_invalid_phone_no_card": "Actualitza el número de telèfon de la teva adreça de facturació per continuar.",
+        "preview_not_available": {
+          "title": "Previsualització no disponible",
+          "content": "No et preocupis, aquest procés de pagament exprés funciona per als teus clients.",
+          "button": "Acceptar"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Introdueix una data d'emissió vàlida",
+              "issue_number": "Introdueix un número d'emissió vàlid"
+            },
+            "invalid": {
+              "verification_value": "Introdueix un codi de seguretat (CVV) vàlid"
+            }
+          }
+        },
+        "simulated_checkout": "Previsualització disponible properament",
+        "vaulting_agreement_label": "Guardar la meva informació de pagament amb %{company} per a un pagament més ràpid",
+        "business_customer_vaulting_payment_label": "Desa aquesta forma de pagament en finalitzar el procés de pagament i autoritza %{company} a utilitzar-la per a futures compres en aquesta sucursal. Tots els contactes assignats a aquesta sucursal poden utilitzar la forma de pagament.",
+        "purchase_options_and_vaulting_agreement_label": "Un o més articles del carret són una compra diferida o una subscripció. En continuar amb el pagament, acceptes que s'aplicaran càrrecs a la teva forma de pagament automàticament segons el preu i la freqüència indicats en aquesta pàgina fins que s'acabi o la cancel·lis. Totes les cancel·lacions estan subjectes a la %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "política de cancel·lació",
+        "use_different_credit_card_label": "Utilitzar una altra targeta",
+        "saved_credit_card": "La teva targeta de crèdit desada",
+        "saved_credit_card_info": "Darrers quatre dígits",
+        "saved_credit_cards_modal": {
+          "view_all_label": "Veure totes les targetes desades",
+          "done": "A punt",
+          "cancel": "Cancel·lar"
+        },
+        "expired_cards_info": {
+          "one": "Hi ha %{count} targeta caducada que pots veure i editar al teu compte.",
+          "other": "Hi ha %{count} targetes caducades que pots veure i editar al teu compte.",
+          "many": "Hi ha %{count} targetes caducades que pots veure i editar al teu compte."
+        },
+        "local_payment_method_receiver_notice": "Després de fer la comanda, rebràs els detalls del pagament. Fes el pagament en un caixer automàtic o en línia en un termini de {{dueDays}} dies.",
+        "order_edit_banner_title": "Es requereix el pagament de {{amount_owed}}",
+        "order_edit_banner_subtitle": "La teva comanda {{order_number}} s'ha actualitzat. Revisa els canvis i paga per a confirmar la comanda.",
+        "order_edit_banner_single_item_added": "Afegit",
+        "order_edit_banner_multiple_items_added": "S'ha afegit {{amount}}.",
+        "order_edit_banner_single_item_removed": "Eliminat",
+        "order_edit_banner_multiple_items_removed": "S'ha suprimit {{amount}}."
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "Saldo actual %{amount}",
@@ -1796,7 +1930,15 @@
           "many": "Un o més articles que has afegit no es poden enviar a la teva ubicació. Elimina'ls per completar el pagament, o posa't en contacte amb la botiga."
         },
         "payment_method_not_supported": "No pots utilitzar aquesta forma de pagament a %{country}. Utilitza una altra forma de pagament per fer l'enviament a aquest país.",
-        "empty_state": "Introdueix la teva adreça d'enviament per veure els mètodes disponibles."
+        "empty_state": "Introdueix la teva adreça d'enviament per veure els mètodes disponibles.",
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Els articles del carretó no compleixen els requisits de preu o pes per qualificar per a l'enviament. Modifica el carretó i torna-ho a intentar.",
+        "title": "L'enviament no està disponible",
+        "invalid_selected_address": "L'adreça d'enviament seleccionada no és vàlida",
+        "invalid_selected_address_with_update_link": "L'adreça d'enviament seleccionada no és vàlida. %{update_address_link} o selecciona una adreça diferent",
+        "unavailable_selected_address": "No hi ha enviament disponible per a l'adreça seleccionada",
+        "unavailable_selected_address_for_region": "No hi ha servei d'enviament disponible per a {{region}}. Selecciona una adreça diferent per continuar",
+        "unavailable_addresses_only_countries": "La teva comanda només es pot enviar a {{countriesList}}. Per continuar, afegeix una adreça nova.",
+        "unavailable_address_country": "L'enviament al país que has seleccionat no està disponible. Fes servir una altra adreça per continuar."
       },
       "pickup_point": {
         "selector_tab_list": "Llista",
@@ -2299,7 +2441,34 @@
         "pickup_map_marker": {
           "callout": "Recollida a {{location}}",
           "directions_link_accessibility_label": "Recollida a {{location}}, obtenir indicacions"
-        }
+        },
+        "title": "Gràcies per la teva compra!",
+        "confirmation_email_sent_text": "S'ha enviat un correu electrònic de confirmació a %{email}",
+        "return_to_store_link_label": "Continuar comprant",
+        "print_link_label": "Imprimir",
+        "payment_information_title": "Informació de pagament",
+        "shipping_information_title": "Informació d'enviament",
+        "page_title": "Gràcies, %{display_name}!",
+        "page_title_no_name": "Gràcies!",
+        "cancelled_page_title": "Comanda cancel·lada",
+        "customer_information_title": "Detalls de la comanda",
+        "contact_information_title": "Informació de contacte",
+        "billing_address_title": "Adreça de facturació",
+        "shipping_address_title": "Adreça d'enviament",
+        "shipping_address_map_title": "El mapa de Google mostra la ubicació exacta de l'adreça d'enviament: %{address}",
+        "payment_method_title": "Mètodes de pagament",
+        "shipping_method_title": "Mètode d'enviament",
+        "tracking_number": "Número de seguiment:",
+        "company_tracking_number": "Número de seguiment de %{company}:",
+        "estimated_arrival": "Data de lliurament estimada:",
+        "re-order": "Demanar de nou els mateixos articles",
+        "confirmed": "Confirmat",
+        "thank_you_title": "La teva comanda està confirmada",
+        "thank_you_confirmed_order_with_email": "Rebràs en breu un correu electrònic de confirmació amb el teu número de comanda.",
+        "thank_you_confirmed_order_with_phone": "Rebràs aviat un missatge de text de confirmació amb el teu número de comanda.",
+        "thank_you_confirmed_order_with_email_and_phone": "Rebràs en breu un correu electrònic de confirmació amb el número de comanda.",
+        "thank_you_confirmed_order_with_missing": "Contacta amb nosaltres per correu electrònic o per telèfon per rebre la confirmació de la teva comanda.",
+        "order_status_confirmed_order_with_email": "Rebràs un correu electrònic quan la teva comanda estigui a punt."
       },
       "review": {
         "title": "Revisar",
@@ -2963,6 +3132,87 @@
         "item_discounts_label": "Descomptes en articles",
         "tax_label": "Impostos",
         "duty_label": "Aranzels"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Pagament exprés",
+        "show_more_options": "Mostrar més opcions",
+        "hide_more_options": "Ocultar més opcions",
+        "or_pay_another_way": "O paga d'una altra manera",
+        "or_check_out_another_way": "O completa el procés de pagament d'una altra manera",
+        "or_pay_with_credit_card": "O paga amb targeta de crèdit"
+      },
+      "processing": {
+        "redirecting_page_title": "Redirigint…",
+        "redirecting_title": "Redirigint…",
+        "redirecting_notice": "Espereu mentre us redirigim.",
+        "complete_your_purchase_title": "Completar la teva compra.",
+        "continue_to_payment_gateway_notice": "Continua amb la pantalla de pagament per afegir la teva informació de pagament.",
+        "continue_to_payment_gateway_button_label": "Continuar amb el pagament",
+        "complete_your_purchase_title_error": "Corregir la teva informació de pagament",
+        "continue_to_payment_gateway_notice_error": "No s'ha pogut verificar la teva informació de pagament.",
+        "continue_to_payment_gateway_button_label_error": "Actualitza la informació de pagament",
+        "page_title": "Tramitació de la comanda",
+        "title": "Tramitació de la comanda",
+        "your_order_has_been_received_title": "Gràcies per la teva comanda",
+        "you_will_receive_confirmation": "Estem rebent moltes comandes en aquest moment. Hauries de rebre la confirmació per correu electrònic o missatge de text en breu. Si no la reps abans d'una hora, contacta'ns.",
+        "wait": {
+          "short": "La teva comanda està sent processada.",
+          "medium": {
+            "one": "La teva comanda s'està processant. El temps d'espera estimat és de %{count} minut.",
+            "other": "La teva comanda s'està processant. El temps d'espera estimat és de %{count} minuts.",
+            "many": "La teva comanda s'està processant. El temps d'espera estimat és de %{count} minuts."
+          },
+          "long": "Rebràs un correu electrònic quan es processi la teva comanda. Actualment hi ha un volum elevat de comandes.",
+          "no_auto_refresh_html": "Si no ets redirigit automàticament, %{link}.",
+          "refresh_this_page": "torna a carregar aquesta pàgina"
+        },
+        "you_will_not_be_charged": "Encara no se't cobrarà",
+        "action_required": "Mesura necessària",
+        "redirecting_to_bank": "Redirigir a {{bank}}",
+        "modal_notice": "Ens estem connectant amb {{paymentMethod}}",
+        "remote_shops_payments_processing": "Processant pagaments",
+        "remote_checkout_count": "%{current} de %{total}"
+      },
+      "failed_payment": {
+        "page_title": "No s'ha pogut processar el pagament",
+        "title": "No s'ha pogut processar el pagament",
+        "payment_not_processed_title": "El teu pagament no s'ha pogut processar",
+        "payment_not_processed_text": "No se t'ha cobrat. Torna al teu carret per finalitzar la transacció.",
+        "return_to_cart_button_label": "Tornar al carretó"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Targeta de crèdit",
+        "bank_deposit_label": "Dipòsit bancari",
+        "cash_on_delivery_label": "Pagament contra reemborsament",
+        "money_order_label": "Gir Postal",
+        "debit_card_label": "Targeta de dèbit",
+        "deferred_payment_label": "Triar la forma de pagament més tard",
+        "generic_payment_terms": "Estàs sota els termes de {{translatedName}}. El teu pagament vencerà el {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} en un compte amb accés a aquesta sucursal per afegir o utilitzar formes de pagament desades.",
+            "link": "Inicia la sessió"
+          }
+        },
+        "direct_payment_terms": "Estàs sota els termes de {{translatedName}}. S'efectuarà el càrrec a la teva targeta el dia {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "El pagament s'haurà de realitzar quan s'hagi preparat la comanda.",
+        "order_due_on_fulfillment_payment": "El càrrec a la targeta es farà quan s'hagi preparat la comanda.",
+        "draft_order_payment_due_later_no_terms": "El pagament s'haurà de realitzar quan s'hagi confirmat la comanda.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Es farà el càrrec a la teva targeta quan s'hagi confirmat la comanda.",
+        "draft_order_payment_due_later_terms": "Quan es confirmi la comanda, estaràs sota els termes de {{translatedName}}.",
+        "draft_order_payment_due_on_fulfillment": "El pagament s'haurà de realitzar quan s'hagi confirmat i preparat la comanda.",
+        "fixed_payment_label": "El teu pagament venç el {{dueDate}}.",
+        "fixed_direct_payment_terms": "Es farà el càrrec a la teva targeta el {{dueDate}}.",
+        "order_deposit_due_now": "El {{depositAmount}} s'ha d'abonar avui. El saldo està subjecte a les condicions de pagament {{translatedName}} i venç el {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "El {{depositAmount}} s'ha d'abonar avui. El saldo s'haurà de pagar una vegada que la comanda s'hagi preparat.",
+        "order_due_on_receipt_choose_later": "Hauràs de realitzar el pagament en el moment de la recepció.",
+        "draft_order_deposit_due_later": "El dipòsit de {{depositAmount}} s'haurà d'abonar quan es confirmi la teva comanda. El saldo estarà a les condicions de {{translatedName}}.",
+        "draft_order_deposit_due_on_fulfillment": "El dipòsit de {{depositAmount}} s'haurà d'abonar quan es confirmi la teva comanda. El saldo s'haurà de pagar un cop que la comanda s'hagi preparat.",
+        "order_deposit_due_on_receipt": "Avui és la data límit per a abonar l'{{depositAmount}}. La data de pagament del saldo venç més endavant.",
+        "order_deposit_due_on_fixed_date": "Avui és la data límit per abonar el {{depositAmount}}. La data de pagament del saldo és el {{dueDate}}.",
+        "bank_account_label": "Compte bancari",
+        "credit_or_debit_card_label": "Crèdit/dèbit",
+        "bogus_label": "Passarel·la de pagament de prova"
       }
     },
     "pagination": {
