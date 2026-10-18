@@ -2005,7 +2005,234 @@
       "cookie_preferences_link": "Preferències de cookies"
     },
     "announcement_bar": {
-      "expand_label": "Expandir barra d'anuncis"
+      "expand_label": "Expandir barra d'anuncis",
+      "collapse_label": "Contraure la barra d'anuncis",
+      "close_label": "Tancar barra d'anuncis"
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "title": "Reemplaçar forma de pagament",
+        "loading": "S'estan carregant les formes de pagament",
+        "no_payment_methods_available": "No hi ha cap forma de pagament disponible",
+        "select_new_payment_method": "Selecciona una forma de pagament nova",
+        "current_method": "Actual",
+        "cancel": "Cancel·lar",
+        "save": "Desar",
+        "success": "Mètode de pagament actualitzat",
+        "use_new_payment_method": "+ Utilitzar una nova forma de pagament"
+      }
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "sheet_title": "Inicia la sessió o crea un compte",
+        "section_divider": "Més maneres d'iniciar sessió",
+        "email_field_label": "Correu electrònic",
+        "orders_button": "Comandes",
+        "profile_button": "Perfil",
+        "shop_login_button": "Inicia sessió amb Shop",
+        "continue_with_google": "Continuar amb Google",
+        "continue_with_facebook": "Continuar amb Facebook",
+        "use_email_button": "Utilitzar el correu electrònic en el seu lloc"
+      },
+      "signed_in_state": {
+        "greeting_with_name": "Hola, {{first_name}}",
+        "greeting_without_name": "Compte",
+        "orders_button": "Comandes",
+        "profile_button": "Perfil"
+      },
+      "location_picker": {
+        "sheet_title": "Sucursals",
+        "search_field_placeholder": "Cerca"
+      },
+      "aria_labels": {
+        "close_menu": "Tancar menú",
+        "back_to_main_menu": "Tornar al menú principal des de {{title}}",
+        "open_submenu": "{{title}} obre un submenú",
+        "loading_menu": "Carregant menú",
+        "account": "Compte",
+        "sign_in_with_email": "Inicia la sessió amb el correu electrònic",
+        "sign_in": "Inicia sessió",
+        "loading": "Carregant"
+      }
+    },
+    "intents": {
+      "subscription_replace_payment_method": {
+        "card_number": "Número de targeta",
+        "title": "Reemplaçar forma de pagament",
+        "replace_with": "Substituir per",
+        "add_new_payment_method": "Afegir nou",
+        "save_button": "Desar",
+        "close_button": "Tancar",
+        "loading": "S'està carregant el modal de substitució de la forma de pagament",
+        "success": "Mètode de pagament actualitzat",
+        "invalid_subscription_contract": "No s'ha pogut trobar la subscripció",
+        "expiry_date": "Caduca el {{expiryDate}}",
+        "edit_current_payment_method": "Editar la forma de pagament actual",
+        "edit_selected_payment_method": "Editar la forma de pagament seleccionada"
+      }
+    },
+    "order_receipt_document": {
+      "placeholder_title": "Marcador de posició de rebut",
+      "placeholder": "Marcador de posició: la comanda %{name} de %{total} no està llesta per mostrar-se."
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "Logotip de %{shop_name}",
+      "step_one": {
+        "page_title": "Inicia la sessió - %{shop_name}",
+        "heading": "Inicia sessió",
+        "subheading": "Introdueix el teu correu electrònic i t'enviarem un codi de verificació",
+        "input_field_label": "Correu electrònic",
+        "button": "Continuar",
+        "subheading_with_sign_in_options": "Inicia sessió o crea un compte",
+        "consent_agreement": "Si continues, acceptes els %{terms}",
+        "last_used_pill": "Últim ús"
+      },
+      "step_two": {
+        "page_title": "Introduir codi - %{shop_name}",
+        "heading": "Introduir codi",
+        "subheading": "Enviat a %{email}",
+        "restart_link": "Inicia sessió amb un altre correu electrònic",
+        "input_field_label": "Codi de sis dígits",
+        "button": "Enviar",
+        "change_email": "Canviar"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Introdueix una adreça de correu electrònic vàlida",
+          "invalid_code": "Introdueix el codi de 6 dígits correcte"
+        }
+      },
+      "processing": "Processant..."
+    },
+    "orders": {
+      "manage": "Gestionar",
+      "manage_accessiblity_label": "Gestionar comanda {{orderId}}",
+      "fulfillment_status_title": "Estat de preparació de la comanda: {{status}}",
+      "list_title_confirmed_orders_accessibility_label": "Comandes: confirmades",
+      "list_title_pending_orders_accessibility_label": "Comandes: pendents",
+      "switch_order_type_pending_orders_accessibility_label": "Canvia el tipus de comanda. Actualment es mostren les comandes pendents.",
+      "switch_order_type_confirmed_orders_accessibility_label": "Canvia el tipus de comanda. Actualment es mostren les comandes confirmades.",
+      "group_title_label": "Part de: {{groupTitle}}",
+      "group_title_label_with_parent": "Per a: {{groupTitle}}"
+    },
+    "order_details": {
+      "addresses_section_title": "Facturació i enviament",
+      "billing_address": "Adreça de facturació",
+      "card_ending_with": "que acaba en {{lastDigits}}",
+      "contact": "Contacte",
+      "hide_items": "Amagar articles",
+      "loading": "S'estan carregant els detalls de la comanda",
+      "loading_finished_accessibility_message": "Els detalls de la comanda s'han carregat.",
+      "payment": {
+        "status_in_review": "Venciment del pagament després de la revisió",
+        "status_unpaid": "Venciment del pagament el {{date}}",
+        "title": "Pagament",
+        "shop_pay_installments": {
+          "view_schedule": "Veure cronograma",
+          "summary": "Quotes de Shop"
+        },
+        "transactions": {
+          "show_all": "Mostrar-ho tot",
+          "show_less": "Mostra menys",
+          "details": "Detalls",
+          "payment_details": "Detalls de pagament"
+        },
+        "emv_details": {
+          "auth": "AUT:",
+          "aid": "AJUT:",
+          "source": "DESTÍ:"
+        },
+        "payment_type": {
+          "gift_card": "Targeta de regal",
+          "store_credit": "Crèdit a la botiga",
+          "money_order": "Giro postal",
+          "cash_on_delivery": "Pagament contra reemborsament",
+          "bank_deposit": "Dipòsit bancari",
+          "manual": "Manual"
+        }
+      },
+      "shipping": {
+        "address": "Adreça d'enviament",
+        "address_map_marker": "Adreça d'enviament",
+        "method": "Mètode d'enviament",
+        "summary": "Enviament",
+        "free": "Gratuït",
+        "free_shipping_discount": "Enviament gratuït",
+        "one_time": "Enviament únic",
+        "subscription": "Enviament per subscripció",
+        "method_short": "Mètode",
+        "ship_to": "Enviar a"
+      },
+      "show_items": "Mostrar articles",
+      "subtitle": "Data de confirmació: {{date}}",
+      "subtotal": "Subtotal",
+      "summary_list_title_accessibility_label": "Articles de la comanda",
+      "summary_title": "Resum de la comanda",
+      "summary_totals_title_accessibility_label": "Totals de la comanda",
+      "taxes": "Impostos",
+      "title": "Comanda {{name}}",
+      "total": "Total",
+      "unit_price": "{{price}}/unitat",
+      "location": "Sucursal",
+      "not_applicable": "N. a.",
+      "fully_refunded_label": "REEMBORSAT",
+      "partially_refunded_label": "PARCIALMENT REEMBORSAT",
+      "refunded_amount": "Reemborsat",
+      "discount": "Descompte",
+      "compare_at_sale": "Oferta ({{saleAmount}})",
+      "no_data": "Cap",
+      "pagination": {
+        "load_more": "Mostra més",
+        "load_more_accessibility_label": "Mostra més articles",
+        "loading_accessibility_label": "Carregant articles"
+      },
+      "returns": {
+        "expand_events_label": "Mostrar detalls",
+        "hide_events_label": "Amagar detalls",
+        "print_shipping_label": "Imprimir etiqueta d'enviament",
+        "tracking_number": "Número de seguiment:",
+        "return_and_refund_modal_header": "Política de reemborsament",
+        "ineligible_return_message": "Cap article d'aquesta comanda no compleix els requisits de devolució.",
+        "ineligible_return_message_when_returned": "Cap altre article d'aquesta comanda no compleix els requisits de devolució.",
+        "exchange_header": "Canviar articles",
+        "exchange_subheader": "Els articles de canvi s'afegiran a la comanda un cop es completi la devolució."
+      },
+      "request_return_failed": "S'ha produït un error en processar la teva sol·licitud. Torna-ho a intentar.",
+      "mobile_summary_toggle_button": {
+        "open": "Mostrar resum de la comanda",
+        "closed": "Ocultar resum de la comanda"
+      },
+      "show_order_summary": "Mostrar el resum de la comanda",
+      "hide_order_summary": "Ocultar el resum de la comanda",
+      "company": "Empresa",
+      "no_data_provided_accessibility_label": "{{fieldName}} està buit",
+      "marketing_section_title": "Notícies i ofertes",
+      "marketing_checkbox_label": "Envia'm novetats i ofertes per correu electrònic",
+      "marketing_checkmark_label": "Estàs subscrit per rebre notícies i ofertes per correu electrònic",
+      "image_gallery": {
+        "product_name_and_quantity": "La quantitat de {{productName}} és {{quantity}}",
+        "next": "Mostrar els articles següents",
+        "previous": "Mostrar articles anteriors",
+        "load_more_items": {
+          "one": "Mostra {{count}} article més",
+          "other": "Mostrar {{count}} articles més",
+          "many": "Mostrar {{count}} articles més"
+        }
+      },
+      "shop_order_tracking": {
+        "download_shop_to_track": "Descarrega Shop per fer seguiment del paquet",
+        "track_order_with_shop": "Fer seguiment de la comanda amb Shop",
+        "title_header": "Escaneja amb el teu telèfon",
+        "real_time_delivery_updates": "Shop t'enviarà informació en temps real sobre el lliurament quan s'hagi enviat la teva comanda.",
+        "real_time_delivery_updates_with_gift": "Rep les actualitzacions de lliurament en temps real i un regal de {{promoAmount}} per gastar a l'app Shop.",
+        "shop_app_promo_amount_off": "Rep un regal de {{promoAmount}}",
+        "shop_app_promo_text": "{{amountOff}} per gastar a l'app Shop",
+        "open_in_shop": "Obrir botiga"
+      },
+      "shop_pay": {
+        "order_completed_with": "Comanda completada amb",
+        "learn_more": "Més informació"
+      }
     }
   }
 }
