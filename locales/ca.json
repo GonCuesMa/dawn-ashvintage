@@ -3463,7 +3463,137 @@
             "due_today": "El pagament venç avui"
           }
         }
-      }
+      },
+      "order_status": {
+        "delivered": "Lliurat el {{date}}",
+        "complete_label": "Completat",
+        "multiple_statuses_label": "Estats de diverses comandes",
+        "status_timestamp": "Actualitzat el {{date}}",
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Lliurament avalat per",
+            "mixed_brands_label": "Lliurament garantit",
+            "not_delivered_by_label": "Encara no lliurat el {{date}}",
+            "modal_accessibility_button_label": "Informació sobre la promesa de lliurament"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Reclamar el teu Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} per reclamar Shop Cash",
+            "download_shop_app_label": "Descarregar Shop"
+          },
+          "details_modal": {
+            "title": "Lliurament avalat per",
+            "modal_accessiblity_label": "Informació sobre la promesa de lliurament",
+            "delivery_by_label": "Entrega per al {{date}}",
+            "delivery_guaranteed_by_label": "Data de lliurament assegurada per al {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garanteix un lliurament ràpid i fiable. Sol·licita Shop Cash si la teva comanda arriba amb retard.",
+              "may_be_eligible_not_authorized_label": "És possible que siguis elegible per reclamar Shop Cash perquè aquesta comanda ha arribat amb retard. Inicia sessió per veure tota la informació.",
+              "redeemed_label": "Ja has reclamat el Shop Cash perquè aquesta comanda ha arribat tard.",
+              "no_shop_cash_label": "Aquesta comanda no compleix els requisits per a la reclamació de lliurament endarrerit perquè no es va pagar amb Shop Pay.",
+              "no_longer_guaranteed_label": "Aquests articles ja no compten amb el suport de la garantia de lliurament.",
+              "claim_shop_cash_title": "Escaneja per reclamar {{amount}} en Shop Cash",
+              "claim_shop_cash_description": "Pots utilitzar el teu Shop Cash en compres futures a l'aplicació Shop."
+            },
+            "delivery_guarantee_label": "Garantia de lliurament"
+          }
+        },
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Gestionar a Amazon"
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Lliurament garantit per",
+            "external_promise_brand_label": "Lliurament abans del",
+            "not_delivered_by_label": "Lliurat després del {{date}}",
+            "delivery_guarantee_expired_label": "La garantia de lliurament ha vençut",
+            "modal_accessibility_button_label": "Informació sobre la promesa de lliurament",
+            "download_shop_app_button_label": "Descarregar Shop per fer seguiment",
+            "track_with_shop_button_label": "Seguiment amb Shop",
+            "claim_shop_cash_button_label": "Reclamar Shop Cash"
+          },
+          "details_modal": {
+            "title": "Garantia de lliurament",
+            "active_delivery_guarantee_label": "Entrega per al {{date}}",
+            "expired_badge_label": "Vençut",
+            "order_includes_guarantees_label": "La teva comanda inclou {{deliveryAgreementsCount}} garanties",
+            "order_includes_guarantees_description": "Shop Promise garanteix un lliurament ràpid i fiable. Reclama Shop Cash si la teva comanda arriba després del {{date}}.",
+            "delivered_after_label": "Lliurat després del {{date}}",
+            "delivered_after_description": "Com que la teva comanda va arribar amb retard, pots reclamar {{amount}} de Shop Cash.",
+            "claimed_shop_cash_description": "Com que aquesta comanda va arribar amb retard, vas reclamar {{amount}} de Shop Cash.",
+            "eligible_to_claim_shop_cash_description": "Com que la teva comanda va arribar amb retard, pots reclamar {{amount}} de Shop Cash.",
+            "learn_more_button_label": "Més informació",
+            "claim_shop_cash_button_label": "Reclamar Shop Cash",
+            "view_balance_in_shop_button_label": "Veure saldo a Shop",
+            "scan_to_claim_shop_cash_label": "Escaneja per reclamar {{amount}} en Shop Cash",
+            "expired_shop_promise_guarantee_description": "La garantia de Shop Promise d'aquesta comanda va caducar."
+          }
+        },
+        "tracking_number": {
+          "one": "Número de seguiment",
+          "other": "Números de seguiment",
+          "many": "Números de seguiment"
+        },
+        "gift_card_resend_button": {
+          "one": "Reenviar targeta de regal",
+          "other": "Reenviar targetes regal",
+          "many": "Reenviar targetes regal"
+        },
+        "was_expected_by": "Estava prevista per a {{date}}",
+        "confirmed_description_shipping": "Estem preparant aquests articles per al seu enviament.",
+        "arrives": "Arriba el {{date}}",
+        "delivery_estimate_backed_by": "Amb el suport de",
+        "delivery_estimate_delayed_description": "Les entregues a la teva zona estan trigant més del que és habitual. La teva comanda pot arribar tard.",
+        "delivery_estimate_delayed_title": "Endarrerit",
+        "delivery_exception_shop_promise_delivered_late_description": "La teva comanda està protegida per Shop Promise. Com que va arribar tard, sol·licita {{amount}} en Shop Cash.",
+        "predicted_by_shop": "Pronosticat per Shop",
+        "pickup_address_map_link_accessibility_label": "Veure el lloc de retir a {{address}} en un mapa (obre una finestra nova)",
+        "pickup_location_label": "Lloc de recés:",
+        "fulfillment_tracking": {
+          "delivery_progress_heading": "Progrés del lliurament",
+          "status": {
+            "attempted_delivery": "Intent d'entrega",
+            "buyer_action_required": "Acció requerida",
+            "carrier_picked_up": "Retirat per l'empresa de transport",
+            "confirmed": "Confirmat",
+            "delayed": "Endarrerit",
+            "delivered": "Lliurat",
+            "exception": "Problema de lliurament",
+            "failure": "Problema de lliurament",
+            "in_transit": "De camí",
+            "label_printed": "Etiqueta impresa",
+            "label_purchased": "Etiqueta comprada",
+            "out_for_delivery": "Enviat al destinatari",
+            "picked_up": "Retirat",
+            "ready_for_pickup": "Llest perquè l'empresa de transport el reculli",
+            "ready_for_recipient_pickup": "Llest per retirar",
+            "returning_to_sender": "Retorn al remitent"
+          },
+          "attempted_delivery_banner": "Consulta amb {{carrier}} per obtenir informació sobre el lliurament o per programar-ne un de nou",
+          "buyer_action_required_banner": "Consulta amb {{carrier}} o contacta amb nosaltres per obtenir més informació",
+          "carrier_banner_link_accessibility_label": "Veure els detalls de seguiment de {{carrier}} (s'obre en una finestra nova)",
+          "carrier_link_accessibility_label": "Fer seguiment de l'enviament de {{carrier}} (s'obre en una finestra nova)",
+          "completed_gift_card": "Completat el {{date}}",
+          "delivered_on": "Lliurat el {{date}}",
+          "in_store_purchase": "Compra a la botiga",
+          "picked_up_on": "Retirat el {{date}}",
+          "pickup_details_banner": "Consulta els detalls de la recollida amb {{carrier}}",
+          "pickup_details_link_accessibility_label": "Veure detalls de la recollida de {{carrier}} (s'obre en una finestra nova)",
+          "delivery_progress_for_shipment_accessibility_label": "Progrés del lliurament de l'enviament {{position}}",
+          "tracking_link_accessibility_label": "Fer seguiment de l'enviament {{trackingNumber}} de {{carrier}} (s'obre en una finestra nova)",
+          "gift_card_sent_to_recipient": {
+            "one": "La targeta de regal es va enviar al destinatari.",
+            "other": "Les targetes de regal es van enviar als destinataris.",
+            "many": "Les targetes de regal es van enviar als destinataris."
+          },
+          "unknown_carrier_banner": "Contacta'ns per a més informació"
+        },
+        "arrives_tomorrow": "Arriba demà",
+        "arrives_today": "Arriba avui"
+      },
+      "status_mark_as_delivered": "Marcar com a entregat",
+      "buy_again": "Tornar a comprar",
+      "buy_again_accessibility_label": "Tornar a comprar per a la comanda {{orderId}}"
     },
     "order_details": {
       "addresses_section_title": "Facturació i enviament",
