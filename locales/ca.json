@@ -1823,6 +1823,130 @@
         },
         "review_and_confirm_title": "Revisar i confirmar",
         "account_more_actions": "Més accions per a aquest compte"
+      },
+      "general": {
+        "autocomplete_zero_item": "No hi ha cap article disponible.",
+        "autocomplete_powered_by_google": "Tecnologia {{brandName}}",
+        "submit": "Enviar",
+        "processing": "En procés...",
+        "stepper": {
+          "increase": "Augmentar {{type}}",
+          "decrease": "Reduir {{type}}",
+          "minimum_reached": "Mínim de {{value}} assolit",
+          "maximum_reached": "Màxim de {{value}} assolit"
+        },
+        "remove_item": "Eliminar %{label}",
+        "remove_tag": "Eliminar etiqueta",
+        "dates": {
+          "weekdays": {
+            "monday": "dilluns",
+            "tuesday": "dimarts",
+            "wednesday": "dimecres",
+            "thursday": "dijous",
+            "friday": "divendres",
+            "saturday": "dissabte",
+            "sunday": "diumenge"
+          },
+          "weekdays_abbreviation": {
+            "monday": "LU",
+            "tuesday": "MA",
+            "wednesday": "EL MEU",
+            "thursday": "JU",
+            "friday": "VI",
+            "saturday": "SA",
+            "sunday": "FER"
+          },
+          "months": {
+            "january": "gener",
+            "february": "febrer",
+            "march": "març",
+            "april": "abril",
+            "may": "maig",
+            "june": "juny",
+            "july": "juliol",
+            "august": "agost",
+            "september": "setembre",
+            "october": "octubre",
+            "november": "novembre",
+            "december": "desembre"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Mostra el mes anterior, {{month}} {{year}}",
+          "show_next_month": "Mostrar el mes que ve, {{month}} {{year}}",
+          "range_start": "Inici del rang",
+          "in_range": "Dins del rang",
+          "range_end": "Fi del rang"
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Grup de {{number}} marcador",
+            "other": "Grup de {{number}} marcadors",
+            "many": "Grup de {{number}} marcadors"
+          }
+        },
+        "sheet": {
+          "expand": "Expandir"
+        },
+        "confirm_order_button_label": "Confirmar comanda",
+        "qr_code": "Codi QR",
+        "dropzone": {
+          "add_file": "Afegir fitxer",
+          "invalid_file_type": "El tipus d'arxiu no és compatible",
+          "dragged_over": "Deixa anar l'arxiu que vols pujar"
+        },
+        "loading": "Carregant…",
+        "remove_chip": "Eliminar article",
+        "finalize_order_accessibility_label": "Finalitzar comanda"
+      },
+      "contact": {
+        "title": "Informació",
+        "address_title": "Adreça",
+        "delivery_option_title": "Forma de lliurament",
+        "contact_method_title": "Contacte",
+        "email_label": "Correu electrònic",
+        "email_placeholder": "Correu electrònic",
+        "email_or_phone_label": "Correu electrònic o número de telèfon mòbil",
+        "email_or_phone_placeholder": "Correu electrònic o número de telèfon mòbil",
+        "stored_addresses_label": "Adreces desades",
+        "new_address_label": "Utilitza una adreça nova",
+        "first_name_label": "Nom",
+        "optional_first_name_label": "Nom (opcional)",
+        "last_name_label": "Cognoms",
+        "company_label": "Empresa",
+        "optional_company_label": "Empresa (opcional)",
+        "address1_label": "Adreça",
+        "address2_label": "Casa, apartament, etc. (opcional)",
+        "optional_address2_label": "Casa, apartament, etc. (opcional)",
+        "city_label": "Ciutat",
+        "country_label": "País / Regió",
+        "country_code": "Codi de país/regió",
+        "province_label": "Província / Estat",
+        "province_placeholder": "Província / Estat",
+        "county_label": "Comtat",
+        "county_placeholder": "Comtat",
+        "state_label": "Estat",
+        "state_placeholder": "Estat",
+        "region_label": "Regió",
+        "region_placeholder": "Regió",
+        "prefecture_label": "Prefectura",
+        "prefecture_placeholder": "Prefectura",
+        "governorate_label": "Província",
+        "governorate_placeholder": "Província",
+        "emirate_label": "Emirat",
+        "emirate_placeholder": "Emirat",
+        "state_and_territory_label": "Estat/Territori",
+        "state_and_territory_placeholder": "Estat/Territori",
+        "phone_label": "Telèfon",
+        "optional_phone_label": "Telèfon (opcional)",
+        "phone_placeholder": "Telèfon",
+        "phone_tooltip": "En cas que hàgim de contactar amb tu sobre la teva comanda.",
+        "zip_code_label": "Codi postal",
+        "zip_code_placeholder": "Codi postal",
+        "postal_code_label": "Codi postal",
+        "postal_code_placeholder": "Codi postal",
+        "postcode_label": "Codi postal",
+        "postcode_placeholder": "Codi postal"
       }
     },
     "pagination": {
