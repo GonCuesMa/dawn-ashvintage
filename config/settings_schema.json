@@ -1508,5 +1508,23 @@
       {"type": "range", "id": "discount_popup_delay", "label": "Segundos hasta mostrarse", "min": 0, "max": 30, "step": 1, "default": 5},
       {"type": "range", "id": "discount_popup_days", "label": "Días sin volver a mostrarse tras cerrarlo", "min": 1, "max": 30, "step": 1, "default": 7}
     ]
+  },
+  {
+    "name": "WhatsApp",
+    "settings": [
+      {"type": "checkbox", "id": "ash_whatsapp_enabled", "label": "Mostrar botón flotante de WhatsApp", "info": "Solo se muestra si hay un número de teléfono.", "default": true},
+      {"type": "text", "id": "ash_whatsapp_phone", "label": "Número de WhatsApp", "info": "En formato internacional, sin + ni espacios. Ejemplo: 34600123456"},
+      {"type": "text", "id": "ash_whatsapp_label", "label": "Texto del botón (escritorio)", "default": "Escríbenos por WhatsApp"},
+      {"type": "textarea", "id": "ash_whatsapp_message", "label": "Mensaje inicial", "default": "Hola AshVintage, quiero información sobre vuestros lotes."},
+      {"type": "textarea", "id": "ash_whatsapp_product_message", "label": "Mensaje inicial en páginas de producto", "info": "[producto] se sustituye por el nombre del lote y [enlace] por su dirección web.", "default": "Hola AshVintage, me interesa este lote: [producto] [enlace]"},
+      {"type": "select", "id": "ash_whatsapp_position", "label": "Posición", "options": [{"value": "right", "label": "Derecha"}, {"value": "left", "label": "Izquierda"}], "default": "right"}
+    ]
+  },
+  {
+    "name": "Datos de empresa (SEO)",
+    "settings": [
+      {"type": "text", "id": "ash_legal_name", "label": "Razón social", "info": "Se usa en los datos estructurados que lee Google.", "default": "ASH VINTAGE S.L."},
+      {"type": "url", "id": "ash_company_registry_url", "label": "Ficha empresarial", "default": "https://www.datoscif.es/empresa/ash-vintage-sl"}
+    ]
   }
 ]

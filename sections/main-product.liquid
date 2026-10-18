@@ -753,6 +753,18 @@
       </script>
     </div>
   </product-component>
+  {%- if section.settings.sticky_atc -%}
+    <sticky-atc class="sticky-atc" data-section="{{ section.id }}">
+      <div class="sticky-atc__info">
+        <p class="sticky-atc__title">{{ product.title | escape }}</p>
+        <p class="sticky-atc__price" data-sticky-price></p>
+      </div>
+      <button type="button" class="button button--primary sticky-atc__button" data-sticky-submit>
+        {{- 'products.product.add_to_cart' | t -}}
+      </button>
+    </sticky-atc>
+    <script src="{{ 'ash-sticky-atc.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
 </product-info>
 
 {% schema %}
@@ -2191,6 +2203,13 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky_atc",
+      "default": true,
+      "label": "Barra de compra fija en móvil",
+      "info": "Muestra precio y botón de compra al bajar por la página, cuando el botón principal ya no se ve."
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

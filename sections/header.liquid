@@ -458,26 +458,35 @@
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
 
+{%- liquid
+  assign same_as = settings.social_instagram_link | append: '|' | append: settings.social_tiktok_link
+  assign same_as = same_as | append: '|' | append: settings.social_facebook_link | append: '|' | append: settings.social_youtube_link
+  assign same_as = same_as | append: '|' | append: settings.social_twitter_link | append: '|' | append: settings.social_pinterest_link
+  assign same_as = same_as | append: '|' | append: settings.ash_company_registry_url
+  assign same_as_items = same_as | split: '|'
+  assign same_as_started = false
+-%}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
+    {% if settings.ash_legal_name != blank %}
+      "legalName": {{ settings.ash_legal_name | json }},
+    {% endif %}
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
+      {%- for item in same_as_items -%}
+        {%- if item != blank -%}
+          {%- if same_as_started %},{% endif -%}
+          {{ item | json }}
+          {%- assign same_as_started = true -%}
+        {%- endif -%}
+      {%- endfor -%}
     ],
-    "url": {{ request.origin | append: page.url | json }}
+    "url": {{ request.origin | append: routes.root_url | json }}
   }
 </script>
 

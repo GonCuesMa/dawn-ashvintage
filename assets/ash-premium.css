@@ -324,3 +324,150 @@ body .cart-notification-product__name {
 body .cart-notification__links .button {
   min-height: 4.8rem;
 }
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.ash-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 5.6rem;
+  height: 5.6rem;
+  padding: 0 1.6rem;
+  border-radius: 4rem;
+  background: #25d366;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(31, 27, 24, 0.25);
+  transition: transform 0.35s var(--ash-ease), box-shadow 0.35s var(--ash-ease), bottom 0.35s var(--ash-ease);
+}
+
+.ash-whatsapp--right {
+  right: 2rem;
+}
+
+.ash-whatsapp--left {
+  left: 2rem;
+}
+
+.ash-whatsapp:hover,
+.ash-whatsapp:focus-visible {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(31, 27, 24, 0.3);
+}
+
+.ash-whatsapp__icon {
+  flex: none;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.ash-whatsapp__label {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .ash-whatsapp__label {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ash-whatsapp {
+    bottom: 1.6rem;
+    width: 5.6rem;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .ash-whatsapp--right {
+    right: 1.6rem;
+  }
+
+  .ash-whatsapp--left {
+    left: 1.6rem;
+  }
+
+  /* Si hay barra de compra fija, el botón se eleva para no taparla */
+  body:has(.sticky-atc.is-visible) .ash-whatsapp {
+    bottom: 9rem;
+  }
+}
+
+/* ---------- Barra de compra fija (móvil) ---------- */
+.sticky-atc {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .sticky-atc {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 39;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem calc(1.2rem + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+    box-shadow: 0 -8px 24px rgba(31, 27, 24, 0.1);
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform 0.4s var(--ash-ease), visibility 0s linear 0.4s;
+  }
+
+  .sticky-atc.is-visible {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.4s var(--ash-ease);
+  }
+
+  .sticky-atc__info {
+    min-width: 0;
+  }
+
+  .sticky-atc__title,
+  .sticky-atc__price {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sticky-atc__title {
+    color: var(--ash-ink);
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .sticky-atc__price {
+    color: var(--ash-ink);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .sticky-atc__button {
+    flex: none;
+    min-width: 15rem;
+    min-height: 4.6rem;
+  }
+
+  body:has(.sticky-atc.is-visible) {
+    padding-bottom: 7.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ash-whatsapp,
+  .sticky-atc {
+    transition: none;
+  }
+}
