@@ -1,0 +1,39 @@
+{% doc %}
+  Selector de idioma en forma de botones (ES / CA / EN). Solo se pinta si hay más de un idioma publicado.
+  Es un formulario normal de localización: cada botón envía su idioma y Shopify devuelve a la misma página.
+
+  @param {string} id - Identificador único del formulario (p. ej. "HeaderLanguageForm").
+  @param {string} [class] - Clases adicionales para el contenedor.
+  @param {string} [label_class] - Clase del título visible; sin él, el título queda oculto para lectores de pantalla.
+{% enddoc %}
+
+{%- if localization.available_languages.size > 1 -%}
+  {%- form 'localization', id: id, class: 'ash-lang' -%}
+    <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+    <p class="{% if label_class %}{{ label_class }}{% else %}visually-hidden{% endif %}" id="{{ id }}-label">
+      {{- 'localization.language_label' | t -}}
+    </p>
+    <div class="ash-lang__list {{ class }}" role="group" aria-labelledby="{{ id }}-label">
+      {%- for language in localization.available_languages -%}
+        {%- assign is_current = false -%}
+        {%- if language.iso_code == localization.language.iso_code -%}
+          {%- assign is_current = true -%}
+        {%- endif -%}
+        <button
+          type="submit"
+          name="language_code"
+          value="{{ language.iso_code }}"
+          class="ash-lang__button{% if is_current %} is-active{% endif %}"
+          lang="{{ language.iso_code }}"
+          aria-label="{{ language.endonym_name | capitalize | escape }}"
+          title="{{ language.endonym_name | capitalize | escape }}"
+          {% if is_current %}
+            aria-current="true"
+          {% endif %}
+        >
+          {{- language.iso_code | upcase -}}
+        </button>
+      {%- endfor -%}
+    </div>
+  {%- endform -%}
+{%- endif -%}

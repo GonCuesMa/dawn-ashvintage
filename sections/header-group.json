@@ -31,18 +31,10 @@
             "text": "🔥 10% DTO CON EL CÓDIGO BIENVENIDO10",
             "link": ""
           }
-        },
-        "announcement-bar-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "🚚 ENVÍO GRATIS A PARTIR DE 300€",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "announcement-bar-1"
+        "announcement-bar-0"
       ]
     },
     "header": {

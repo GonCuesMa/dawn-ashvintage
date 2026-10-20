@@ -596,3 +596,55 @@ body .cart-notification__links .button {
   color: var(--ash-accent);
   font-weight: 600;
 }
+
+/* ---------- Selector de idioma (ES / CA / EN) ---------- */
+.ash-lang {
+  display: block;
+}
+
+.ash-lang__list {
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+  border-radius: 4rem;
+}
+
+.ash-lang__button {
+  min-width: 4rem;
+  min-height: 3.6rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 4rem;
+  background: transparent;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ash-lang__button:hover {
+  background: rgba(var(--color-foreground), 0.08);
+}
+
+.ash-lang__button.is-active {
+  background: var(--ash-ink);
+  color: var(--ash-cream);
+  cursor: default;
+}
+
+.ash-lang__button:focus-visible {
+  outline: 0.2rem solid rgb(var(--color-foreground));
+  outline-offset: 0.2rem;
+}
+
+body .menu-drawer__localization .ash-lang__button {
+  min-height: 4.4rem;
+}
+
+body .footer__column .ash-lang .caption-large {
+  margin-bottom: 0.8rem;
+}

@@ -59,7 +59,7 @@
           "settings": {
             "heading": "Envío y devoluciones",
             "icon": "truck",
-            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas. Envío gratis a partir de 300 €.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>"
+            "content": "<p>Preparamos y enviamos tu pedido en 24/48 horas.</p><p>No se aceptan devoluciones parciales de los lotes: el lote se devuelve entero o no se devuelve.</p>"
           }
         },
         "tab_info": {
