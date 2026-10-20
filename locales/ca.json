@@ -4556,7 +4556,26 @@
       "removeChip": "Eliminar article",
       "reviewItemHeaderChangeValue": "Canviar valor",
       "reviewItemHeaderSection": "Secció",
-      "reviewItemHeaderValue": "Valor"
+      "reviewItemHeaderValue": "Valor",
+      "closeNotification": "Tancar",
+      "expandNotification": "Veure més",
+      "closeModal": "Tancar",
+      "submit": "Enviar",
+      "processing": "Processant...",
+      "increase": "Augmentar {{type}}",
+      "decrease": "Reduir {{type}}",
+      "minimumReached": "Mínim de {{value}} assolit",
+      "maximumReached": "Màxim de {{value}} assolit",
+      "january": "Gener",
+      "february": "Febrer",
+      "march": "Març",
+      "april": "Abril",
+      "may": "Maig",
+      "june": "Juny",
+      "july": "Juliol",
+      "august": "Agost",
+      "september": "Setembre",
+      "october": "Octubre"
     },
     "profile_preview_bar": {
       "customize_button": "Personalitzar",
@@ -5542,9 +5561,13 @@
           "transactions_list_accessibility_label": "Transaccions de crèdit en botiga",
           "transaction_types": {
             "credit": "Afegit",
-            "debit": "Desgastat"
+            "debit": "Desgastat",
+            "debit_revert": "Reemborsat",
+            "expiration": "Vençut"
           }
-        }
+        },
+        "expirable_amounts_label": "Imports que poden vèncer",
+        "accessibility_label": "Crèdit a la botiga - {{formattedBalance}}"
       },
       "title": "Formes de pagament",
       "add_payment_method_button": "Afegir mètode de pagament",
@@ -5613,7 +5636,68 @@
         "billing_address_choose_from_list": "Triar de la llista",
         "future_purchases_notice": "Aquesta forma de pagament es desarà per a futures compres.",
         "generic_error": "S'ha produït un problema en l'actualització. Torna-ho a intentar."
-      }
+      },
+      "three_d_secure": {
+        "title": "3D Secure",
+        "verification_failed": "No s'ha pogut verificar el teu pagament. Torna-ho a provar o utilitza una forma de pagament diferent."
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Afegir mètode de pagament PayPal",
+        "loading_accessibility_message": "Carregant PayPal",
+        "errors": {
+          "generic": "Hi ha hagut un problema amb PayPal. Torna-ho a provar o utilitza una forma de pagament diferent."
+        }
+      },
+      "card_update_consent_subscriptions": "Aquesta forma de pagament es desarà per a futures compres i es podrà utilitzar per a qualsevol compra recurrent o diferida.",
+      "add_payment_method_dropdown": {
+        "bank_account_consent": "Quan afegeixes un mètode de pagament, autoritzes que les compres futures que aprovis es carreguin a la teva targeta o es treguin del teu compte bancari fins que ho cancel·lis."
+      },
+      "replacement_payment_method_title": "Reemplaçar la forma de pagament",
+      "bank_account": {
+        "loading_accessibility_message": "El botó de compte bancari s'està carregant",
+        "iframe_title_accessibility_label": "Configuració del compte bancari",
+        "display_name": "Compte bancari",
+        "generic_error": "No s'ha pogut afegir un compte bancari. Torna-ho a provar més tard."
+      },
+      "update_payment_method": {
+        "title": "Actualitzar la forma de pagament",
+        "button_title": "Actualitzar",
+        "billing_address": "Adreça de facturació",
+        "disclaimer": "Aquesta forma de pagament es desarà per a futures compres i es podrà utilitzar per a qualsevol compra recurrent o diferida.",
+        "error_message": "No es pot modificar la forma de pagament",
+        "current": "Actual",
+        "loading_form_accessibility_message": "S'està carregant el formulari d'actualització de la forma de pagament",
+        "loading_current_payment_method": "S'està carregant el mètode de pagament actual",
+        "loading_digital_wallets": "Carregant opcions de cartera digital",
+        "loading_card_fields": "S'estan carregant els camps de la targeta de crèdit",
+        "subscriptions_title": "Subscripcions",
+        "subscriptions_list_accessibility_label": "Llista de productes de subscripció",
+        "pre_orders_title": "Pròxims",
+        "pre_orders_list_accessibility_label": "Llista de productes de la comanda pendents",
+        "resources_list_accessibility_label": "Productes de subscripció i productes de la comanda pendents que fan servir aquesta forma de pagament",
+        "resources_card_scroll": "Desplaça't per veure més articles",
+        "resources_card_show_more": "Mostra més",
+        "resources_card_show_less": "Mostra menys",
+        "loading_resources": "Carregant les subscripcions i les properes comandes"
+      },
+      "link_expired": {
+        "message": "L'enllaç per actualitzar la teva forma de pagament ha caducat.",
+        "return_home_button": "Tornar a la pàgina d'inici",
+        "update_message": "L'enllaç per actualitzar la teva forma de pagament ha caducat.",
+        "add_message": "L'enllaç per afegir la teva forma de pagament ha caducat."
+      },
+      "update_success": {
+        "title": "Mètode de pagament actualitzat",
+        "done_button": "Continuar comprant"
+      },
+      "expired_badge_label": "Caducat",
+      "credit_card_title": "Targeta de crèdit",
+      "additional_payment_methods": "Formes de pagament addicionals",
+      "add_success": {
+        "title": "S'ha afegit la forma de pagament",
+        "done_button": "Continuar comprant"
+      },
+      "expiring_badge_label": "Per vèncer"
     },
     "errors": {
       "banner_title": {
@@ -6023,6 +6107,42 @@
         "save": "Desar",
         "title": "Núm. de comanda de compra: {{poNumber}}"
       }
-    }
+    },
+    "payment_method_brands": {
+      "visa": "Visat",
+      "mastercard": "Mastercard",
+      "shoppay": "Shop Pay",
+      "applepay": "Apple Pay",
+      "googlepay": "Google Pay",
+      "paypal": "PayPal",
+      "americanexpress": "American Express",
+      "discover": "Descobreix",
+      "dinersclub": "Diners Club",
+      "jcb": "JCB",
+      "elo": "Hola",
+      "visaelectron": "Visa Electron",
+      "maestro": "Mestre",
+      "forbrugsforeningen": "Forbrugsforeningen",
+      "dankort": "Dankort",
+      "hipercard": "Hipercard",
+      "unionpay": "UnionPay",
+      "laser": "Làser",
+      "storecredit": "Crèdit a la botiga",
+      "bogus": "Fals",
+      "klarna_pay_now": "Klarna",
+      "klarna_pay_later": "Klarna",
+      "klarna_slice_it": "Klarna",
+      "blik": "BLIK",
+      "ideal": "iDEAL",
+      "klarna": "Klarna",
+      "mobilepay": "MobilePay",
+      "przelewy24": "Przelewy24",
+      "swish": "Xiuet",
+      "twint": "TWINT",
+      "usdc": "Criptomoneda: USDC",
+      "vipps": "Vipps",
+      "paypay": "PayPay"
+    },
+    "enable_javascript": "Per veure el teu compte, activa el JavaScript a la configuració del navegador o inicia sessió amb un altre navegador."
   }
 }
