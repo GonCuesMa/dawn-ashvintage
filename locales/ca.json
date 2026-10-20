@@ -587,7 +587,74 @@
               "view_instructions": "Veure instruccions de pagament",
               "view_instructions_accessibility_label": "Veure instruccions de pagament (s'obre en una pestanya nova)",
               "expired_title": "Codi de pagament vençut",
-              "expired": "Va vèncer el %{date}"
+              "expired": "Va vèncer el %{date}",
+              "label": "Konbini",
+              "outlets": {
+                "familymart": "FamilyMart",
+                "lawson": "Lawson",
+                "ministop": "Ministop",
+                "seicomart": "Seicomart"
+              },
+              "codes": {
+                "reference_number": "Codi de pagament",
+                "confirmation_number": "Codi de confirmació"
+              },
+              "steps": {
+                "familymart": {
+                  "1": "A la màquina multifunció, selecciona 代金支払い／チャージ (\"Pagament / Càrrega\")",
+                  "2": "Introdueix el teu codi de pagament i prem OK",
+                  "3": "Introdueix el teu codi de confirmació i prem OK",
+                  "4": "Revisa la informació i prem \"Confirmar\" per imprimir el teu comprovant",
+                  "5": "Porta el comprovant a la caixa en un termini de 30 minuts i paga en efectiu o amb FamiPay"
+                },
+                "lawson": {
+                  "1": "A la terminal Loppi, selecciona 各種番号をお持ちの方 (\"Tinc un número\")",
+                  "2": "Introdueix el teu codi de pagament i prem 次へ (\"Següent\")",
+                  "3": "Introdueix el teu codi de confirmació i prem 次へ",
+                  "4": "Revisa la informació i prem はい (\"Sí\") per imprimir el teu comprovant",
+                  "5": "Porta el comprovant a la caixa en un termini de 30 minuts i paga en efectiu"
+                },
+                "ministop": {
+                  "1": "A la terminal Loppi, selecciona 各種番号をお持ちの方 (\"Tinc un número\")",
+                  "2": "Introdueix el teu codi de pagament i prem 次へ (\"Següent\")",
+                  "3": "Introdueix el teu codi de confirmació i prem 次へ",
+                  "4": "Revisa la informació i prem はい (\"Sí\") per imprimir el teu comprovant",
+                  "5": "Porta el comprovant a la caixa en un termini de 30 minuts i paga en efectiu"
+                },
+                "seicomart": {
+                  "1": "A la caixa, digues al caixer インターネット支払い (\"Pagament per internet\")",
+                  "2": "Introdueix el teu codi de pagament a la pantalla del client i selecciona 登録 (\"Introduir\")",
+                  "3": "Introdueix el teu codi de confirmació i selecciona 登録",
+                  "4": "Revisa la informació i selecciona OK",
+                  "5": "Paga en efectiu"
+                },
+                "1": "Porta el codi de pagament i el codi de confirmació a la terminal o caixa de la botiga i paga en efectiu abans que venci el cupó."
+              },
+              "pay": "Pagar %{amount}",
+              "choose_outlet": "Tria un Konbini per veure els teus codis i com pagar",
+              "expires_at": "Venc el %{date}"
+            }
+          },
+          "oxxo": {
+            "voucher": {
+              "label": "OXXO",
+              "number": "Número de referència",
+              "steps": {
+                "scan_barcode_at_oxxo": "Escaneja el codi de barres a l'OXXO més proper."
+              },
+              "barcode_alt": "Codi de barres del comprovant d'OXXO per al número de referència %{reference_number}"
+            }
+          },
+          "multibanco": {
+            "voucher": {
+              "label": "Multibanc",
+              "codes": {
+                "entity": "Entitat",
+                "reference_number": "Referència"
+              },
+              "steps": {
+                "pay_at_atm_or_online": "Paga en un caixer automàtic Multibanco o a través de la teva banca en línia amb la informació següent."
+              }
             }
           }
         },
@@ -935,7 +1002,12 @@
         "bank_account_connect": "Connecta un compte bancari",
         "crypto_payment_method": {
           "description": "Connecta la teva cartera digital de forma segura. El teu saldo i adreça no es compartiran.",
-          "tooltip": "El saldo de la teva cartera digital i la teva adreça no es compartiran i només es pot deduir l'import sol·licitat"
+          "tooltip": "El saldo de la teva cartera digital i la teva adreça no es compartiran i només es pot deduir l'import sol·licitat",
+          "cashback_descriptor": {
+            "one": "Rebràs el teu reemborsament després de %{count} dia",
+            "other": "Rebràs el teu reemborsament després de %{count} dies",
+            "many": "Rebràs el teu reemborsament després de %{count} dies"
+          }
         },
         "purchase_options_agreement_label": "Un o més articles del teu carret corresponen a una compra diferida o recurrent. Si continues amb el pagament, acceptes que s'apliqui un càrrec automàtic a la teva forma de pagament amb el preu i la freqüència que s'indiquen en aquesta pàgina fins que finalitzi o cancel·lis. Totes les cancel·lacions estan subjectes a la %{cancellation_policy_label}.",
         "update_payment_method": "Actualitzar la forma de pagament",
@@ -1007,7 +1079,77 @@
         "order_edit_banner_single_item_added": "Afegit",
         "order_edit_banner_multiple_items_added": "S'ha afegit {{amount}}.",
         "order_edit_banner_single_item_removed": "Eliminat",
-        "order_edit_banner_multiple_items_removed": "S'ha suprimit {{amount}}."
+        "order_edit_banner_multiple_items_removed": "S'ha suprimit {{amount}}.",
+        "bank_account_missing": "S'ha de connectar un compte bancari",
+        "usdc_cashback_title": "%{incentive_percentage}% de reemborsament",
+        "usdc_cashback_additional_info": "Paga amb USDC a Base i rep un %{incentive_percentage}% de reemborsament a la teva cartera digital en 30 dies.",
+        "usdc_cashback_terms": "S'apliquen termes i condicions",
+        "discount_show_more_warnings": {
+          "one": "Mostrar %{count} més",
+          "other": "Mostrar %{count} més",
+          "many": "Mostrar %{count} més"
+        },
+        "separate_payments_label": "Els teus articles són de més d'una botiga. Se't cobrarà a %{separate_payments_link}.",
+        "separate_payments_text": "pagaments separats",
+        "payments": "Pagaments",
+        "business_customer_with_bank_account_vaulting_payment_label": "Desa aquesta forma de pagament en finalitzar el procés de pagament i autoritza %{company} perquè l'utilitzi per a futures compres en aquesta sucursal fins que la cancel·lis. Tots els contactes assignats a aquesta sucursal poden utilitzar la forma de pagament.",
+        "new_bank_account_disclaimer": "En completar la teva comanda, autoritzes %{shop_name} a fer un dèbit del compte següent a través d'ACH per l'import i en la data indicats.",
+        "bank_account_disclaimer": "Els pagaments de l'ACH (Cambra de Compensació Automatitzada) poden trigar fins a quatre dies hàbils a processar-se.",
+        "bank_account_vaulted_company_location": "Compte bancari desat per a aquesta sucursal",
+        "bank_account_generic_error": "No s'ha pogut afegir el compte bancari. Torna-ho a provar més tard.",
+        "discount_codes_removed_summary": {
+          "one": "S'ha eliminat %{count} codi de descompte",
+          "other": "S'han eliminat %{count} codis de descompte",
+          "many": "S'han eliminat %{count} codis de descompte"
+        },
+        "default": "Predeterminada",
+        "continue_to_guest_checkout": "Continuar al pagament com a visitant",
+        "add_payment_method": "Afegir mètode de pagament",
+        "choose_new_payment_method": "Tria una nova forma de pagament",
+        "add_new_payment_method": "Afegir una nova forma de pagament",
+        "discount_codes_modified_summary": {
+          "one": "S'ha modificat %{count} codi de descompte",
+          "other": "S'han modificat %{count} codis de descompte",
+          "many": "S'han modificat %{count} codis de descompte"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "S'ha eliminat o modificat %{count} codi de descompte",
+          "other": "S'han eliminat o modificat %{count} codis de descompte",
+          "many": "S'han eliminat o modificat %{count} codis de descompte"
+        },
+        "multiple_primary_payment_not_allowed": "Formes de pagament no vàlides",
+        "purchase_options_subscription_confirmation_title": "Confirma la subscripció",
+        "purchase_options_subscription_agreement_label": "El carretó conté una subscripció de renovació automàtica. Si fas clic a \"%{button_label}\", %{consent_text} %{cancellation_instructions}",
+        "purchase_options_subscription_agreement_label_wallets": "El carret conté una subscripció de renovació automàtica. Si fas servir el pagament exprés, %{consent_text} %{cancellation_instructions}",
+        "purchase_options_subscription_consent_text": "acceptes expressament i afirmativament que se't cobrarà automàticament l'import o els imports recurrents mostrats al carretó (més despeses d'enviament i impostos) fins que la subscripció o les subscripcions finalitzin o cancel·lis.",
+        "purchase_options_subscription_cancellation_instructions": "%{cancel_text} Consulta la %{cancellation_policy_label}.",
+        "purchase_options_subscription_cancel_text": "Pots cancel·lar en qualsevol moment si accedeixes al teu compte o contactes amb la botiga.",
+        "vault_for_payment_later": {
+          "pay_button_label": "Fer comanda",
+          "notice": "No se't cobrarà ara. Si continues amb el pagament, acceptes que s'aplicarà un càrrec a la forma de pagament quan es processi la comanda."
+        },
+        "alipay_label": "Alipay",
+        "wechat_pay_label": "WeChat Pay",
+        "oxxo_label": "OXXO",
+        "pay_with_credit_card": "Pagar amb targeta de crèdit",
+        "pay_with_debit_card": "Pagar amb targeta de dèbit",
+        "bogus_test_checkout": {
+          "title": "Instruccions de prova",
+          "intro": "Utilitza aquests valors per provar el pagament:",
+          "approved_transaction": "{{card_number}} per simular una transacció aprovada",
+          "declined_transaction": "{{card_number}} per simular una transacció rebutjada",
+          "gateway_failure": "{{card_number}} per simular una fallada de la passarel·la",
+          "additional_instructions": "Utilitza qualsevol data de caducitat futura i qualsevol codi de seguretat de 3 dígits.",
+          "support_link": "Obtenir ajuda"
+        },
+        "order_edit_banner_single_item_updated": "Actualitzat",
+        "order_edit_banner_previous_taxes_label": "Impostos anteriors:",
+        "order_edit_banner_new_taxes_label": "Nous impostos:",
+        "order_edit_banner_no_taxes_label": "Cap",
+        "satispay_label": "Satispay",
+        "wechat_app_label": "WeChat",
+        "mb_way_label": "MB WAY",
+        "bizum_label": "Bizum"
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "Saldo actual %{amount}",
