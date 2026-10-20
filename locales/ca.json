@@ -1987,7 +1987,13 @@
           "one": "No hi ha punts de recollida disponibles per al teu article",
           "other": "No hi ha punts de recollida disponibles per als teus articles",
           "many": "No hi ha punts de recollida disponibles per als teus articles"
-        }
+        },
+        "location_is_currently_closed": "Tancat",
+        "business_hours": "Horari de la botiga",
+        "title": "Punt de recollida",
+        "search_button": "Cerca",
+        "selector_tabs": "Selector de punts de recollida",
+        "selector_tab_map": "Mapa"
       },
       "error_page": {
         "terminal": {
@@ -3129,7 +3135,12 @@
           "tax_credential_pe": "DNI/RUC/CE",
           "shipping_credential_pe": "DNI/RUC/CE",
           "tax_credential_pt": "NIF/IVA",
-          "shipping_credential_pt": "NIF/IVA"
+          "shipping_credential_pt": "NIF/IVA",
+          "tax_credential_es": "DNI/NIF",
+          "shipping_credential_es": "DNI/NIF",
+          "shipping_credential_tw": "Número nacional d'identitat/IVA",
+          "tax_credential_tr": "Número d'identificació de la República de Turquia/IVA",
+          "shipping_credential_tr": "Número d'identificació de la República de Turquia/IVA"
         }
       },
       "order_summary": {
@@ -3582,6 +3593,167 @@
           "description": "Els preus i les quantitats disponibles d'aquests articles han canviat i s'han actualitzat al carretó."
         },
         "out_of_stock_in_context_label": "Aquest producte no està disponible al teu país o regió."
+      },
+      "post_purchase": {
+        "page_title": "Després de la compra",
+        "title": "Després de la compra",
+        "escape_confirmation": "Has pagat la teva comanda.",
+        "escape_action": "Veure confirmació de comanda ›",
+        "components": {
+          "close": "Tancar",
+          "expand": "Veure més",
+          "processing": "En procés…",
+          "submit": "Enviar"
+        }
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "El teu carret s'ha actualitzat segons el teu país de destinació.",
+        "cart_and_currency_updated_based_on_country": "El vostre carret i la vostra moneda s'han modificat en funció del país d'enviament.",
+        "currency_updated_for_country": "Moneda actualitzada per a %{country}"
+      },
+      "subscriptions": {
+        "recurring_totals": "%{total_price} cada %{interval}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Primer pagament %{total_price}",
+            "other": "Primers %{count} pagaments de %{total_price} cadascun",
+            "many": "Primers %{count} pagaments de %{total_price} cadascun"
+          },
+          "following_cycles": ", després %{total_price} cada %{interval}"
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "one": "dia",
+            "other": "%{count} dies",
+            "many": "%{count} dies"
+          },
+          "week": {
+            "one": "setmana",
+            "other": "%{count} setmanes",
+            "many": "%{count} setmanes"
+          },
+          "month": {
+            "one": "més",
+            "other": "%{count} mesos",
+            "many": "%{count} mesos"
+          },
+          "year": {
+            "one": "any",
+            "other": "%{count} anys",
+            "many": "%{count} anys"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount": "Primer pagament %{total_price_with_discount}, després %{recurring_total}",
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", seguit de %{count} pagament de %{total_price}",
+            "other": ", seguit de %{count} pagaments de %{total_price} cadascun",
+            "many": ", seguit de %{count} pagaments de %{total_price} cadascun"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Formes de pagament",
+        "title": "Formes de pagament",
+        "update_card_button_label": "Actualitzar targeta",
+        "delete_customer_mandate": {
+          "generic_error": "S'ha produït un error en processar la teva sol·licitud.",
+          "success_message": "La teva forma de pagament s'ha eliminat correctament."
+        }
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Termes i condicions del responsable del processament de pagaments",
+        "privacy_policy": "Política de privacitat del responsable del processament de pagaments"
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Producte no disponible",
+          "other": "Productes no disponibles",
+          "many": "Productes no disponibles"
+        },
+        "products_not_available": {
+          "one": "Aquest producte s'eliminarà del teu carret perquè no està disponible al teu país o regió.",
+          "other": "Aquests productes s'eliminaran del teu carret perquè no estan disponibles al teu país o regió.",
+          "many": "Aquests productes s'eliminaran del teu carret perquè no estan disponibles al teu país o regió."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Aquest producte no està disponible al teu país o regió.",
+          "other": "Aquests productes no estan disponibles al teu país o regió.",
+          "many": "Aquests productes no estan disponibles al teu país o regió."
+        },
+        "unavailable_label": "No disponible"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "S'ha modificat el teu país o regió. Introdueix la teva adreça d'enviament per continuar amb el pagament."
+      },
+      "throttle": {
+        "line_to_check_out": "Estàs a la cua per pagar",
+        "cart_summary_heading": "El teu carretó",
+        "merchandise": {
+          "sold_out": "Esgotat",
+          "available": "Disponible"
+        },
+        "inventory": {
+          "partial_inventory_banner": "Alguns articles del teu carret estan esgotats i no estaran disponibles a la pantalla de pagament.",
+          "sold_out": {
+            "heading": "Els articles del teu carret estan esgotats",
+            "storefront_body": "Tornar a la botiga per continuar comprant",
+            "no_storefront_body": "Malauradament, l'article que vols comprar ja no està disponible.",
+            "link": "Tornar a la botiga"
+          }
+        },
+        "title": "Llista d'espera",
+        "time_to_checkout_title": "Hora de pagar - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Calculant el temps d'espera estimat",
+          "less_than_one": "Temps d'espera estimat: menys d'un minut",
+          "one": "Temps d'espera estimat: {{count}} minut",
+          "other": "Temps d'espera estimat: {{count}} minuts",
+          "many": "Temps d'espera estimat: {{count}} minuts"
+        },
+        "last_checked": "(Verificat per última vegada: {{time}})",
+        "footer": {
+          "heading": "No refresquis la pàgina; s'actualitzarà automàticament.",
+          "body": "Els articles del teu carret no es reserven fins que completis el procés de pagament."
+        },
+        "too_many_attempts": {
+          "message": "Massa intents.",
+          "description": "Torna-ho a intentar d'aquí a uns minuts."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "S'ha produït un error en processar la teva sol·licitud. Contacta amb el propietari de la botiga."
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "No hi ha cap lliurament disponible per a %{count} article",
+            "other": "No hi ha cap lliurament disponible per a %{count} articles",
+            "many": "No hi ha cap lliurament disponible per a %{count} articles"
+          },
+          "message": {
+            "one": "Aquest article s'eliminarà del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça.",
+            "other": "Aquests articles s'eliminaran del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça.",
+            "many": "Aquests articles s'eliminaran del carret perquè no hi ha formes de lliurament disponibles per a la teva adreça."
+          },
+          "label": "Sense lliurament"
+        }
+      },
+      "no_address_location": {
+        "title": "Sucursal sense adreça",
+        "header": "No tens cap adreça d'enviament per a aquesta sucursal",
+        "message": "Poseu-vos en contacte amb nosaltres per afegir una adreça per a aquesta sucursal i així poder acabar el pagament.",
+        "email_us_button_label": "Envieu-nos un correu electrònic",
+        "alt_header": "Falta l'adreça d'enviament"
+      },
+      "order_errors": {
+        "creation_failure": "Hi ha hagut un problema en crear la teva comanda. Torna-ho a intentar o contacta amb nosaltres per conèixer més detalls.",
+        "network_failure": "La comanda no s'ha pogut enviar a causa d'un error de xarxa. Comprova la teva connexió i torna-ho a intentar.",
+        "inventory_reservation_failure": "Alguns articles ja no estan disponibles."
+      },
+      "session_errors": {
+        "session_not_unique": "Hi ha hagut un problema en processar la comanda. Actualitza aquesta pàgina per tornar a la botiga.",
+        "session_already_finished": "Aquesta comanda ja s'ha enviat. Pots tornar a la botiga per iniciar una nova comanda."
       }
     },
     "pagination": {
