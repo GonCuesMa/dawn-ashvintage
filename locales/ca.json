@@ -5144,7 +5144,13 @@
       },
       "not_upgraded": "Els comptes de client no estan actualitzats.",
       "failed_to_revert": "No s'ha pogut revertir la configuració del compte de client.",
-      "revert_window_expired": "La finestra de reversió ha caducat."
+      "revert_window_expired": "La finestra de reversió ha caducat.",
+      "address_deletion_error": {
+        "description": "Hi ha hagut un problema en eliminar l'adreça. Torna-ho a intentar o actualitza la pàgina."
+      },
+      "addresses_loading_issue": {
+        "description": "Error de connexió. Comprova la connexió a internet i torna-ho a intentar."
+      }
     },
     "addresses": {
       "add_button": "Afegir adreça",
@@ -5341,7 +5347,151 @@
         "cancel_adding_billing_address_accessibility_label": "Cancel·lar l'addició de l'adreça de facturació",
         "cancel_adding_shipping_address_accessibility_label": "Cancel·lar l'addició de l'adreça d'enviament",
         "save_new_billing_address_accessibility_label": "Desar l'adreça de facturació",
-        "save_new_shipping_address_accessibility_label": "Desar l'adreça d'enviament"
+        "save_new_shipping_address_accessibility_label": "Desar l'adreça d'enviament",
+        "shipping_address_card_title": "Adreça d'enviament",
+        "no_billing_address_banner": "No s'ha afegit una adreça de facturació"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Amagar tot",
+          "show_all": "Mostrar-ho tot",
+          "hide_all_accessibility_label": "Ocultar totes les comandes de la revisió",
+          "show_all_accessibility_label": "Mostrar totes les comandes de la revisió",
+          "title": "Pendent",
+          "pagination": {
+            "nav_accessibility_label": "Botons de navegació de comandes en revisió"
+          },
+          "show_all_orders_in_review": "Mostrar totes les comandes en la revisió",
+          "show_less_orders_in_review": "Mostrar menys comandes en la revisió",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "No tens cap comanda pendent",
+            "pending_orders": {
+              "one": "Tens {{count}} comanda pendent",
+              "other": "Tens {{count}} comandes pendents",
+              "many": "Tens {{count}} comandes pendents"
+            },
+            "more_than_pagination_length": "Tens més de {{count}} comandes pendents"
+          },
+          "pending_orders_count_more_than_pagination_length": "Més de {{count}}"
+        },
+        "order_list_column_headers_location": "Sucursal",
+        "order_list_column_headers_contact": "Contacte",
+        "removed_company_contact_tooltip": "Eliminat de l'empresa",
+        "order_list_column_headers_status": "Estat"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Data de confirmació del {{date}} de la comanda {{draftOrderName}}",
+        "loading": "S'estan carregant els detalls de la comanda",
+        "loading_finished_accessibility_message": "Els detalls de la comanda s'han carregat.",
+        "payment_status": {
+          "draft": {
+            "description": "Els detalls del pagament es decideixen quan es confirma la comanda.",
+            "title": "Pagament encara no vençut",
+            "in_review": {
+              "description": "Els detalls del pagament es decideixen quan es confirma la comanda.",
+              "title": "Pagament encara no vençut"
+            },
+            "submitted": {
+              "description": "Efectua el pagament per confirmar aquesta comanda.",
+              "title": "Pagar per confirmar",
+              "deposit": {
+                "title": "Pendent de pagament",
+                "due_later": "El saldo està subjecte a les condicions de {{translatedName}} i venç el {{dueDate}}.",
+                "due_on_fulfillment": "El saldo s'ha d'abonar una vegada que tots els articles d'aquesta comanda estiguin preparats.",
+                "due_on_receipt": "Rebràs una factura per la resta del saldo.",
+                "due_on_date": "La data de pagament del saldo és el {{dueDate}}."
+              }
+            },
+            "deposit": {
+              "due_later": "El dipòsit de {{depositAmount}} s'haurà d'abonar quan es confirmi la teva comanda. El saldo estarà a les condicions de {{translatedName}}.",
+              "due_on_fulfillment": "El dipòsit de {{depositAmount}} s'haurà d'abonar quan es confirmi la teva comanda. El saldo s'haurà de pagar quan es prepari la comanda.",
+              "due_on_receipt": "El dipòsit de {{depositAmount}} s'haurà d'abonar quan es confirmi la teva comanda. La data límit de pagament del saldo se situa més endavant.",
+              "due_on_date": "El dipòsit de {{depositAmount}} s'ha d'abonar quan es confirmi la comanda. La data límit de pagament del saldo és el {{dueDate}}."
+            }
+          },
+          "paid": {
+            "description": "La comanda es va pagar en la seva totalitat.",
+            "title": "Pagat",
+            "title_with_date": "Pagat el {{date}}"
+          },
+          "pay_now": "Pagar ara",
+          "title": "Estat del pagament",
+          "pending": {
+            "banner_overdue": {
+              "one": "El pagament va vèncer fa {{count}} dia.",
+              "other": "El pagament va vèncer fa {{count}} dies.",
+              "many": "El pagament va vèncer fa {{count}} dies."
+            },
+            "banner_due": {
+              "one": "El pagament venç en {{count}} dia.",
+              "other": "El pagament venç en {{count}} dies.",
+              "many": "El pagament venç en {{count}} dies."
+            },
+            "banner_due_today": "El pagament venç avui.",
+            "title": "Pagament pendent",
+            "title_with_date": "El pagament venç el {{date}}",
+            "description_overdue": "El pagament va amb retard.",
+            "description_partially_paid": "S'ha pagat parcialment la comanda. Tens saldo restant.",
+            "description_authorized": "Es cobrarà segons la teva forma de pagament en la data de venciment, o pots pagar ara.",
+            "title_due_on_receipt": "Pagament no vençut",
+            "description_due_on_receipt": "Rebràs una factura quan el pagament venci.",
+            "title_due_on_fulfillment": "El pagament s'ha de fer en preparar la comanda",
+            "description_due_on_fulfillment": "El pagament s'ha de realitzar una vegada preparats tots els articles de la comanda.",
+            "description_waiting_for_manual_payment": "Aquesta comanda té un pagament pendent. S'actualitzarà el saldo quan es rebi el pagament.",
+            "description_due_on_receipt_partially_paid": "Aquesta comanda es va pagar parcialment. Tens saldo pendent. Rebràs una factura quan el pagament venci.",
+            "description_due_on_fulfillment_partially_paid": "Aquesta comanda es va pagar parcialment. Tens saldo pendent. El pagament s'ha de fer un cop preparats tots els articles de la comanda.",
+            "banner_due_today_for_single_fulfillment": "El pagament de {{amount}} venç avui. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Avui venç el pagament de {{count}} preparacions de comandes",
+            "banner_overdue_for_multiple_fulfillments": "Pagament vençut de {{count}} preparacions de comandes",
+            "description_due_on_fulfillment_partially_paid_next": "Aquesta comanda s'ha pagat parcialment. Tens saldo restant.",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "El pagament de {{amount}} va vèncer fa {{count}} dia. {{link}}",
+              "other": "El pagament de {{amount}} va vèncer fa {{count}} dies. {{link}}",
+              "many": "El pagament de {{amount}} va vèncer fa {{count}} dies. {{link}}"
+            }
+          },
+          "refund": {
+            "title": "Reemborsat",
+            "title_with_date": "Reemborsat el {{date}}",
+            "description_full_refund": "Has rebut un reemborsament complet per aquesta comanda.",
+            "description_single_refund": "Has rebut un reemborsament parcial per aquesta comanda.",
+            "description_multiple_refunds": "Has rebut reemborsaments parcials per aquesta comanda."
+          },
+          "canceled": {
+            "title": "Pagament cancel·lat",
+            "description": "No se t'ha cobrat cap import."
+          },
+          "pay_now_accessibility_label": "Pagar ara la comanda {{orderName}}",
+          "due_date": "Venç el {{date}}",
+          "total_balance": "Saldo total"
+        },
+        "subtitle": "Data d'enviament: {{date}}",
+        "title": "Comanda {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Aquesta forma de pagament ja no estarà disponible per a futures compres des d'aquesta sucursal.",
+          "description_with_replacement": "En eliminar aquesta forma de pagament, els pagaments preautoritzats per a aquesta sucursal es veuran afectats. Reemplaça-la per una altra forma alternativa per rebre les pròximes comandes."
+        },
+        "payment_details": {
+          "order_label": "Comanda {{name}}",
+          "draft_label": "Comanda preliminar {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Afegir número d'ordre de compra",
+        "add_modal_title": "Afegir número d'ordre de compra",
+        "cancel": "Cancel·lar",
+        "close_modal_accessibility_label": "Tancar finestra modal de número d'ordre de compra",
+        "discard": "Descarta",
+        "discard_changes_modal_title": "Voleu descartar els canvis?",
+        "edit_accessibility_label": "Editar número de comanda",
+        "edit_modal_title": "Editar número de comanda",
+        "empty_state": "Sense número d'ordre de compra",
+        "modal_po_number_input_label": "Número de comanda",
+        "modal_po_number_input_max_length_error": "Els números de les ordres de compra tenen un màxim de {{maxLength}} caràcters.",
+        "save": "Desar",
+        "title": "Núm. de comanda de compra: {{poNumber}}"
       }
     }
   }
